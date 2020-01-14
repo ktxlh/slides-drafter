@@ -23,8 +23,13 @@ from itertools import combinations
 from nltk.tokenize import sent_tokenize
 
 import torch
-from torch.utils.data import (DataLoader, RandomSampler, TensorDataset, random_split)
+from torch.utils.data import (DataLoader, RandomSampler, random_split)
 from transformers import BertForSequenceClassification, BertTokenizer
+from utils import TextSegDS
+
+# CUDA for PyTorch
+use_cuda = torch.cuda.is_available()
+device = torch.device("cuda:0" if use_cuda else "cpu")
 
 # Parameters
 max_epochs = 10
@@ -77,23 +82,38 @@ print("# of sections loaded:", len(sections))
 sent_secs, inputs, labels = [],[],[]
 for i in range(len(sections)):
     sent_secs.extend(zip([i]*len(sections[i]), sections[i]))
+
 combs = combinations(sent_secs, 2)
+
 for (l1,s1), (l2,s2) in combs:
     inputs.append(
         tokenizer.encode_plus(
             s1, s2, **tokenizer_encode_plus_parameters))
     labels.append(int(l1 == l2))
 
-inputs = torch.tensor(inputs)
-labels = torch.tensor(labels)
-
-data = TensorDataset(inputs, labels)
-train_set, test_set = random_split(data, [int(len(labels)*0.8), int(len(labels)*0.2)])
-
-dataloader = DataLoader(train_set, sampler=RandomSampler(data), batch_size=batch_size)
+data = TextSegDS(inputs, labels)
+train_set, valid_set = random_split(data, [int(len(labels)*0.8), int(len(labels)*0.2)])
+train_generator = DataLoader(train_set, sampler=RandomSampler(data), batch_size=batch_size)
+valid_generator = DataLoader(valid_set, sampler=RandomSampler(data), batch_size=batch_size)
 
 # Fine-tune model
-for 
+for epoch in range(max_epochs):
+    # Training
+    for local_batch, local_labels in train_generator:
+        # Transfer to GPU
+        local_batch, local_labels = local_batch.to(device), local_labels.to(device)
+
+        # Model computations
+        [...]
+
+    # Validation
+    with torch.set_grad_enabled(False):
+        for local_batch, local_labels in valid_generator:
+            # Transfer to GPU
+            local_batch, local_labels = local_batch.to(device), local_labels.to(device)
+
+            # Model computations
+            [...]
 
 
 # Test fine-tuned model
