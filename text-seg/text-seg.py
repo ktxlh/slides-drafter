@@ -13,37 +13,41 @@ Data dir (shanglinghsu@): ~/ml-camp/wiki-vandalism/json
   >>> nltk.download('punkt')
 
 """
+import argparse
 import json
 import os
 import random
 import re
 import string
 from itertools import combinations
-
+from tqdm import tqdm, trange
 from nltk.tokenize import sent_tokenize
 
 import torch
-from torch.utils.data import (DataLoader, RandomSampler, random_split)
+from torch.utils.data import DataLoader, RandomSampler, TensorDataset, random_split
 from transformers import BertForSequenceClassification, BertTokenizer
-from utils import TextSegDS
 
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
 device = torch.device("cuda:0" if use_cuda else "cpu")
 
 # Parameters
-max_epochs = 10
+num_train_epochs = 10
 batch_size = 16 # TODO batch_size was 64 in the example
 max_sent_len = 40
-random.seed(666)
-torch.manual_seed(666)
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
 # mini-json: Subset with only 7822*.json and 7823*.json
 num_paragraphs_used = 10 ### TODO
 tokenizer_encode_plus_parameters = {
     'max_length' : max_sent_len,
     'pad_to_max_length' : 'right',
+    'return_tensors' : 'pt',
 }
+seed = 666
+def set_seed(seed):
+    random.seed(seed)
+    #np.random.seed(seed)
+    torch.manual_seed(seed)
 
 # Load model
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
@@ -72,39 +76,81 @@ for root, dirs, files in os.walk(json_dir):
                 sentences = sent_tokenize(text)
                 if len(sentences) > 10:
                     continue # Some tables are weird <1>
-                print(len(sentences))
                 sections.append(sentences)
         if len(sections) >= num_paragraphs_used: ### TODO Use more data later
             break
 
 print("# of sections loaded:", len(sections))
 
-sent_secs, inputs, labels = [],[],[]
+sent_secs = []
 for i in range(len(sections)):
     sent_secs.extend(zip([i]*len(sections[i]), sections[i]))
 
+# TODO: Too slow. 1)switch to index combinations 2)Materialize to list 3)random.choice 
 combs = combinations(sent_secs, 2)
-
-for (l1,s1), (l2,s2) in combs:
-    inputs.append(
-        tokenizer.encode_plus(
-            s1, s2, **tokenizer_encode_plus_parameters))
+inputs, labels = [],[]
+for (l1,s1), (l2,s2) in tqdm(combs): # TODO Tqdm -> Trange
+    inputs.append(tokenizer.encode_plus(
+        s1, s2, **tokenizer_encode_plus_parameters
+    )['input_ids'])
     labels.append(int(l1 == l2))
 
-data = TextSegDS(inputs, labels)
-train_set, valid_set = random_split(data, [int(len(labels)*0.8), int(len(labels)*0.2)])
+data = TensorDataset(torch.cat(inputs), torch.tensor(labels))
+n_test = int(len(labels)*0.2)
+n_train = len(labels) - n_test
+train_set, valid_set = random_split(data, [n_train, n_test])
 train_generator = DataLoader(train_set, sampler=RandomSampler(data), batch_size=batch_size)
 valid_generator = DataLoader(valid_set, sampler=RandomSampler(data), batch_size=batch_size)
 
 # Fine-tune model
-for epoch in range(max_epochs):
-    # Training
-    for local_batch, local_labels in train_generator:
-        # Transfer to GPU
+# Prepare optimizer and schedule (linear warmup and decay)
+# TODO Add argparse
+weight_decay = 0.0 ###
+learning_rate = 5e-5 ###
+adam_epsilon = 1e-8 ###
+warmup_steps = 0 ###
+max_grad_norm = 1.0 ###
+
+no_decay = ["bias", "LayerNorm.weight"]
+optimizer_grouped_parameters = [
+    {
+        "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
+        "weight_decay": weight_decay,
+    },
+    {"params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0},
+]
+optimizer = AdamW(optimizer_grouped_parameters) lr=learning_rate, eps=adam_epsilon)
+scheduler = get_linear_schedule_with_warmup(
+    optimizer, num_warmup_steps=warmup_steps, num_training_steps=t_total
+)
+
+print("***** Running training *****")
+tr_loss, logging_loss = 0.0, 0.0
+global_step = 0
+epochs_trained = 0
+#steps_trained_in_current_epoch = 0
+model.zero_grad()
+train_iterator = trange(
+    epochs_trained, int(num_train_epochs), desc="Epoch"
+)
+set_seed(seed)  # Added here for reproducibility
+for _ in train_iterator:
+    epoch_iterator = tqdm(train_generator, desc="Iteration")
+    for step, local_batch, local_labels in enumerate(epoch_iterator): # TODO What's the enumerate() for?
+
         local_batch, local_labels = local_batch.to(device), local_labels.to(device)
 
-        # Model computations
-        [...]
+        model.train()
+        outputs = model(local_batch, labels=local_labels)
+        loss = outputs[0]
+        loss.backward()
+        tr_loss += loss.item()
+
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm) ###
+        optimizer.step()
+        scheduler.step()  # Update learning rate schedule
+        model.zero_grad()
+        global_step += 1
 
     # Validation
     with torch.set_grad_enabled(False):
@@ -114,29 +160,6 @@ for epoch in range(max_epochs):
 
             # Model computations
             [...]
-
-
-# Test fine-tuned model
-
-"""
-inputs = torch.tensor([tokenizer.encode("Let's see all hidden-states and attentions on this text")])
-labels = None
-
-# If you used to have this line in pytorch-pretrained-bert:
-loss = model(inputs, labels=labels)
-
-# Now just use this line in transformers to extract the loss from the output tuple:
-outputs = model(inputs, labels=labels)
-loss = outputs[0]
-
-# In transformers you can also have access to the logits:
-loss, logits = outputs[:2]
-
-# And even the attention weights if you configure the model to output them (and other outputs too, see the docstrings and documentation)
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', output_attentions=True)
-outputs = model(inputs, labels=labels)
-loss, logits, attentions = outputs
-"""
 
 
 # Save model
