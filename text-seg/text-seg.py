@@ -59,28 +59,35 @@ model = model_class.from_pretrained('./directory/to/save/')  # re-load
 tokenizer = BertTokenizer.from_pretrained('./directory/to/save/')  # re-load
 """
 
-def remove_non_printable(s):
-    return s.encode('ascii', errors='ignore').decode('ascii')
-
 # Data (subset) -> Dataset
-## traverse root directory, and list directories as dirs and files as files
-sections = []
-for root, dirs, files in os.walk(json_dir):
-    print("# of json files in total:",len(files))
-    files.sort()
-    for fname in files:
-        obj = json.load(open(os.path.join(json_dir, fname)))
-        for secs in obj['now']['sections']:
-            text = remove_non_printable(secs['text'])
-            if len (text) > 0:
-                sentences = sent_tokenize(text)
-                if len(sentences) > 10:
-                    continue # Some tables are weird <1>
-                sections.append(sentences)
-        if len(sections) >= num_paragraphs_used: ### TODO Use more data later
-            break
+def traverse_json_dir(json_dir, toke_to_sent):
 
-print("# of sections loaded:", len(sections))
+    def remove_non_printable(s):
+        return s.encode('ascii', errors='ignore').decode('ascii')
+
+    sections = []
+    for root, dirs, files in os.walk(json_dir):
+        print("# of json files in total:",len(files))
+        files.sort()
+        for fname in files:
+            obj = json.load(open(os.path.join(json_dir, fname)))
+            for secs in obj['now']['sections']:
+                text = remove_non_printable(secs['text'])
+                if len (text) > 0:
+                    sentences = sent_tokenize(text)
+                    if len(sentences) > 10:
+                        continue # Some tables are weird <1>
+                    if tokenize:
+                        sections.append(sentences)
+                    else:
+                        sections.append(text)
+            if len(sections) >= num_paragraphs_used: ### TODO Use more data later
+                break
+
+    print("# of sections loaded:", len(sections))
+    return sections
+
+sections = traverse_json_dir(json_dir, toke_to_sent=True)
 
 sent_secs = []
 for i in range(len(sections)):
@@ -159,7 +166,9 @@ for _ in train_iterator:
             local_batch, local_labels = local_batch.to(device), local_labels.to(device)
 
             # Model computations
-            [...]
+            outputs = model(local_batch, labels=local_labels)
+            loss = outputs[0]
+            tr_loss += loss.item()
 
 
 # Save model
