@@ -32,7 +32,7 @@ for root, dirs, files in os.walk(JSON_DIR):
         if obj['is_vandalism']:
             continue
         for secs in obj['now']['sections']:
-            if len (secs['text'] > 0):
+            if len (secs['text']) > 0:
                 paragraphs.append(secs['text'])
         if len(paragraphs) == NUM_PAR_TRAIN:
             break
