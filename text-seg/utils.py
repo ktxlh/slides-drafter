@@ -17,9 +17,7 @@ def traverse_json_dir(json_dir, toke_to_sent, limit_paragraphs):
                 text = remove_non_printable(secs['text'])
                 if len (text) > 0:
                     sentences = sent_tokenize(text)
-                    if len(sentences) > 10:
-                        continue # Some tables are weird <1>
-                    sentences = [sent for sent in sentences if len(' '.split(sent))>6]
+                    sentences = [sent for sent in sentences if len(sent.split(' '))>6]
                     if toke_to_sent:
                         sections.append(sentences)
                     else:
