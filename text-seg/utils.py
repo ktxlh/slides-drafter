@@ -16,12 +16,10 @@ def traverse_json_dir(json_dir, toke_to_sent, limit_paragraphs):
             for secs in obj['now']['sections']:
                 text = remove_non_printable(secs['text'])
                 if len (text) > 0:
-                    sentences = sent_tokenize(text)
-                    sentences = [sent for sent in sentences if len(sent.split(' '))>6]
                     if toke_to_sent:
                         sections.append(sentences)
                     else:
-                        sections.append(' '.join(sentences))
+                        sections.append(text)
             if limit_paragraphs > 0 and len(sections) >= limit_paragraphs: ### TODO Use more data later
                 break
 
