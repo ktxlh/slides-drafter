@@ -4,6 +4,7 @@ Task: Classify a pair of sentences into "from the same paragraph or not"
 
 Data dir (shanglinghsu@): ~/ml-camp/wiki-vandalism/json
 """
+import os
 import json
 import torch
 from transformers import BertForSequenceClassification
