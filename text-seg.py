@@ -9,7 +9,7 @@ import json
 import torch
 from transformers import BertForSequenceClassification
 
-JSON_DIR = "/home/shanglinghsu/ml-camp/wiki-vandalism/json/."
+JSON_DIR = "/home/shanglinghsu/ml-camp/wiki-vandalism/json"
 NUM_PAR_TRAIN = 1000
 
 # Load model
@@ -26,13 +26,16 @@ tokenizer = BertTokenizer.from_pretrained('./directory/to/save/')  # re-load
 paragraphs = []
 for root, dirs, files in os.walk(JSON_DIR):
     print("# of json files in total:",len(files))
+    files.sort()
     for fname in files:
-        json_obj = json.load(open(fname))
-        print(json_obj)
-        break
-        #paragraphs.append()
-        #if len(paragraphs) == NUM_PAR_TRAIN:
-        #    break
+        obj = json.load(open(os.path.join(JSON_DIR, fname)))
+        if obj['is_vandalism']:
+            continue
+        for secs in obj['now']['sections']:
+            if len (secs['text'] > 0):
+                paragraphs.append(secs['text'])
+        if len(paragraphs) == NUM_PAR_TRAIN:
+            break
 print("# of paragraphs loaded:", len(paragraphs))
 
 """
