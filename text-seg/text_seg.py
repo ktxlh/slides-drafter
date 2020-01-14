@@ -21,7 +21,6 @@ import re
 import string
 from itertools import combinations
 from tqdm import tqdm, trange
-from nltk.tokenize import sent_tokenize
 
 import torch
 from torch.utils.data import DataLoader, RandomSampler, TensorDataset, random_split
@@ -36,7 +35,7 @@ device = torch.device("cuda:0" if use_cuda else "cpu")
 num_train_epochs = 10
 batch_size = 16 # TODO batch_size was 64 in the example
 max_sent_len = 40
-num_paragraphs_used = 10 ### TODO
+limit_paragraphs = 10 ### TODO
 
 weight_decay = 0.0 ###
 learning_rate = 5e-5 ###
@@ -45,10 +44,12 @@ warmup_steps = 0 ###
 max_grad_norm = 1.0 ###
 
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
-tag = '{}-{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len, num_paragraphs_used)
-model_dir = "/home/shanglinghsu/ml-camp/"+tag
-if not os.path.exists(model_dir):
-    os.makedirs(model_dir)
+tag = '{}-{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len, limit_paragraphs)
+model_dir = "/home/shanglinghsu/ml-camp/models/"+tag
+loss_dir = "/home/shanglinghsu/ml-camp/losses/"+tag
+for d in [model_dir, loss_dir]:
+    if not os.path.exists(d):
+        os.makedirs(d)
 
 # mini-json: Subset with only 7822*.json and 7823*.json
 tokenizer_encode_plus_parameters = {
@@ -73,34 +74,7 @@ tokenizer = BertTokenizer.from_pretrained('./directory/to/save/')  # re-load
 """
 
 # Data (subset) -> Dataset
-def traverse_json_dir(json_dir, toke_to_sent):
-
-    def remove_non_printable(s):
-        return s.encode('ascii', errors='ignore').decode('ascii')
-
-    sections = []
-    for root, dirs, files in os.walk(json_dir):
-        print("# of json files in total:",len(files))
-        files.sort()
-        for fname in files:
-            obj = json.load(open(os.path.join(json_dir, fname)))
-            for secs in obj['now']['sections']:
-                text = remove_non_printable(secs['text'])
-                if len (text) > 0:
-                    sentences = sent_tokenize(text)
-                    if len(sentences) > 10:
-                        continue # Some tables are weird <1>
-                    if toke_to_sent:
-                        sections.append(sentences)
-                    else:
-                        sections.append(text)
-            if len(sections) >= num_paragraphs_used: ### TODO Use more data later
-                break
-
-    print("# of sections loaded:", len(sections))
-    return sections
-
-sections = traverse_json_dir(json_dir, toke_to_sent=True)
+sections = traverse_json_dir(json_dir, toke_to_sent=True, limit_paragraphs=limit_paragraphs)
 
 sent_secs = []
 for i in range(len(sections)):
@@ -179,7 +153,10 @@ for _ in train_iterator:
 
 print("*** losses ***")
 for lt,lv in zip(tr_loss, vl_loss):
-    print('{:5f},\t{:5f},'lt,lv)
+    print('{:5f}\t{:5f}'.format(lt,lv))
+
+with open(loss_dir+'loss.txt','w') as f:
+    f.write('\n'.join(['{}\t{}' for lt,lv in zip(tr_loss, vl_loss)])+'\n')
 
 # Save model
 model.save_pretrained(model_dir)
