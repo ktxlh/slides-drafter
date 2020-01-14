@@ -83,7 +83,7 @@ def traverse_json_dir(json_dir, toke_to_sent):
                     sentences = sent_tokenize(text)
                     if len(sentences) > 10:
                         continue # Some tables are weird <1>
-                    if tokenize:
+                    if toke_to_sent:
                         sections.append(sentences)
                     else:
                         sections.append(text)
