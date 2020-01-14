@@ -23,7 +23,7 @@ def traverse_json_dir(json_dir, toke_to_sent, limit_paragraphs):
                     if toke_to_sent:
                         sections.append(sentences)
                     else:
-                        sections.append(text)
+                        sections.append(' '.join(sentences))
             if limit_paragraphs > 0 and len(sections) >= limit_paragraphs: ### TODO Use more data later
                 break
 
