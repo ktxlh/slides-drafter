@@ -35,9 +35,15 @@ device = torch.device("cuda:0" if use_cuda else "cpu")
 num_train_epochs = 10
 batch_size = 16 # TODO batch_size was 64 in the example
 max_sent_len = 40
-json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
-# mini-json: Subset with only 7822*.json and 7823*.json
 num_paragraphs_used = 10 ### TODO
+json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
+
+tag = '{}-{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len, num_paragraphs_used)
+model_dir = "/home/shanglinghsu/ml-camp/"+tag
+if not os.path.exists(model_dir):
+    os.makedirs(model_dir)
+
+# mini-json: Subset with only 7822*.json and 7823*.json
 tokenizer_encode_plus_parameters = {
     'max_length' : max_sent_len,
     'pad_to_max_length' : 'right',
@@ -126,13 +132,13 @@ optimizer_grouped_parameters = [
     },
     {"params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0},
 ]
-optimizer = AdamW(optimizer_grouped_parameters) lr=learning_rate, eps=adam_epsilon)
+optimizer = AdamW(optimizer_grouped_parameters), lr=learning_rate, eps=adam_epsilon)
 scheduler = get_linear_schedule_with_warmup(
     optimizer, num_warmup_steps=warmup_steps, num_training_steps=t_total
 )
 
 print("***** Running training *****")
-tr_loss, logging_loss = 0.0, 0.0
+tr_loss, logging_loss, vl_loss = 0.0, 0.0, []
 global_step = 0
 epochs_trained = 0
 #steps_trained_in_current_epoch = 0
@@ -168,14 +174,15 @@ for _ in train_iterator:
             # Model computations
             outputs = model(local_batch, labels=local_labels)
             loss = outputs[0]
-            tr_loss += loss.item()
+            vl_loss.append(loss)
 
+print("*** vl_loss ***")
+for item in vl_loss:
+    print(item)
 
 # Save model
-"""
-model.save_pretrained('./directory/to/save/')  # save
-tokenizer.save_pretrained('./directory/to/save/')  # save
-"""
+model.save_pretrained(model_dir)
+tokenizer.save_pretrained(model_dir)
 
 """
 Footnotes

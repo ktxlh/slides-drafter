@@ -1,5 +1,5 @@
 import os
-from text-seg import traverse_json_dir
+from text_seg import traverse_json_dir
 from nltk.tokenize import sent_tokenize
 
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
