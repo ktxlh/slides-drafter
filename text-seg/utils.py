@@ -1,3 +1,5 @@
+import os
+import json
 from nltk.tokenize import sent_tokenize
 
 def traverse_json_dir(json_dir, toke_to_sent, limit_paragraphs):
