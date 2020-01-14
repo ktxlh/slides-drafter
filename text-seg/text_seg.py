@@ -25,19 +25,26 @@ from nltk.tokenize import sent_tokenize
 
 import torch
 from torch.utils.data import DataLoader, RandomSampler, TensorDataset, random_split
-from transformers import BertForSequenceClassification, BertTokenizer, AdamW
+from transformers import BertForSequenceClassification, BertTokenizer, AdamW, get_linear_schedule_with_warmup
 
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
 device = torch.device("cuda:0" if use_cuda else "cpu")
 
 # Parameters
+# TODO Add argparse
 num_train_epochs = 10
 batch_size = 16 # TODO batch_size was 64 in the example
 max_sent_len = 40
 num_paragraphs_used = 10 ### TODO
-json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
 
+weight_decay = 0.0 ###
+learning_rate = 5e-5 ###
+adam_epsilon = 1e-8 ###
+warmup_steps = 0 ###
+max_grad_norm = 1.0 ###
+
+json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
 tag = '{}-{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len, num_paragraphs_used)
 model_dir = "/home/shanglinghsu/ml-camp/"+tag
 if not os.path.exists(model_dir):
@@ -116,14 +123,8 @@ train_generator = DataLoader(train_set, sampler=RandomSampler(data), batch_size=
 valid_generator = DataLoader(valid_set, sampler=RandomSampler(data), batch_size=batch_size)
 
 # Fine-tune model
-# Prepare optimizer and schedule (linear warmup and decay)
-# TODO Add argparse
-weight_decay = 0.0 ###
-learning_rate = 5e-5 ###
-adam_epsilon = 1e-8 ###
-warmup_steps = 0 ###
-max_grad_norm = 1.0 ###
 
+## Prepare optimizer and schedule (linear warmup and decay)
 no_decay = ["bias", "LayerNorm.weight"]
 optimizer_grouped_parameters = [
     {
