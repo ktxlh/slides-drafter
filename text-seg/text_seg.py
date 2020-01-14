@@ -25,7 +25,7 @@ from nltk.tokenize import sent_tokenize
 
 import torch
 from torch.utils.data import DataLoader, RandomSampler, TensorDataset, random_split
-from transformers import BertForSequenceClassification, BertTokenizer
+from transformers import BertForSequenceClassification, BertTokenizer, AdamW
 
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
