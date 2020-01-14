@@ -135,11 +135,11 @@ optimizer_grouped_parameters = [
 ]
 optimizer = AdamW(optimizer_grouped_parameters, lr=learning_rate, eps=adam_epsilon)
 scheduler = get_linear_schedule_with_warmup(
-    optimizer, num_warmup_steps=warmup_steps, num_training_steps=t_total
+    optimizer, num_warmup_steps=warmup_steps, num_training_steps=len(train_generator)
 )
 
 print("***** Running training *****")
-tr_loss, logging_loss, vl_loss = 0.0, 0.0, []
+tr_loss, vl_loss = [],[]
 global_step = 0
 epochs_trained = 0
 #steps_trained_in_current_epoch = 0
@@ -177,9 +177,9 @@ for _ in train_iterator:
             loss = outputs[0]
             vl_loss.append(loss)
 
-print("*** vl_loss ***")
-for item in vl_loss:
-    print(item)
+print("*** losses ***")
+for lt,lv in zip(tr_loss, vl_loss):
+    print('{:5f},\t{:5f},'lt,lv)
 
 # Save model
 model.save_pretrained(model_dir)

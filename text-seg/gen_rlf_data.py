@@ -4,9 +4,9 @@ from nltk.tokenize import sent_tokenize
 
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
 output_dir = json_dir+"-raw"
-
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
+print("output_dir:", output_dir)
 
 sections = traverse_json_dir(json_dir, toke_to_sent=False)
 
