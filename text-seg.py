@@ -9,7 +9,7 @@ import json
 import torch
 from transformers import BertForSequenceClassification
 
-JSON_DIR = "~/ml-camp/wiki-vandalism/json"
+JSON_DIR = "~/ml-camp/wiki-vandalism/json/."
 NUM_PAR_TRAIN = 1000
 
 # Load model
