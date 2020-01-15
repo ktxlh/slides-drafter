@@ -15,7 +15,7 @@ from tqdm import tqdm, trange
 import torch
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
-from transformers import (AdamW, BertForSequenceClassification, BertTokenizer, BertForTokenClassification
+from transformers import (AdamW, BertForSequenceClassification, BertTokenizer, BertForTokenClassification,
                           get_linear_schedule_with_warmup)
 from utils import remove_non_printable, traverse_json_dir
 
@@ -40,6 +40,9 @@ classifier_token = BertForTokenClassification.from_pretrained(model_dir, num_lab
 
 from utils import keywordextract
 
-sentence = "Some students space paragraphs, trying to separate points when the process of writing is over."
-kw = keywordextract(sentence, classifier_token, tokenizer)
-
+sentences = ["Some students space paragraphs, trying to separate points when the process of writing is over.","This is a major mistake.", "How much easier your writing would become if you looked at it from another angle!"]
+sentence = sentences[0]
+s0, s1, s2 = sentences[:3]
+kw = keywordextract(s1, classifier_token, tokenizer)
+kw = keywordextract(s2, classifier_token, tokenizer)
+kw = keywordextract(s3, classifier_token, tokenizer)
