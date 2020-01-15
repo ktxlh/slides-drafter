@@ -125,9 +125,13 @@ class TextSplitter():
 
         : text: str -- Normal text input
         : segments: list(str) -- Each str is a semantic segment.
-        : key_phrases: list(list(str)) -- Key words for each segment.
         """
+        #: key_phrases: list(list(str)) -- Key words for each segment.
+        return ["Dummy paragraph 1.", "Dummy paragraph 2."]
+
+    def _split(self, text):
         segments = []
+        key_phrases = []
         segment_counter = 0
         paragraphs = [t for t in text.split('\n') if len(t) > 0]
         for paragraph in paragraphs:
