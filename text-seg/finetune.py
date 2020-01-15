@@ -137,7 +137,7 @@ def main():
     parser.add_argument("--reduce_memory", action="store_true",
                         help="Store training data as on-disc memmaps to massively reduce memory usage")
 
-    parser.add_argument("--epochs", type=int, default=1, help="Number of epochs to train for")
+    parser.add_argument("--epochs", type=int, default=3, help="Number of epochs to train for")
     parser.add_argument("--local_rank",
                         type=int,
                         default=-1,

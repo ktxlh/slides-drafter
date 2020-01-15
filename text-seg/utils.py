@@ -8,7 +8,6 @@ def remove_non_printable(s):
         return s
 
 def traverse_json_dir(json_dir, return_docs):
-
     rtn = []
     print("*** Traversing ***")
     for root, dirs, files in os.walk(json_dir):
