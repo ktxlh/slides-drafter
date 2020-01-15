@@ -50,6 +50,7 @@ def keywordextract(sentence, model, tokenizer):
     indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
     tokens_tensor = torch.tensor([indexed_tokens]).to(device)
     model.eval()
+    model.to(device)
     prediction = []
     logit = model(tokens_tensor)
     logit = logit.detach().cpu().numpy()
