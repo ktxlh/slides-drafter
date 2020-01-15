@@ -15,7 +15,7 @@ def traverse_json_dir(json_dir, toke_to_sent, limit_paragraphs):
             obj = json.load(open(os.path.join(json_dir, fname)))
             for secs in obj['now']['sections']:
                 text = remove_non_printable(secs['text'])
-                if len (text) > 0:
+                if len (text) > 40:
                     if toke_to_sent:
                         sections.append(sentences)
                     else:
