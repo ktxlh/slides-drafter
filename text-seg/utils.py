@@ -2,6 +2,7 @@ import os
 import json
 import torch
 from nltk.tokenize import sent_tokenize
+from tqdm import trange
 
 def remove_non_printable(s):
         s = s.encode('ascii', errors='ignore').decode('ascii')
@@ -15,7 +16,8 @@ def traverse_json_dir(json_dir, return_docs):
     for root, dirs, files in os.walk(json_dir):
         print("# of json files in total:",len(files))
         files.sort()
-        for fname in files:
+        for i in trange(len(files)):
+            fname = files[i]
             obj = json.load(open(os.path.join(json_dir, fname)))
             sections = []
             for secs in obj['now']['sections']:
