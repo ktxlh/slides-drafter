@@ -37,7 +37,6 @@ device = torch.device("cuda:0" if use_cuda else "cpu")
 num_train_epochs = 10
 batch_size = 16 # TODO batch_size was 64 in the example
 max_sent_len = 40
-limit_paragraphs = 10 ### TODO
 
 weight_decay = 0.0 ###
 learning_rate = 5e-5 ###
@@ -46,7 +45,7 @@ warmup_steps = 0 ###
 max_grad_norm = 1.0 ###
 
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
-tag = '{}-{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len, limit_paragraphs)
+tag = '{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len)
 model_dir = "/home/shanglinghsu/ml-camp/models/"+tag
 loss_dir = "/home/shanglinghsu/ml-camp/losses/"+tag
 for d in [model_dir, loss_dir]:
@@ -76,20 +75,25 @@ tokenizer = BertTokenizer.from_pretrained('./directory/to/save/')  # re-load
 """
 
 # Data (subset) -> Dataset
-sections = traverse_json_dir(json_dir, toke_to_sent=True, limit_paragraphs=limit_paragraphs)
-
-sent_secs = []
-for i in range(len(sections)):
-    sent_secs.extend(zip([i]*len(sections[i]), sections[i]))
-
-# TODO: Too slow. 1)switch to index combinations 2)Materialize to list 3)random.choice 
-combs = combinations(sent_secs, 2)
+docs = traverse_json_dir(json_dir, return_docs=True)
 inputs, labels = [],[]
-for (l1,s1), (l2,s2) in tqdm(combs): # TODO Tqdm -> Trange
-    inputs.append(tokenizer.encode_plus(
-        s1, s2, **tokenizer_encode_plus_parameters
-    )['input_ids'])
-    labels.append(int(l1 != l2)) # Corresponds to is_random_next
+
+# docs之間無關
+for sections in docs:
+    # secs之間是1
+    for i in range(len(sections)-1):
+        inputs.append(tokenizer.encode_plus(
+            sections[i][-1], sectoins[i+1][0], **tokenizer_encode_plus_parameters
+        )['input_ids'])
+        labels.append(1)
+
+    # sec內sents間是0
+    for sents in sections:
+        for i in range(len(sents)-1):
+            inputs.append(tokenizer.encode_plus(
+                sents[i], sents[i+1], **tokenizer_encode_plus_parameters
+            )['input_ids'])
+            labels.append(0)
 
 data = TensorDataset(torch.cat(inputs), torch.tensor(labels))
 n_test = int(len(labels)*0.2)
@@ -118,71 +122,3 @@ def test_model(model, device, generator,tokenizer): # generator
         break
 
 test_model(model, device, valid_generator,tokenizer)
-
-"""
-# Fine-tune model
-
-## Prepare optimizer and schedule (linear warmup and decay)
-no_decay = ["bias", "LayerNorm.weight"]
-optimizer_grouped_parameters = [
-    {
-        "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
-        "weight_decay": weight_decay,
-    },
-    {"params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], "weight_decay": 0.0},
-]
-optimizer = AdamW(optimizer_grouped_parameters, lr=learning_rate, eps=adam_epsilon)
-scheduler = get_linear_schedule_with_warmup(
-    optimizer, num_warmup_steps=warmup_steps, num_training_steps=len(train_generator)
-)
-
-print("***** Running training *****")
-tr_loss, vl_loss = [],[]
-global_step = 0
-epochs_trained = 0
-#steps_trained_in_current_epoch = 0
-model.zero_grad()
-train_iterator = trange(
-    epochs_trained, int(num_train_epochs), desc="Epoch"
-)
-set_seed(seed)  # Added here for reproducibility
-for _ in train_iterator:
-    epoch_iterator = tqdm(train_generator, desc="Iteration")
-    for step, local_batch, local_labels in enumerate(epoch_iterator): # TODO What's the enumerate() for?
-
-        local_batch, local_labels = local_batch.to(device), local_labels.to(device)
-
-        model.train()
-        outputs = model(local_batch, labels=local_labels)
-        loss = outputs[0]
-        loss.backward()
-        tr_loss += loss.item()
-
-        torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm) ###
-        optimizer.step()
-        scheduler.step()  # Update learning rate schedule
-        model.zero_grad()
-        global_step += 1
-
-    # Validation
-    with torch.set_grad_enabled(False):
-        for local_batch, local_labels in valid_generator:
-            # Transfer to GPU
-            local_batch, local_labels = local_batch.to(device), local_labels.to(device)
-
-            # Model computations
-            outputs = model(local_batch, labels=local_labels)
-            loss = outputs[0]
-            vl_loss.append(loss)
-
-print("*** losses ***")
-for lt,lv in zip(tr_loss, vl_loss):
-    print('{:5f}\t{:5f}'.format(lt,lv))
-
-with open(loss_dir+'loss.txt','w') as f:
-    f.write('\n'.join(['{}\t{}' for lt,lv in zip(tr_loss, vl_loss)])+'\n')
-
-# Save model
-model.save_pretrained(model_dir)
-tokenizer.save_pretrained(model_dir)
-"""
