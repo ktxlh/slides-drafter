@@ -48,13 +48,10 @@ def keywordextract(sentence, model, tokenizer):
     text = sentence
     tkns = tokenizer.tokenize(text)
     indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
-    segments_ids = [0] * len(tkns)
     tokens_tensor = torch.tensor([indexed_tokens]).to(device)
-    segments_tensors = torch.tensor([segments_ids]).to(device)
     model.eval()
     prediction = []
-    logit = model(tokens_tensor, token_type_ids=None,
-                                  attention_mask=segments_tensors)
+    logit = model(tokens_tensor)
     logit = logit.detach().cpu().numpy()
     prediction.extend([list(p) for p in np.argmax(logit, axis=2)])
     for k, j in enumerate(prediction[0]):
