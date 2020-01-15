@@ -19,6 +19,7 @@ def traverse_json_dir(json_dir, toke_to_sent, limit_paragraphs):
                 text = remove_non_printable(secs['text'])
                 if len (text) > 40:
                     if toke_to_sent:
+                        sentences = sent_tokenize(text)
                         sections.append(sentences)
                     else:
                         sections.append(text)
