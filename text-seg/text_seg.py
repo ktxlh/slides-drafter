@@ -11,7 +11,23 @@ Data dir (shanglinghsu@): ~/ml-camp/wiki-vandalism/json
 * In python, run this
   >>> import nltk
   >>> nltk.download('punkt')
+  
 
+########################################
+#            Example Usage             #
+########################################
+# text_seg.py must be in the same folder
+# as the code who calls it
+from text_seg import TextSplitter
+model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
+text = r"This is the text to be split. Many sentences. Sometimes '\n'."
+
+# Initialize one splitter
+# It takes time, so reuse it!
+splitter = TextSplitter(model_dir) 
+
+# Reuse the same splitter multiple times
+segments, key_phrases = splitter.split(text)
 """
 import argparse
 import json
@@ -110,21 +126,9 @@ def create_training_json(args):
 
 class TextSplitter():
     """
-    ########################################
-    #                Usage                 #
-    ########################################
     # Please make sure that the dependencies 
     # in the begginning of this doc are 
     # properly installed before using this
-
-    model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
-    text = r"This is the text to be split. Many sentences. Sometimes '\n'."
-    
-    # It takes time to initialize this, so 
-    # reusing the same during one session 
-    # should be a better idea.
-    splitter = TextSplitter(model_dir) 
-    segments = splitter.split(text)
     """
     def __init__(self, model_dir):
         self.tokenizer = BertTokenizer.from_pretrained(model_dir)
@@ -155,7 +159,7 @@ class TextSplitter():
                 logits = logits.squeeze(0)
                 
                 ## Keyphrase is the most attented input
-                key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,-1,:,0].argmax()]])
+                key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,0,:,0].argmax()]])
                 #current sentences = self.tokenizer.decode(input_ids)
                 
                 ## Update list with this result
@@ -173,7 +177,7 @@ class TextSplitter():
             input_ids = self.tokenizer.encode_plus(sents[-1], return_tensors='pt')['input_ids']
             _, attentions = self.model(input_ids)
             input_ids = input_ids.squeeze(0)
-            key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,-1,:,0].argmax()]])
+            key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,0,:,0].argmax()]])
             
             ## Update list for the last one
             segments[-1].append(sents[-1])
