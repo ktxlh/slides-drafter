@@ -98,7 +98,7 @@ train_set, valid_set = random_split(data, [n_train, n_test])
 train_generator = DataLoader(train_set, sampler=RandomSampler(train_set), batch_size=batch_size)
 valid_generator = DataLoader(valid_set, sampler=RandomSampler(valid_set), batch_size=batch_size)
 
-def test_model(model, device, generator): # generator
+def test_model(model, device, generator,tokenizer): # generator
     # TODO change run.sh seq_len
     
     # Transfer to GPU
@@ -114,10 +114,10 @@ def test_model(model, device, generator): # generator
         vl_loss.append(loss)
         print("loss:",loss)
         for b,l,ll in zip(local_batch, logits, local_labels):
-            print(b,'\t',l,'\t',ll)
+            print(l.tolist(),'\t',ll.tolist(), '\t', tokenizer.decode(b))
         break
 
-test_model(model, device, valid_generator)
+test_model(model, device, valid_generator,tokenizer)
 
 """
 # Fine-tune model
