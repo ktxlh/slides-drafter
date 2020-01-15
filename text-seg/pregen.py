@@ -19,6 +19,7 @@ from text_seg import create_training_json
 def main():
     parser = ArgumentParser()
     parser.add_argument('--train_corpus', type=Path, required=True)
+    parser.add_argument("--json_dir", type=Path, required=True)
     parser.add_argument("--output_dir", type=Path, required=True)
     parser.add_argument("--bert_model", type=str, required=True,
                         choices=["bert-base-uncased", "bert-large-uncased", "bert-base-cased",
@@ -53,7 +54,7 @@ def main():
 
     if args.num_workers > 1:
         writer_workers = Pool(min(args.num_workers))
-        arguments = [(args)]
+        arguments = [(args, tokenizer)]
         writer_workers.starmap(create_training_json, arguments)
     else:
         create_training_json(args, tokenizer)

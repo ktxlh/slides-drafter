@@ -57,4 +57,4 @@ def keywordextract(sentence, model, tokenizer):
     for k, j in enumerate(prediction[0]):
         if j==1 or j==0:
             print(tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
-            
+    

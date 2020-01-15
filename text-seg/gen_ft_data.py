@@ -1,4 +1,6 @@
 """
+What is this code for???
+
 It takes ~30 mins for the 400,003 json
 files (wiki) provided by google
 """

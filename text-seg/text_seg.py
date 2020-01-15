@@ -60,11 +60,11 @@ def get_inputs_labels(json_dir):
     return inputs, labels
 
 # pregen.py
-def create_instances_from_json(max_seq_length, tokenizer):
+def create_instances_from_json(max_seq_length, tokenizer, json_dir):
 
-    tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'add_special_tokens' : True, }#'return_tensors' : 'pt',}
+    tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'add_special_tokens' : True, }
 
-    inputs, labels = get_inputs_labels(json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json") # Should be json #json_dir)
+    inputs, labels = get_inputs_labels(json_dir = json_dir)
     print("*** Batch encoding ***")
     enc =  tokenizer.batch_encode_plus(inputs, **tokenizer_encode_plus_parameters)
     print("--- Batch encoding done ---")
@@ -86,7 +86,7 @@ def create_training_json(args, tokenizer):
     num_instances = 0
     with epoch_filename.open('w') as epoch_file:
         doc_instances = create_instances_from_json(
-            args.max_seq_len, tokenizer)
+            args.max_seq_len, tokenizer, args.json_dir)
         doc_instances = [json.dumps(instance) for instance in doc_instances]
         for instance in doc_instances:
             epoch_file.write(instance + '\n')
@@ -118,6 +118,7 @@ class TextSplitter():
 
         : text: str -- Normal text input
         : segments: list(str) -- Each str is a semantic segment.
+        : key_phrases: list(list(str)) -- Key words for each segment.
         """
         segments = []
         segment_counter = 0
@@ -147,7 +148,7 @@ class TextSplitter():
             ## Update list for the last one
             segments[-1].append(sents[-1])
 
-        return segments
+        return segments, key_phrases
 
 """
 def test_model(model, device, tokenizer): # generator
