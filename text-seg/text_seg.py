@@ -102,6 +102,7 @@ def test_model(model, device, generator): # generator
     # TODO change run.sh seq_len
     
     # Transfer to GPU
+    vl_loss = []
     model = model.to(device)
 
     for local_batch, local_labels in valid_generator:
