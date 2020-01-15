@@ -46,8 +46,8 @@ max_grad_norm = 1.0 ###
 
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
 tag = '{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len)
-model_dir = "/home/shanglinghsu/ml-camp/models/"+tag
-loss_dir = "/home/shanglinghsu/ml-camp/losses/"+tag
+model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
+
 for d in [model_dir, loss_dir]:
     if not os.path.exists(d):
         os.makedirs(d)
@@ -65,8 +65,8 @@ def set_seed(seed):
     torch.manual_seed(seed)
 
 # Load model
-model = BertForSequenceClassification.from_pretrained('bert-base-cased')
-tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
+model = BertForSequenceClassification.from_pretrained(model_dir)#'bert-base-cased')
+tokenizer = BertTokenizer.from_pretrained(model_dir)#'bert-base-cased')
 PAD_ID = tokenizer.pad_token_id
 """
 ## TODO From pre_trained
