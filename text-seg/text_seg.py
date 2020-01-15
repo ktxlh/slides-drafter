@@ -55,7 +55,8 @@ def get_inputs_labels(sections):
     # negative sampling
     # 只要不是該section最後一句，都平均地可能被選到
     population = [(sec_num, sent_num) for sec_num, sents in enumerate(sections) for sent_num in range(len(sents)-1)]
-    choices = random.choices(population, k = len(sections)-1)
+    choices = random.choices(
+        population, k = min(len(sections)-1, len(population)))
     for (sec_num, sent_num) in choices:
         inputs.append((sections[sec_num][sent_num], sections[sec_num][sent_num+1]))
         labels.append(0)
