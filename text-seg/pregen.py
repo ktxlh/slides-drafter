@@ -120,7 +120,7 @@ def main():
         arguments = [(args)]
         writer_workers.starmap(create_training_json, arguments)
     else:
-        create_training_json(args)
+        create_training_json(args, tokenizer)
 
 
 if __name__ == '__main__':

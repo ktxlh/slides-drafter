@@ -10,6 +10,7 @@ def remove_non_printable(s):
 
 def traverse_json_dir(json_dir, return_docs):
     rtn = []
+    num_sentences_counter = 0
     print("*** Traversing ***")
     for root, dirs, files in os.walk(json_dir):
         print("# of json files in total:",len(files))
@@ -21,11 +22,13 @@ def traverse_json_dir(json_dir, return_docs):
                 text = remove_non_printable(secs['text'])
                 if len (text) > 40:
                     sentences = sent_tokenize(text)
+                    num_sentences_counter += len(sentences)
                     sections.append(sentences)
             if return_docs:
                 rtn.append(sections)
             else:
                 rtn.extend(sections)
+    print("# of sentences in total:",num_sentences_counter)
     print("--- Traversing done ---")
     return rtn
 

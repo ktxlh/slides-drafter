@@ -28,7 +28,7 @@ device = torch.device("cuda:0" if use_cuda else "cpu")
 
 # mini-json: Subset with only 7822*.json and 7823*.json
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
-#model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
+model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/" #TODO Unused. Comment it out
 
 #for d in [model_dir]: #loss_dir
 #    if not os.path.exists(d):
@@ -60,7 +60,7 @@ def get_inputs_labels(json_dir):
     return inputs, labels
 
 # pregen.py
-def create_instances_from_json(max_seq_length):
+def create_instances_from_json(max_seq_length, tokenizer):
 
     tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'add_special_tokens' : True, }#'return_tensors' : 'pt',}
 
@@ -81,12 +81,12 @@ def create_instances_from_json(max_seq_length):
     random.shuffle(instances)
     return instances
 
-def create_training_json(args):
+def create_training_json(args, tokenizer):
     epoch_filename = args.output_dir / "epoch_0.json"
     num_instances = 0
     with epoch_filename.open('w') as epoch_file:
         doc_instances = create_instances_from_json(
-            max_seq_length=args.max_seq_len)
+            args.max_seq_len, tokenizer)
         doc_instances = [json.dumps(instance) for instance in doc_instances]
         for instance in doc_instances:
             epoch_file.write(instance + '\n')
