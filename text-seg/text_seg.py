@@ -3,32 +3,6 @@ Goal: Segment text into sections
 Task: Classify a pair of sentences into "from the same section or not"
 
 Data dir (shanglinghsu@): ~/ml-camp/wiki-vandalism/json
-
-
-*** Before using this code ***
-* default pytorch conda ve provided: conda activate pytorch
-* pip install --user transformers nltk
-* In python, run this
-  >>> import nltk
-  >>> nltk.download('punkt')
-  
-
-########################################
-#            Example Usage             #
-########################################
-# text_seg.py must be in the same folder
-# as the code who calls it
-text = r"This is the text to be split. Many sentences. Sometimes '\n'."
-
-from text_seg import TextSplitter
-model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
-
-# Initialize one splitter
-# It takes time, so reuse it!
-splitter = TextSplitter(model_dir) 
-
-# Reuse the same splitter multiple times
-segments, key_phrases = splitter.split(text)
 """
 import argparse
 import json
@@ -92,11 +66,17 @@ def create_instances_from_json(max_seq_length):
 
     inputs, labels = get_inputs_labels(json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json") # Should be json #json_dir)
     print("*** Batch encoding ***")
-    enc =  tokenizer.batch_encode_plus(inputs, **tokenizer_encode_plus_parameters)
+    # Do not use batch_encode_plus. It does not 
+    # add special tokens for me
+    input_ids, token_type_ids = [],[]
+    for inpt in inputs:
+        enc =  tokenizer.encode_plus(*inpt, **tokenizer_encode_plus_parameters)
+        input_ids.append(enc['input_ids'])
+        token_type_ids.append(enc['token_type_ids'])
     print("--- Batch encoding done ---")
     
     instances = []
-    for input_id, token_type_id, label in zip(enc['input_ids'], enc['token_type_ids'], labels):
+    for input_id, token_type_id, label in zip(input_ids, token_type_ids, labels):
         instances.append({
             "tokens": tokenizer.convert_ids_to_tokens(input_id),
             "segment_ids": token_type_id,

@@ -1,5 +1,6 @@
 import os
 import json
+import torch
 from nltk.tokenize import sent_tokenize
 
 def remove_non_printable(s):
@@ -27,3 +28,16 @@ def traverse_json_dir(json_dir, return_docs):
                 rtn.extend(sections)
     print("--- Traversing done ---")
     return rtn
+
+def format_attention(attention):
+    """
+    attention: list of ``torch.FloatTensor``(one for each layer) of shape
+                ``(batch_size(must be 1), num_heads, sequence_length, sequence_length)``
+    """
+    # From https://github.com/jessevig/bertviz/blob/138381e83d33cf3e221bd540cc1c704b5c4af99e/bertviz/util.py#L3
+    squeezed = []
+    for layer_attention in attention:
+        # num_heads x seq_len x seq_len
+        squeezed.append(layer_attention.squeeze(0))
+    # num_layers x num_heads x seq_len x seq_len
+    return torch.stack(squeezed)
