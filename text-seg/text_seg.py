@@ -64,8 +64,8 @@ def set_seed(seed):
     torch.manual_seed(seed)
 
 # Load model
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertForSequenceClassification.from_pretrained('bert-base-cased')
+tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 PAD_ID = tokenizer.pad_token_id
 """
 ## From pre_trained

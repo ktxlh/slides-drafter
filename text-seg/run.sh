@@ -7,7 +7,7 @@ python run_lm_finetuning.py \
     --train_data_file=$TRAIN_FILE \
     --do_eval \
     --eval_data_file=$TEST_FILE \
-    --mlm
-    #--model_type=roberta \
-    #--model_name_or_path=roberta-base \
-    
+    --mlm \
+    --model_type=bert \ 
+    --model_name_or_path=bert_base_cased
+    # roberta?
