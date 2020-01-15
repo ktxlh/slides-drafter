@@ -62,21 +62,15 @@ def get_inputs_labels(json_dir):
 # pregen.py
 def create_instances_from_json(max_seq_length):
 
-    tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right'}#, 'return_tensors' : 'pt',}
+    tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'add_special_tokens' : True, }#'return_tensors' : 'pt',}
 
     inputs, labels = get_inputs_labels(json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json") # Should be json #json_dir)
     print("*** Batch encoding ***")
-    # Do not use batch_encode_plus. It does not 
-    # add special tokens for me
-    input_ids, token_type_ids = [],[]
-    for inpt in inputs:
-        enc =  tokenizer.encode_plus(*inpt, **tokenizer_encode_plus_parameters)
-        input_ids.append(enc['input_ids'])
-        token_type_ids.append(enc['token_type_ids'])
+    enc =  tokenizer.batch_encode_plus(inputs, **tokenizer_encode_plus_parameters)
     print("--- Batch encoding done ---")
     
     instances = []
-    for input_id, token_type_id, label in zip(input_ids, token_type_ids, labels):
+    for input_id, token_type_id, label in zip(enc['input_ids'], enc['token_type_ids'], labels):
         instances.append({
             "tokens": tokenizer.convert_ids_to_tokens(input_id),
             "segment_ids": token_type_id,
