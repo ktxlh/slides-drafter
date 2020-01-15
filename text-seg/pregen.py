@@ -95,11 +95,11 @@ def main():
 
     parser.add_argument("--num_workers", type=int, default=1,
                         help="The number of workers to use to write the files")
-    parser.add_argument("--epochs_to_generate", type=int, default=3,
-                        help="Number of epochs of data to pregenerate")
+    #parser.add_argument("--epochs_to_generate", type=int, default=1,
+    #                    help="Number of epochs of data to pregenerate")
     parser.add_argument("--max_seq_len", type=int, default=128)
-    parser.add_argument("--short_seq_prob", type=float, default=0.1,
-                        help="Probability of making a short sentence as a training example")
+    #parser.add_argument("--short_seq_prob", type=float, default=0.1,
+    #                    help="Probability of making a short sentence as a training example")
     parser.add_argument("--masked_lm_prob", type=float, default=0.15,
                         help="Probability of masking each token for the LM task")
     parser.add_argument("--max_predictions_per_seq", type=int, default=20,

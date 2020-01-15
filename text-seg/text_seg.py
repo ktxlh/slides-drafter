@@ -28,7 +28,7 @@ from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
 from transformers import (AdamW, BertForSequenceClassification, BertTokenizer,
                           get_linear_schedule_with_warmup)
-from utils import traverse_json_dir
+from utils import traverse_json_dir, remove_non_printable
 
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
@@ -112,10 +112,20 @@ def create_training_json(args):
         }
         metrics_file.write(json.dumps(metrics))
 
+
+def segment_text(text):
+    """
+    The main API of this code.
+    Segment according to:
+    1. 
+    : whole_text -- str. Normal text input
+    : paragraphs -- list(str). Each str is a paragraph.
+    """
+    paragraphs = []
+    texts = text.split('\n')
+
 """
 def test_model(model, device, tokenizer): # generator
-    # TODO change run.sh seq_len
-    
     
     inputs, labels = get_inputs_labels(json_dir)
     data = TensorDataset(torch.cat(inputs), torch.tensor(labels))

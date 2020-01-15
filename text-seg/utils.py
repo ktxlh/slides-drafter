@@ -2,12 +2,12 @@ import os
 import json
 from nltk.tokenize import sent_tokenize
 
-def traverse_json_dir(json_dir, return_docs):
-
-    def remove_non_printable(s):
+def remove_non_printable(s):
         s = s.encode('ascii', errors='ignore').decode('ascii')
         s = '\n'.join([ss for ss in s.split('\n') if len(ss) > 40])
         return s
+
+def traverse_json_dir(json_dir, return_docs):
 
     rtn = []
     print("*** Traversing ***")

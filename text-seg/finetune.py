@@ -67,8 +67,8 @@ class PregeneratedDataset(Dataset):
         self.tokenizer = tokenizer
         self.epoch = epoch
         self.data_epoch = epoch % num_data_epochs
-        data_file = training_path / f"epoch_{self.data_epoch}.json"
-        metrics_file = training_path / f"epoch_{self.data_epoch}_metrics.json"
+        data_file = training_path / f"epoch_0.json" #f"epoch_{self.data_epoch}.json"
+        metrics_file = training_path / f"epoch_0_metrics.json" #f"epoch_{self.data_epoch}_metrics.json"
         assert data_file.is_file() and metrics_file.is_file()
         metrics = json.loads(metrics_file.read_text())
         num_samples = metrics['num_training_examples']
@@ -137,7 +137,7 @@ def main():
     parser.add_argument("--reduce_memory", action="store_true",
                         help="Store training data as on-disc memmaps to massively reduce memory usage")
 
-    parser.add_argument("--epochs", type=int, default=3, help="Number of epochs to train for")
+    parser.add_argument("--epochs", type=int, default=1, help="Number of epochs to train for")
     parser.add_argument("--local_rank",
                         type=int,
                         default=-1,
@@ -184,8 +184,8 @@ def main():
 
     samples_per_epoch = []
     for i in range(args.epochs):
-        epoch_file = args.pregenerated_data / f"epoch_{i}.json"
-        metrics_file = args.pregenerated_data / f"epoch_{i}_metrics.json"
+        epoch_file = args.pregenerated_data / f"epoch_0.json" #f"epoch_{i}.json"
+        metrics_file = args.pregenerated_data / f"epoch_0_metrics.json" #f"epoch_{i}_metrics.json"
         if epoch_file.is_file() and metrics_file.is_file():
             metrics = json.loads(metrics_file.read_text())
             samples_per_epoch.append(metrics['num_training_examples'])
