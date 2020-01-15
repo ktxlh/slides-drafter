@@ -34,34 +34,3 @@ def traverse_json_dir(json_dir, return_docs):
     print("# of sentences in total:",num_sentences_counter)
     print("--- Traversing done ---")
     return rtn
-
-def keywordextract(sentence, classifier_token, tokenizer):
-    """
-    Usage:
-        sentence = "Some students space paragraphs, trying to separate points when the process of writing is over."
-        kw = keywordextract(sentence, model, tokenizer)
-    
-    from: https://github.com/ibatra/BERT-Keyword-Extractor/blob/master/keyword-extractor.py
-    """
-    use_cuda = torch.cuda.is_available()
-    device = torch.device("cuda:0" if use_cuda else "cpu")
-
-    text = sentence
-    tkns = tokenizer.tokenize(text)
-    indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
-    segments_ids = [0] * len(tkns)
-    tokens_tensor = torch.tensor([indexed_tokens]).to(device)
-    segments_tensors = torch.tensor([segments_ids]).to(device)
-    
-    classifier_token.eval()
-    classifier_token.to(device)
-    prediction = []
-
-    logit = classifier_token(tokens_tensor, attention_mask=segments_tensors)[0]
-    logit = logit.detach().cpu().numpy()
-    prediction.extend([list(p) for p in np.argmax(logit, axis=1)])
-    for k, j in enumerate(prediction[0]):
-        if j==1 or j==0:
-            print(tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
-            return tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k]
-    return []

@@ -1,6 +1,6 @@
 # Dependencies:
 #   Scikit-learn (pip install -U --user scikit-learn)
-JSON=/home/shanglinghsu/ml-camp/wiki-vandalism/json/
+JSON=/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json/
 PREGENERATE=/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen
 MAX_SEQLEN=50
 

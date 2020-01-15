@@ -62,7 +62,7 @@ def get_inputs_labels(json_dir):
 # pregen.py
 def create_instances_from_json(max_seq_length, tokenizer, json_dir):
     instances = []
-    
+
     tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'add_special_tokens' : True, }
 
     inputs, labels = get_inputs_labels(json_dir = json_dir)
@@ -71,7 +71,7 @@ def create_instances_from_json(max_seq_length, tokenizer, json_dir):
     for start in range(0, len(inputs), 16):
         end = min(len(inputs), start+16)
 
-        inputs_sub, labels_sub = inputs[start:end], labels[start,end]
+        inputs_sub, labels_sub = inputs[start:end], labels[start:end]
         enc =  tokenizer.batch_encode_plus(inputs_sub, **tokenizer_encode_plus_parameters)
     
         for input_id, token_type_id, label in zip(enc['input_ids'], enc['token_type_ids'], labels_sub):
