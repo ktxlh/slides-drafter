@@ -29,5 +29,5 @@ splitter = TextSplitter(model_dir)
 
 ### Reuse the same splitter multiple times
 ```
-segments, key_phrases = splitter.split(text)
+segments = splitter.split(text)
 ```
