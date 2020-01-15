@@ -163,7 +163,7 @@ class TextSplitter():
                 key_phrases[-1].append(key_phrase)
                 
                 ## Split paragraph
-                softmax = torch.nn.functional.softmax(logits)
+                softmax = torch.nn.functional.softmax(logits, dim=0)
                 argmax = softmax.argmax().item()
                 segments.append([]) # 2) semantic segment
                 key_phrases.append([])
