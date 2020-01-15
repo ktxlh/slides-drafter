@@ -17,7 +17,7 @@ import torch
 from torch.utils.data import DataLoader, Dataset, RandomSampler
 from torch.utils.data.distributed import DistributedSampler
 from transformers import (CONFIG_NAME, WEIGHTS_NAME, AdamW, BertForPreTraining,
-                          BertTokenizer, WarmupLinearSchedule)
+                          BertTokenizer, get_linear_schedule_with_warmup)
 
 InputFeatures = namedtuple("InputFeatures", "input_ids input_mask segment_ids lm_label_ids is_next")
 
@@ -281,7 +281,7 @@ def main():
             optimizer = FP16_Optimizer(optimizer, static_loss_scale=args.loss_scale)
     else:
         optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
-    scheduler = WarmupLinearSchedule(optimizer, warmup_steps=args.warmup_steps, t_total=num_train_optimization_steps)
+    scheduler = get_linear_schedule_with_warmup(optimizer, warmup_steps=args.warmup_steps, t_total=num_train_optimization_steps)
 
     global_step = 0
     logging.info("***** Running training *****")
