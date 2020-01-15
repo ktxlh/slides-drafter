@@ -21,7 +21,7 @@ def traverse_json_dir(json_dir, return_docs):
                 if len (text) > 40:
                     sentences = sent_tokenize(text)
                     sections.append(sentences)
-            if doc_sensitive:
+            if return_docs:
                 rtn.append(sections)
             else:
                 rtn.extend(sections)
