@@ -48,7 +48,7 @@ json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be jso
 tag = '{}-{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], num_train_epochs, batch_size, max_sent_len)
 model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
 
-for d in [model_dir, loss_dir]:
+for d in [model_dir]: #loss_dir
     if not os.path.exists(d):
         os.makedirs(d)
 
