@@ -26,6 +26,8 @@ import torch
 from torch.utils.data import DataLoader, RandomSampler, TensorDataset, random_split
 from transformers import BertForSequenceClassification, BertTokenizer, AdamW, get_linear_schedule_with_warmup
 
+from utils import traverse_json_dir
+
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
 device = torch.device("cuda:0" if use_cuda else "cpu")
@@ -68,7 +70,7 @@ model = BertForSequenceClassification.from_pretrained('bert-base-cased')
 tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 PAD_ID = tokenizer.pad_token_id
 """
-## From pre_trained
+## TODO From pre_trained
 model = model_class.from_pretrained('./directory/to/save/')  # re-load
 tokenizer = BertTokenizer.from_pretrained('./directory/to/save/')  # re-load
 """
@@ -93,9 +95,28 @@ data = TensorDataset(torch.cat(inputs), torch.tensor(labels))
 n_test = int(len(labels)*0.2)
 n_train = len(labels) - n_test
 train_set, valid_set = random_split(data, [n_train, n_test])
-train_generator = DataLoader(train_set, sampler=RandomSampler(data), batch_size=batch_size)
-valid_generator = DataLoader(valid_set, sampler=RandomSampler(data), batch_size=batch_size)
+train_generator = DataLoader(train_set, sampler=RandomSampler(train_set), batch_size=batch_size)
+valid_generator = DataLoader(valid_set, sampler=RandomSampler(valid_set), batch_size=batch_size)
 
+def test_model(): # generator
+    # TODO change run.sh seq_len
+    
+    for local_batch, local_labels in valid_generator:
+        # Transfer to GPU
+        local_batch, local_labels = local_batch.to(device), local_labels.to(device)
+
+        # Model computations
+        outputs = model(local_batch, labels=local_labels)
+        loss, logits = outputs[:2]
+        vl_loss.append(loss)
+        print(loss)
+        for b,l,ll in zip(local_batch, logits, local_labels):
+            print(b,'\t',l,'\t',ll)
+        break
+
+test_model()    
+
+"""
 # Fine-tune model
 
 ## Prepare optimizer and schedule (linear warmup and decay)
@@ -161,29 +182,4 @@ with open(loss_dir+'loss.txt','w') as f:
 # Save model
 model.save_pretrained(model_dir)
 tokenizer.save_pretrained(model_dir)
-
-"""
-Footnotes
-<1> Weird tables example (# of sentences: 28)
-TEXT     Frank Grillo as Leo Barnes
-Elizabeth Mitchell as Senator Charlie Roan
-Christy Coco as Young Charlie Roan
-Mykelti Williamson as Joe Dixon
-Joseph Julian Soria as Marcos Dali
-Betty Gabriel as Laney Rucker
-Terry Serpico as Earl Danzinger
-Raymond J. Barry as Caleb Warrens
-Edwin Hodge as Dante Bishop
-Cindy Robinson as Purge Announcement Voice
-Kyle Secor as Minister Edwidge Owens
-Liza Coln-Zayas as Dawn
-David Aaron Baker as NFFA Press Secretary Tommy Roseland
-Christopher James Baker as Harmon James
-Brittany Mirabil as Kimmy
-Juani Feliz as Kimmy's friend
-Roman Blat as Lead Russian Murder Tourist purger in Uncle Sam costume (credited as "Uncle Sam")
-Jamal Peters as Crips leader (credited as "Gang Leader with Dying Friend")
-J. Jewels as Political Debater
-Matt Walton as Reporter #1
-
 """
