@@ -107,7 +107,7 @@ class TextSplitter():
     """
     def __init__(self, model_dir):
         self.tokenizer = BertTokenizer.from_pretrained(model_dir)
-        self.model = BertForSequenceClassification.from_pretrained(model_dir, output_attentions=True)#'bert-base-cased')
+        self.model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,'bert-base-cased')
 
     def split(self, text):
         """
@@ -119,46 +119,35 @@ class TextSplitter():
         : text: str -- Normal text input
         : segments: list(str) -- Each str is a semantic segment.
         """
-        segments, key_phrases = [], []
+        segments = []
         segment_counter = 0
         paragraphs = [t for t in text.split('\n') if len(t) > 0]
         for paragraph in paragraphs:
             segments.append([]) # 1) paragraph (split by '\n')
-            key_phrases.append([])
             sents = sent_tokenize(paragraph)
             for i in range(len(sents)-1):
                 # "Current" and "next" sentences
                 input_ids = self.tokenizer.encode_plus(sents[i],sents[i+1], return_tensors='pt')['input_ids']
-                logits, attentions = self.model(input_ids)
+                logits = self.model(input_ids)
                 input_ids = input_ids.squeeze(0)
                 logits = logits.squeeze(0)
                 
-                ## Keyphrase is the most attented input
-                key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,-1,:,0].argmax()]])
-                #current sentences = self.tokenizer.decode(input_ids)
-                
                 ## Update list with this result
                 segments[-1].append(sents[i])
-                key_phrases[-1].append(key_phrase)
                 
                 ## Split paragraph
                 softmax = torch.nn.functional.softmax(logits, dim=0)
                 argmax = softmax.argmax().item()
                 segments.append([]) # 2) semantic segment
-                key_phrases.append([])
                 segment_counter += argmax # 1 if diff; 0 otherwise
             
             # The last sentence
             input_ids = self.tokenizer.encode_plus(sents[-1], return_tensors='pt')['input_ids']
-            _, attentions = self.model(input_ids)
-            input_ids = input_ids.squeeze(0)
-            key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,-1,:,0].argmax()]])
             
             ## Update list for the last one
             segments[-1].append(sents[-1])
-            key_phrases[-1].append(key_phrase)
 
-        return segments, key_phrases
+        return segments
 
 """
 def test_model(model, device, tokenizer): # generator

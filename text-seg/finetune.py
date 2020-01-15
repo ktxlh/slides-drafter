@@ -1,5 +1,12 @@
 """
-Code from https://github.com/huggingface/pytorch-transformers/blob/master/examples/lm_finetuning/finetune_on_pregenerated.py
+Code modified from https://github.com/huggingface/pytorch-transformers/blob/master/examples/lm_finetuning/finetune_on_pregenerated.py
+
+### Install Dependencies for --fp16 ###
+# from the apex github readme.md 
+# (click the following link for it)
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install --user -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 """
 import json
 import logging
@@ -265,7 +272,7 @@ def main():
 
     if args.fp16:
         try:
-            from apex.optimizers import FP16_Optimizer
+            from apex.fp16_utils import FP16_Optimizer
             from apex.optimizers import FusedAdam
         except ImportError:
             raise ImportError(
