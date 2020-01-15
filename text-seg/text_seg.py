@@ -39,24 +39,26 @@ def set_seed(seed):
     random.seed(seed)
     #np.random.seed(seed)
     torch.manual_seed(seed)
-#set_seed(seed)
-
-def get_inputs_labels(json_dir):
-    # Data (subset) -> Dataset
-    docs = traverse_json_dir(json_dir, return_docs=True)
+set_seed(seed)
+    
+def get_inputs_labels(sections):
+    # One doc consists of several sections
+    # sections = [["I am sent 1.","Sent 2."],["3rd sent.","FOURTH S."]]
     inputs, labels = [],[]
-    # docs之間無關
-    for sections in docs:
-        # secs之間是1
-        for i in range(len(sections)-1):
-            inputs.append((sections[i][-1], sections[i+1][0]))
-            labels.append(1)
 
-        # sec內sents間是0
-        for sents in sections:
-            for i in range(len(sents)-1):
-                inputs.append((sents[i], sents[i+1]))
-                labels.append(0)
+    # secs之間是1
+    for i in range(len(sections)-1):
+        inputs.append((sections[i][-1], sections[i+1][0]))
+        labels.append(1)
+
+    # sec內sents間是0
+    # negative sampling
+    # 只要不是該section最後一句，都平均地可能被選到
+    population = [(sec_num, sent_num) for sec_num, sents in enumerate(sections) for sent_num in range(len(sents)-1)]
+    choices = random.choices(population, k = len(sections)-1)
+    for (sec_num, sent_num) in choices:
+        inputs.append((sections[sec_num][sent_num], sections[sec_num][sent_num+1]))
+        labels.append(0)
     return inputs, labels
 
 # pregen.py
@@ -65,23 +67,25 @@ def create_instances_from_json(max_seq_length, tokenizer, json_dir):
 
     tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'add_special_tokens' : True, }
 
-    inputs, labels = get_inputs_labels(json_dir = json_dir)
-    
     print("*** Batch encoding ***")
-    for start in range(0, len(inputs), 16):
-        end = min(len(inputs), start+16)
-
-        inputs_sub, labels_sub = inputs[start:end], labels[start:end]
-        enc =  tokenizer.batch_encode_plus(inputs_sub, **tokenizer_encode_plus_parameters)
+    docs = traverse_json_dir(json_dir, return_docs=True)
+    for sections in docs:
+        inputs, labels = get_inputs_labels(sections)
     
-        for input_id, token_type_id, label in zip(enc['input_ids'], enc['token_type_ids'], labels_sub):
-            instances.append({
-                "tokens": tokenizer.convert_ids_to_tokens(input_id),
-                "segment_ids": token_type_id,
-                "is_random_next": label,
-                "masked_lm_positions": [],
-                "masked_lm_labels": []
-            })
+        for start in range(0, len(inputs), 16):
+            end = min(len(inputs), start+16)
+
+            inputs_sub, labels_sub = inputs[start:end], labels[start:end]
+            enc =  tokenizer.batch_encode_plus(inputs_sub, **tokenizer_encode_plus_parameters)
+        
+            for input_id, token_type_id, label in zip(enc['input_ids'], enc['token_type_ids'], labels_sub):
+                instances.append({
+                    "tokens": tokenizer.convert_ids_to_tokens(input_id),
+                    "segment_ids": token_type_id,
+                    "is_random_next": label,
+                    "masked_lm_positions": [],
+                    "masked_lm_labels": []
+                })
 
     print("--- Batch encoding done ---")
 
