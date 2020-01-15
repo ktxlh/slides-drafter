@@ -101,8 +101,10 @@ valid_generator = DataLoader(valid_set, sampler=RandomSampler(valid_set), batch_
 def test_model(): # generator
     # TODO change run.sh seq_len
     
+    # Transfer to GPU
+    model = model.to(device)
+
     for local_batch, local_labels in valid_generator:
-        # Transfer to GPU
         local_batch, local_labels = local_batch.to(device), local_labels.to(device)
 
         # Model computations
