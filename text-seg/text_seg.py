@@ -114,13 +114,16 @@ def create_training_json(args, tokenizer):
 
 class TextSplitter():
     """
-    # Please make sure that the dependencies 
-    # in the begginning of this doc are 
-    # properly installed before using this
+    Please make sure that the dependencies 
+    in the begginning of this doc are 
+    properly installed before using this
     """
     def __init__(self, model_dir):
         self.tokenizer = BertTokenizer.from_pretrained(model_dir)
         self.model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,'bert-base-cased')
+
+        ''
+        self.token_classifier = BertForTokenClassification.from_pretrained()
 
     def split(self, text):
         """
@@ -143,8 +146,11 @@ class TextSplitter():
         ### 1) paragraph (split by '\n')
         paragraphs = [t for t in text.split('\n') if len(t) > 0]
         for paragraph in paragraphs:
-            segments.append([])
             sents = sent_tokenize(paragraph)
+            if len(sents) == 0:
+                continue
+
+            segments.append([])
             for i in range(len(sents)-1):
                 # "Current" and "next" sentences
                 input_ids = self.tokenizer.encode_plus(sents[i],sents[i+1], return_tensors='pt')['input_ids']
@@ -164,9 +170,6 @@ class TextSplitter():
                     segment_counter += 1 
             
             # The last sentence
-            input_ids = self.tokenizer.encode_plus(sents[-1], return_tensors='pt')['input_ids']
-            
-            ## Update list for the last one
             segments[-1].append(sents[-1])
 
         return segments, key_phrases
