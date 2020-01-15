@@ -303,7 +303,7 @@ def main():
             for step, batch in enumerate(train_dataloader):
                 batch = tuple(t.to(device) for t in batch)
                 input_ids, input_mask, segment_ids, lm_label_ids, is_next = batch
-                outputs = model(input_ids) #, segment_ids, input_mask, lm_label_ids, is_next)
+                outputs = model(input_ids, masked_lm_labels=lm_label_ids, next_sentence_label=is_next)
                 loss = outputs[0]
                 if n_gpu > 1:
                     loss = loss.mean() # mean() to average on multi-gpu.
