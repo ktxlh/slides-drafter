@@ -3,6 +3,7 @@ import json
 import torch
 from nltk.tokenize import sent_tokenize
 from tqdm import trange
+import numpy as np
 
 def remove_non_printable(s):
         s = s.encode('ascii', errors='ignore').decode('ascii')
