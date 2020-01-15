@@ -18,7 +18,7 @@ from tqdm import tqdm, trange
 import torch
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
-from transformers import (AdamW, BertForSequenceClassification, BertTokenizer,
+from transformers import (AdamW, BertForSequenceClassification, BertForTokenClassification, BertTokenizer,
                           get_linear_schedule_with_warmup)
 from utils import remove_non_printable, traverse_json_dir
 
@@ -122,7 +122,6 @@ class TextSplitter():
         self.tokenizer = BertTokenizer.from_pretrained(model_dir)
         self.model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,'bert-base-cased')
 
-        ''
         self.token_classifier = BertForTokenClassification.from_pretrained()
 
     def split(self, text):
