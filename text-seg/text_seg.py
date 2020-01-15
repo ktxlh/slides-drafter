@@ -130,7 +130,7 @@ class TextSplitter():
         self.tokenizer = BertTokenizer.from_pretrained(model_dir)
         self.model = BertForSequenceClassification.from_pretrained(model_dir, output_attentions=True)#'bert-base-cased')
 
-    def split(self.text):
+    def split(self, text):
         """
         The main API of this code.
         Splits text according to:
