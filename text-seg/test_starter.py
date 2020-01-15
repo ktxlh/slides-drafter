@@ -43,6 +43,6 @@ from utils import keywordextract
 sentences = ["Some students space paragraphs, trying to separate points when the process of writing is over.","This is a major mistake.", "How much easier your writing would become if you looked at it from another angle!"]
 sentence = sentences[0]
 s0, s1, s2 = sentences[:3]
+kw = keywordextract(s0, classifier_token, tokenizer)
 kw = keywordextract(s1, classifier_token, tokenizer)
 kw = keywordextract(s2, classifier_token, tokenizer)
-kw = keywordextract(s3, classifier_token, tokenizer)

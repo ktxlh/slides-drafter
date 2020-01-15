@@ -46,12 +46,18 @@ def keywordextract(sentence, classifier_token, tokenizer):
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda:0" if use_cuda else "cpu")
 
-    indexed_tokens = tokenizer.convert_tokens_to_ids(sentence)
+    text = sentence
+    tkns = tokenizer.tokenize(text)
+    indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
+    segments_ids = [0] * len(tkns)
     tokens_tensor = torch.tensor([indexed_tokens]).to(device)
+    segments_tensors = torch.tensor([segments_ids]).to(device)
+    
     classifier_token.eval()
     classifier_token.to(device)
     prediction = []
-    logit = classifier_token(tokens_tensor)[0]
+
+    logit = classifier_token(tokens_tensor, attention_mask=segments_tensors)[0]
     logit = logit.detach().cpu().numpy()
     prediction.extend([list(p) for p in np.argmax(logit, axis=1)])
     for k, j in enumerate(prediction[0]):
