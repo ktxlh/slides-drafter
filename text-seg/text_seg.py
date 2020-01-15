@@ -148,7 +148,7 @@ class TextSplitter():
             for i in range(len(sents)-1):
                 # "Current" and "next" sentences
                 input_ids = self.tokenizer.encode_plus(sents[i],sents[i+1], return_tensors='pt')['input_ids']
-                logits = self.model(input_ids)
+                logits = self.model(input_ids)[0]
                 input_ids = input_ids.squeeze(0)
                 logits = logits.squeeze(0)
                 
