@@ -68,8 +68,9 @@ def create_instances_from_json(max_seq_length, tokenizer, json_dir):
 
     tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'add_special_tokens' : True, }
 
-    print("*** Batch encoding ***")
     docs = traverse_json_dir(json_dir, return_docs=True)
+
+    print("*** Batch encoding ***")
     for sections in docs:
         inputs, labels = get_inputs_labels(sections)
     
@@ -138,9 +139,11 @@ class TextSplitter():
         segments = []
         key_phrases = []
         segment_counter = 0
+        
+        ### 1) paragraph (split by '\n')
         paragraphs = [t for t in text.split('\n') if len(t) > 0]
         for paragraph in paragraphs:
-            segments.append([]) # 1) paragraph (split by '\n')
+            segments.append([])
             sents = sent_tokenize(paragraph)
             for i in range(len(sents)-1):
                 # "Current" and "next" sentences
@@ -153,10 +156,12 @@ class TextSplitter():
                 segments[-1].append(sents[i])
                 
                 ## Split paragraph
+                ### 2) semantic segment
                 softmax = torch.nn.functional.softmax(logits, dim=0)
                 argmax = softmax.argmax().item()
-                segments.append([]) # 2) semantic segment
-                segment_counter += argmax # 1 if diff; 0 otherwise
+                if argmax: # 1 if diff; 0 otherwise
+                    segments.append([])
+                    segment_counter += 1 
             
             # The last sentence
             input_ids = self.tokenizer.encode_plus(sents[-1], return_tensors='pt')['input_ids']
