@@ -18,7 +18,6 @@ from text_seg import create_training_json
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument('--train_corpus', type=Path, required=True)
     parser.add_argument("--json_dir", type=Path, required=True)
     parser.add_argument("--output_dir", type=Path, required=True)
     parser.add_argument("--bert_model", type=str, required=True,
