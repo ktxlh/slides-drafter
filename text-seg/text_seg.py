@@ -22,10 +22,6 @@ from transformers import (AdamW, BertForSequenceClassification, BertForTokenClas
                           get_linear_schedule_with_warmup)
 from utils import remove_non_printable, traverse_json_dir
 
-# CUDA for PyTorch
-use_cuda = torch.cuda.is_available()
-device = torch.device("cuda:0" if use_cuda else "cpu")
-
 # mini-json: Subset with only 7822*.json and 7823*.json
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
 model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/" #TODO Unused. Comment it out
@@ -121,8 +117,12 @@ class TextSplitter():
     def __init__(self, model_dir):
         self.tokenizer = BertTokenizer.from_pretrained(model_dir)
         self.model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,'bert-base-cased')
+        tok_model_path = "/home/shanglinghsu/BERT-Keyword-Extractor/model.pt" #TODO Unused. Comment it out
+        self.token_classifier = BertForTokenClassification.from_pretrained(tok_model_path)
+        # CUDA for PyTorch
+        use_cuda = torch.cuda.is_available()
+        self.device = torch.device("cuda:0" if use_cuda else "cpu")
 
-        self.token_classifier = BertForTokenClassification.from_pretrained()
 
     def split(self, text):
         """
@@ -150,6 +150,7 @@ class TextSplitter():
                 continue
 
             segments.append([])
+            key_phrases.append([])
             for i in range(len(sents)-1):
                 # "Current" and "next" sentences
                 input_ids = self.tokenizer.encode_plus(sents[i],sents[i+1], return_tensors='pt')['input_ids']
@@ -159,6 +160,7 @@ class TextSplitter():
                 
                 ## Update list with this result
                 segments[-1].append(sents[i])
+                key_phrases[-1].extend(self.keywordextract(sents[i]))
                 
                 ## Split paragraph
                 ### 2) semantic segment
@@ -166,12 +168,35 @@ class TextSplitter():
                 argmax = softmax.argmax().item()
                 if argmax: # 1 if diff; 0 otherwise
                     segments.append([])
+                    key_phrasws.append([])
                     segment_counter += 1 
             
             # The last sentence
             segments[-1].append(sents[-1])
+            key_phrases[-1].extend(self.keywordextract(sents[-1]))
 
         return segments, key_phrases
+    
+    def keywordextract(self, sentence):
+        text = sentence
+        tkns = tokenizer.tokenize(text)
+        indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
+        segments_ids = [0] * len(tkns)
+        tokens_tensor = torch.tensor([indexed_tokens]).to(self.device)
+        segments_tensors = torch.tensor([segments_ids]).to(self.device)
+        self.token_classifier.eval()
+        self.token_classifier.to(self.device)
+        prediction = []
+        logit = self.token_classifier(tokens_tensor, token_type_ids=None,
+                                    attention_mask=segments_tensors)[0]
+        logit = logit.detach().cpu().numpy()
+        prediction.extend([list(p) for p in np.argmax(logit, axis=2)])
+        keywords = []
+        for k, j in enumerate(prediction[0]):
+            if j==1 or j==0:
+                keywords.append(tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k])
+                print(tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
+        return keywords
 
 """
 def test_model(model, device, tokenizer): # generator
