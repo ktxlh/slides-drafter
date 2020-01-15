@@ -35,7 +35,7 @@ def traverse_json_dir(json_dir, return_docs):
     print("--- Traversing done ---")
     return rtn
 
-def keywordextract(sentence, model, tokenizer):
+def keywordextract(sentence, classifier_token, tokenizer):
     """
     Usage:
         sentence = "Some students space paragraphs, trying to separate points when the process of writing is over."
@@ -48,13 +48,14 @@ def keywordextract(sentence, model, tokenizer):
 
     indexed_tokens = tokenizer.encode(sentence)
     tokens_tensor = torch.tensor([indexed_tokens]).to(device)
-    model.eval()
-    model.to(device)
+    classifier_token.eval()
+    classifier_token.to(device)
     prediction = []
-    logit = model(tokens_tensor)[0]
+    logit = classifier_token(tokens_tensor)[0]
     logit = logit.detach().cpu().numpy()
-    prediction.extend([list(p) for p in np.argmax(logit, axis=1)])
+    prediction.extend([list(p) for p in np.argmax(logit, axis=2)])
     for k, j in enumerate(prediction[0]):
         if j==1 or j==0:
             print(tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
-    
+            return tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k]
+    return []
