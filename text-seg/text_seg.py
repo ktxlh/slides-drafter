@@ -37,17 +37,12 @@ device = torch.device("cuda:0" if use_cuda else "cpu")
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
 #tag = '{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], max_seq_length)
 model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
+# mini-json: Subset with only 7822*.json and 7823*.json
 
 for d in [model_dir]: #loss_dir
     if not os.path.exists(d):
         os.makedirs(d)
 
-# mini-json: Subset with only 7822*.json and 7823*.json
-tokenizer_encode_plus_parameters = {
-    'max_length' : max_seq_length,
-    'pad_to_max_length' : 'right',
-    'return_tensors' : 'pt',
-}
 seed = 666
 def set_seed(seed):
     random.seed(seed)
@@ -81,11 +76,13 @@ def create_instances_from_json(
         max_seq_length, short_seq_prob,
         masked_lm_prob, max_predictions_per_seq, whole_word_mask, vocab_list):
     instances = []
-    
+
+    tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'return_tensors' : 'pt',}
+
     inputs, labels = get_inputs_labels(json_dir)
     encodings =  tokenizer.batch_encode_plus(inputs, **tokenizer_encode_plus_parameters)
-
-    for inp, lab in all_in:
+    """
+    for inp, lab in []:
         
         instance = {
             "tokens": tokens,
@@ -94,6 +91,7 @@ def create_instances_from_json(
             "masked_lm_positions": masked_lm_positions,
             "masked_lm_labels": masked_lm_labels}
         instances.append(instance)
+    """
 
 
 def test_model(model, device, tokenizer): # generator
