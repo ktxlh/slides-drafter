@@ -82,12 +82,11 @@ def _encode(inp, token2idx, maxlen, type):
         tokens = ['<s>'] + inp.split() + ['</s>']
         while len(tokens) < maxlen:
             tokens.append('<pad>')
-        print(tokens)
         return [token2idx.get(token, token2idx['<unk>']) for token in tokens]
 
     else:
-        inputs = ['<s>'] + list(inp)
-        target = list(inp) + ['</s>']
+        inputs = ['<s>'] + inp.split()
+        target = inp.split() + ['</s>']
         while len(target) < maxlen:
             inputs.append('<pad>')
             target.append('<pad>')
@@ -148,7 +147,6 @@ def _input_fn(sents1, sents2, vocab_fpath, batch_size, gpu_nums, maxlen1, maxlen
         output_types=types,
         args=(sents1, sents2, vocab_fpath, maxlen1, maxlen2))  # <- arguments for generator_fn. converted to np string arrays
     
-    print(dataset)
 
     if shuffle: # for training
         dataset = dataset.shuffle(128*batch_size*gpu_nums)

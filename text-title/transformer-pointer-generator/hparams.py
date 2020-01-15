@@ -24,7 +24,7 @@ class Hparams:
                              help="data for calculate rouge score")
 
     ## vocabulary
-    parser.add_argument('--vocab', default='vocab',
+    parser.add_argument('--vocab', default='./demo_data/vocab',
                         help="vocabulary file path")
 
     parser.add_argument('--stop_vocab', default='stop_vocab',
