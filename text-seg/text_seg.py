@@ -48,6 +48,7 @@ def set_seed(seed):
     random.seed(seed)
     #np.random.seed(seed)
     torch.manual_seed(seed)
+set_seed(seed)
 
 # Load model
 model = BertForSequenceClassification.from_pretrained(model_dir)#'bert-base-cased')
@@ -72,32 +73,49 @@ def get_inputs_labels(json_dir):
     return inputs, labels
 
 # pregen.py
-def create_instances_from_json(
-        max_seq_length, short_seq_prob,
-        masked_lm_prob, max_predictions_per_seq, whole_word_mask, vocab_list):
+def create_instances_from_json(max_seq_length):
+
+    tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right'}#, 'return_tensors' : 'pt',}
+
+    inputs, labels = get_inputs_labels(json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json") # Should be json #json_dir)
+    print("*** Batch encoding ***")
+    enc =  tokenizer.batch_encode_plus(inputs, **tokenizer_encode_plus_parameters)
+    print("--- Batch encoding done ---")
+    
     instances = []
+    for input_id, token_type_id, label in zip(enc['input_ids'], enc['token_type_ids'], labels):
+        instances.append({
+            "tokens": tokenizer.decode(input_id),
+            "segment_ids": token_type_id,
+            "is_random_next": label,
+            "masked_lm_positions": [],
+            "masked_lm_labels": []
+        })
+    random.shuffle(instances)
 
-    tokenizer_encode_plus_parameters = { 'max_length' : max_seq_length, 'pad_to_max_length' : 'right', 'return_tensors' : 'pt',}
+def create_training_json(args):
+    epoch_filename = args.output_dir / "epoch_0.json"
+    num_instances = 0
+    with epoch_filename.open('w') as epoch_file:
+        doc_instances = create_instances_from_json(
+            max_seq_length=args.max_seq_len)
+        doc_instances = [json.dumps(instance) for instance in doc_instances]
+        for instance in doc_instances:
+            epoch_file.write(instance + '\n')
+            num_instances += 1
+    metrics_file = args.output_dir / "epoch_0_metrics.json"
+    with metrics_file.open('w') as metrics_file:
+        metrics = {
+            "num_training_examples": num_instances,
+            "max_seq_len": args.max_seq_len
+        }
+        metrics_file.write(json.dumps(metrics))
 
-    inputs, labels = get_inputs_labels(json_dir)
-    encodings =  tokenizer.batch_encode_plus(inputs, **tokenizer_encode_plus_parameters)
-    """
-    for inp, lab in []:
-        
-        instance = {
-            "tokens": tokens,
-            "segment_ids": segment_ids,
-            "is_random_next": is_random_next,
-            "masked_lm_positions": masked_lm_positions,
-            "masked_lm_labels": masked_lm_labels}
-        instances.append(instance)
-    """
-
-
+"""
 def test_model(model, device, tokenizer): # generator
     # TODO change run.sh seq_len
     
-    """
+    
     inputs, labels = get_inputs_labels(json_dir)
     data = TensorDataset(torch.cat(inputs), torch.tensor(labels))
     n_test = int(len(labels)*0.2)
@@ -105,7 +123,7 @@ def test_model(model, device, tokenizer): # generator
     train_set, valid_set = random_split(data, [n_train, n_test])
     train_generator = DataLoader(train_set, sampler=RandomSampler(train_set), batch_size=batch_size)
     valid_generator = DataLoader(valid_set, sampler=RandomSampler(valid_set), batch_size=batch_size)
-    """
+    
     # Transfer to GPU
     vl_loss = []
     model = model.to(device)
@@ -123,3 +141,4 @@ def test_model(model, device, tokenizer): # generator
         break
 
 #test_model(model, device, tokenizer)
+"""

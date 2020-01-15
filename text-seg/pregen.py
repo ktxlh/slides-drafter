@@ -14,7 +14,7 @@ import numpy as np
 from tqdm import tqdm, trange
 
 from transformers import BertTokenizer
-
+from text_seg import create_training_json
 
 class DocumentDatabase:
     def __init__(self, reduce_memory=False):
@@ -347,12 +347,11 @@ def main():
         args.output_dir.mkdir(exist_ok=True)
 
         if args.num_workers > 1:
-            writer_workers = Pool(min(args.num_workers, args.epochs_to_generate))
-            arguments = [(docs, vocab_list, args, idx) for idx in range(args.epochs_to_generate)]
-            writer_workers.starmap(create_training_file, arguments)
+            writer_workers = Pool(min(args.num_workers))
+            arguments = [(args)]
+            writer_workers.starmap(create_training_json, arguments)
         else:
-            for epoch in trange(args.epochs_to_generate, desc="Epoch"):
-                create_training_file(docs, vocab_list, args, epoch)
+            create_training_json(args)
 
 
 if __name__ == '__main__':
