@@ -37,10 +37,14 @@ def traverse_json_dir(json_dir, return_docs):
 def keywordextract(sentence, model, tokenizer):
     """
     Usage:
-        keywordextract(args.sentence, model_dir)
+        sentence = "Some students space paragraphs, trying to separate points when the process of writing is over."
+        kw = keywordextract(sentence, model, tokenizer)
     
     from: https://github.com/ibatra/BERT-Keyword-Extractor/blob/master/keyword-extractor.py
     """
+    use_cuda = torch.cuda.is_available()
+    device = torch.device("cuda:0" if use_cuda else "cpu")
+
     text = sentence
     tkns = tokenizer.tokenize(text)
     indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
