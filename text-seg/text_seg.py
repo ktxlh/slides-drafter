@@ -89,7 +89,7 @@ for (l1,s1), (l2,s2) in tqdm(combs): # TODO Tqdm -> Trange
     inputs.append(tokenizer.encode_plus(
         s1, s2, **tokenizer_encode_plus_parameters
     )['input_ids'])
-    labels.append(int(l1 == l2))
+    labels.append(int(l1 != l2)) # Corresponds to is_random_next
 
 data = TensorDataset(torch.cat(inputs), torch.tensor(labels))
 n_test = int(len(labels)*0.2)
