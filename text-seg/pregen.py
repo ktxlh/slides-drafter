@@ -112,27 +112,7 @@ def main():
 
     tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
     vocab_list = list(tokenizer.vocab.keys())
-    """
-    with DocumentDatabase(reduce_memory=args.reduce_memory) as docs:
-        with args.train_corpus.open() as f:
-            doc = []
-            for line in tqdm(f, desc="Loading Dataset", unit=" lines"):
-                line = line.strip()
-                if line == "":
-                    docs.add_document(doc)
-                    doc = []
-                else:
-                    tokens = tokenizer.tokenize(line)
-                    doc.append(tokens)
-            if doc:
-                docs.add_document(doc)  # If the last doc didn't end on a newline, make sure it still gets added
-        if len(docs) <= 1:
-            exit("ERROR: No document breaks were found in the input file! These are necessary to allow the script to "
-                 "ensure that random NextSentences are not sampled from the same document. Please add blank lines to "
-                 "indicate breaks between documents in your input file. If your dataset does not contain multiple "
-                 "documents, blank lines can be inserted at any natural boundary, such as the ends of chapters, "
-                 "sections or paragraphs.")
-    """
+    
     args.output_dir.mkdir(exist_ok=True)
 
     if args.num_workers > 1:

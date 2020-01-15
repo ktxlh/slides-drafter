@@ -85,7 +85,7 @@ def create_instances_from_json(max_seq_length):
     instances = []
     for input_id, token_type_id, label in zip(enc['input_ids'], enc['token_type_ids'], labels):
         instances.append({
-            "tokens": tokenizer.decode(input_id),
+            "tokens": tokenizer.convert_ids_to_tokens(input_id),
             "segment_ids": token_type_id,
             "is_random_next": label,
             "masked_lm_positions": [],
