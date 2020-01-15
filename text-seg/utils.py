@@ -32,15 +32,26 @@ def traverse_json_dir(json_dir, return_docs):
     print("--- Traversing done ---")
     return rtn
 
-def format_attention(attention):
+def keywordextract(sentence, model):
     """
-    attention: list of ``torch.FloatTensor``(one for each layer) of shape
-                ``(batch_size(must be 1), num_heads, sequence_length, sequence_length)``
+    Usage:
+        keywordextract(args.sentence, model_dir)
+    
+    from: https://github.com/ibatra/BERT-Keyword-Extractor/blob/master/keyword-extractor.py
     """
-    # From https://github.com/jessevig/bertviz/blob/138381e83d33cf3e221bd540cc1c704b5c4af99e/bertviz/util.py#L3
-    squeezed = []
-    for layer_attention in attention:
-        # num_heads x seq_len x seq_len
-        squeezed.append(layer_attention.squeeze(0))
-    # num_layers x num_heads x seq_len x seq_len
-    return torch.stack(squeezed)
+    text = sentence
+    tkns = tokenizer.tokenize(text)
+    indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
+    segments_ids = [0] * len(tkns)
+    tokens_tensor = torch.tensor([indexed_tokens]).to(device)
+    segments_tensors = torch.tensor([segments_ids]).to(device)
+    model.eval()
+    prediction = []
+    logit = model(tokens_tensor, token_type_ids=None,
+                                  attention_mask=segments_tensors)
+    logit = logit.detach().cpu().numpy()
+    prediction.extend([list(p) for p in np.argmax(logit, axis=2)])
+    for k, j in enumerate(prediction[0]):
+        if j==1 or j==0:
+            print(tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
+            
