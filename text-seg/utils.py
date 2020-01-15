@@ -25,6 +25,4 @@ def traverse_json_dir(json_dir, return_docs):
                 rtn.append(sections)
             else:
                 rtn.extend(sections)
-            
-    print("# of sections loaded:", len(sections))
     return rtn
