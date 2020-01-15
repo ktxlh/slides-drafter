@@ -5,8 +5,9 @@ from nltk.tokenize import sent_tokenize
 def traverse_json_dir(json_dir, toke_to_sent, limit_paragraphs):
 
     def remove_non_printable(s):
-        s = [ss for ss in s.split('\n') if len(ss) > 40]
-        return s.encode('ascii', errors='ignore').decode('ascii')
+        s = s.encode('ascii', errors='ignore').decode('ascii')
+        s = '\n'.join([ss for ss in s.split('\n') if len(ss) > 40])
+        return s
 
     sections = []
     for root, dirs, files in os.walk(json_dir):
