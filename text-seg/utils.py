@@ -34,7 +34,7 @@ def traverse_json_dir(json_dir, return_docs):
     print("--- Traversing done ---")
     return rtn
 
-def keywordextract(sentence, model):
+def keywordextract(sentence, model, tokenizer):
     """
     Usage:
         keywordextract(args.sentence, model_dir)

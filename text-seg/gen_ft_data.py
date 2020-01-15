@@ -1,3 +1,7 @@
+"""
+It takes ~30 mins for the 400,003 json
+files (wiki) provided by google
+"""
 import os
 from random import shuffle
 from nltk.tokenize import sent_tokenize
