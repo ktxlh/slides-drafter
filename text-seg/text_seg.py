@@ -83,7 +83,7 @@ for sections in docs:
     # secs之間是1
     for i in range(len(sections)-1):
         inputs.append(tokenizer.encode_plus(
-            sections[i][-1], sectoins[i+1][0], **tokenizer_encode_plus_parameters
+            sections[i][-1], sections[i+1][0], **tokenizer_encode_plus_parameters
         )['input_ids'])
         labels.append(1)
 
