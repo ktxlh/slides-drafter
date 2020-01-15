@@ -18,9 +18,10 @@ Data dir (shanglinghsu@): ~/ml-camp/wiki-vandalism/json
 ########################################
 # text_seg.py must be in the same folder
 # as the code who calls it
+text = r"This is the text to be split. Many sentences. Sometimes '\n'."
+
 from text_seg import TextSplitter
 model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
-text = r"This is the text to be split. Many sentences. Sometimes '\n'."
 
 # Initialize one splitter
 # It takes time, so reuse it!
@@ -159,7 +160,7 @@ class TextSplitter():
                 logits = logits.squeeze(0)
                 
                 ## Keyphrase is the most attented input
-                key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,0,:,0].argmax()]])
+                key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,-1,:,0].argmax()]])
                 #current sentences = self.tokenizer.decode(input_ids)
                 
                 ## Update list with this result
@@ -177,7 +178,7 @@ class TextSplitter():
             input_ids = self.tokenizer.encode_plus(sents[-1], return_tensors='pt')['input_ids']
             _, attentions = self.model(input_ids)
             input_ids = input_ids.squeeze(0)
-            key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,0,:,0].argmax()]])
+            key_phrase = self.tokenizer.decode([input_ids[attentions[-1][0,-1,:,0].argmax()]])
             
             ## Update list for the last one
             segments[-1].append(sents[-1])
