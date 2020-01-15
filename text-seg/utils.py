@@ -10,6 +10,7 @@ def traverse_json_dir(json_dir, return_docs):
         return s
 
     rtn = []
+    print("*** Traversing ***")
     for root, dirs, files in os.walk(json_dir):
         print("# of json files in total:",len(files))
         files.sort()
@@ -25,4 +26,5 @@ def traverse_json_dir(json_dir, return_docs):
                 rtn.append(sections)
             else:
                 rtn.extend(sections)
+    print("--- Traversing done ---")
     return rtn

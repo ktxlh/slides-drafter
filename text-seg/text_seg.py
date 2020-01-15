@@ -35,8 +35,8 @@ use_cuda = torch.cuda.is_available()
 device = torch.device("cuda:0" if use_cuda else "cpu")
 
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
-tag = '{}-{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], batch_size, max_seq_length)
-model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
+#tag = '{}-{}-{}'.format(*json_dir.replace('-','_').split('/')[-2:], max_seq_length)
+#model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
 
 for d in [model_dir]: #loss_dir
     if not os.path.exists(d):
