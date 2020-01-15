@@ -92,6 +92,7 @@ def create_instances_from_json(max_seq_length):
             "masked_lm_labels": []
         })
     random.shuffle(instances)
+    return instances
 
 def create_training_json(args):
     epoch_filename = args.output_dir / "epoch_0.json"
