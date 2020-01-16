@@ -145,13 +145,16 @@ class TextSplitter():
         2) Semantic
 
         : text: str -- Normal text input
-        : title: str -- The key sentence of the whole text.
+        : title: str -- The key sentence of the whole text or "Title"
         : segments: list(str) -- Each str is a semantic segment.
         : keywords: list(list(str)) -- Each list corresponds 
             to a segment, containing 0 or more keywords
-        : subtitles: list(str) -- Each str may be '' or one key sentence.
+        : subtitles: list(str) -- Each str may be "Title" or one key sentence.
         """
         title = summarize(text)
+        if title == '':
+            title = "Title"
+
         segments = []
         keywords = []
         subtitles = []
@@ -192,7 +195,15 @@ class TextSplitter():
             keywords[-1].extend(self.extract_keywords(sents[-1]))
 
         segments = [' '.join(sents) for sents in segments]
-        subtitles = [summarize(segment) for segment in segments]
+
+        subtitles = []
+        for segment in segments:
+            s = summarize(segment)
+            if s == '':
+                subtitles.append("Title")
+            else:
+                subtitles.append(s)
+        
         return title, segments, keywords, subtitles
     
     def extract_keywords(self, sentence):
