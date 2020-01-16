@@ -16,9 +16,10 @@ from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
 import torch
+from pytorch_pretrained_bert import BertForTokenClassification
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
-from transformers import (AdamW, BertForSequenceClassification, BertForTokenClassification, BertTokenizer,
+from transformers import (AdamW, BertForSequenceClassification, BertTokenizer,
                           get_linear_schedule_with_warmup)
 from utils import remove_non_printable, traverse_json_dir
 
@@ -188,7 +189,7 @@ class TextSplitter():
         self.token_classifier.to(self.device)
         prediction = []
         logit = self.token_classifier(tokens_tensor, token_type_ids=None,
-                                    attention_mask=segments_tensors)[0]
+                                    attention_mask=segments_tensors)
         logit = logit.detach().cpu().numpy()
         prediction.extend([list(p) for p in np.argmax(logit, axis=2)])
         keywords = []

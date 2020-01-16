@@ -13,13 +13,13 @@ from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
 import torch
+from pytorch_pretrained_bert import BertForTokenClassification
 from text_seg import TextSplitter
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
-from transformers import (AdamW, BertForSequenceClassification,
-                          BertForTokenClassification, BertTokenizer,
+from transformers import (AdamW, BertForSequenceClassification, BertTokenizer,
                           get_linear_schedule_with_warmup)
-from utils import keywordextract, remove_non_printable, traverse_json_dir
+from utils import remove_non_printable, traverse_json_dir
 
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
@@ -59,3 +59,5 @@ for sent in sentences:
 
 ########################
 # python keyword-extractor.py --path "model.pt" --sentence "The IOB format (short for inside, outside, beginning) is a common tagging format for tagging tokens in a chunking task in computational linguistics (ex. named-entity recognition)."
+
+# python keyword-extractor.py --path "model.pt" --sentence "Some students space paragraphs, trying to separate points when the process of writing is over."
