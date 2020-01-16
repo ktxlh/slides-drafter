@@ -14,7 +14,7 @@ from itertools import combinations
 
 import numpy as np
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.tokenize import word_tokenize, sent_tokenize #, texttiling
 from tqdm import tqdm, trange
 
 import torch
@@ -132,6 +132,8 @@ class TextSplitter():
         use_cuda = torch.cuda.is_available()
         self.device = torch.device("cuda:0" if use_cuda else "cpu")
 
+        #self.texttiling = texttiling.TextTilingTokenizer()
+        
     def split(self, text):
         """
         The main API of this code.
@@ -151,6 +153,9 @@ class TextSplitter():
         ### 1) paragraph (split by '\n')
         paragraphs = [t for t in text.split('\n') if len(t) > 0]
         for paragraph in paragraphs:
+            
+            #self.texttiling.tokenize(paragraph)
+
             sents = sent_tokenize(paragraph)
             if len(sents) == 0:
                 continue
