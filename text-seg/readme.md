@@ -19,12 +19,12 @@ Descriptive: These paragraphs have four main aims. First of all, they naturally 
 Expository: It is not an easy task to write an expository paragraph, especially if you are an amateur in the subject. These paragraphs explain how something works or what the reader is to do to make it work. Such paragraphs demand a certain knowledge. Nevertheless, writing them is a great exercise to understand the material, because you keep learning when you teach."""
 ```
 
+## Configuration
 text_seg.py must be in the same folder as the code who calls it
 ```
 from text_seg import TextSplitter
-model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
-token_model_path = "~/BERT-Keyword-Extractor/model.pt"
-
+model_dir = "<your_path>/models/"
+token_model_path = "<your_path>/model.pt"
 ```
 
 ### Initialize one splitter
