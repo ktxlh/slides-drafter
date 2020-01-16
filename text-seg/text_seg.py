@@ -218,7 +218,7 @@ class TextSplitter():
         
         # Remove duplicates
         keywords = list(set(keywords))
-        for w1 in keywords:
+        for w1 in keywords.copy():
             for w2 in keywords:
                 if w2 != w1 and w2 in w1:
                     keywords.remove(w2)
