@@ -141,6 +141,8 @@ class TextSplitter():
 
         : text: str -- Normal text input
         : segments: list(str) -- Each str is a semantic segment.
+        : key_phrases: list(list(str)) -- Each list corresponds 
+            to a segment, containing 0 or more keywords
         """
         segments = []
         key_phrases = []
@@ -179,6 +181,7 @@ class TextSplitter():
             segments[-1].append(sents[-1])
             key_phrases[-1].extend(self.extract_keywords(sents[-1]))
 
+        segments = [' '.join(sents) for sents in segments]
         return segments, key_phrases
     
     def extract_keywords(self, sentence):

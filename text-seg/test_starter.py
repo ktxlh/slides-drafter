@@ -69,6 +69,7 @@ for t in ts:
         print(">>",kw)
     print()
 
+segs, kw = splitter.split(text)
 
 ######################
 # Key: shorter senteces work better
