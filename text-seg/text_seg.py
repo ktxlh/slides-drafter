@@ -13,7 +13,7 @@ import string
 from itertools import combinations
 
 import numpy as np
-from nltk import stop_words
+from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
