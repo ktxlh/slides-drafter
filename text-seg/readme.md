@@ -1,4 +1,6 @@
 # Text Splitter
+To get the keywords of a paragraph for searching proper images.
+
 ## Dependencies
 * default pytorch conda ve provided: conda activate pytorch
 * pip install --user transformers nltk pytorch-pretrained-bert
@@ -7,7 +9,6 @@
 import nltk
 nltk.download('punkt')
 ```
-
 
 ##            Example Usage           
 ### Assumed input text  
