@@ -58,6 +58,7 @@ for sent in sentences:
 
 
 ########################
+# Key: shorter senteces work better
 """
 python keyword-extractor.py --path "model.pt" --sentence "The IOB format (short for inside, outside, beginning) is a common tagging format for tagging tokens in a chunking task in computational linguistics (ex. named-entity recognition)."
 

@@ -161,7 +161,7 @@ class TextSplitter():
                 
                 ## Update list with this result
                 segments[-1].append(sents[i])
-                key_phrases[-1].extend(self.keywordextract(sents[i]))
+                key_phrases[-1].extend(self.extract_keywords(sents[i]))
                 
                 ## Split paragraph
                 ### 2) semantic segment
@@ -174,12 +174,19 @@ class TextSplitter():
             
             # The last sentence
             segments[-1].append(sents[-1])
-            key_phrases[-1].extend(self.keywordextract(sents[-1]))
+            key_phrases[-1].extend(self.extract_keywords(sents[-1]))
 
         return segments, key_phrases
     
-    def keywordextract(self, sentence):
-        text = sentence
+    def extract_keywords(self, sentence):
+        keywords = []
+        keywords.extend(self._extract_keywords_helper(sentence))
+        for subsent in sentence.split(','):
+            keywords.extend(self._extract_keywords_helper(subsent))
+        return keywords
+        
+    def _extract_keywords_helper(self, sub_sentence):
+        text = sub_sentence
         tkns = tokenizer.tokenize(text)
         indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
         segments_ids = [0] * len(tkns)
