@@ -117,7 +117,7 @@ class TextSplitter():
     def __init__(self, model_dir):
         self.tokenizer = BertTokenizer.from_pretrained(model_dir)
         self.model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,'bert-base-cased')
-        tok_model_path = u"/home/shanglinghsu/BERT-Keyword-Extractor/model.pt" #TODO Unused. Comment it out
+        tok_model_path = "/home/shanglinghsu/BERT-Keyword-Extractor/model.pt" #TODO Unused. Comment it out
         self.token_classifier = BertForTokenClassification.from_pretrained(tok_model_path)
         # CUDA for PyTorch
         use_cuda = torch.cuda.is_available()

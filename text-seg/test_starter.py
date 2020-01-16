@@ -13,11 +13,13 @@ from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
 import torch
+from text_seg import TextSplitter
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
-from transformers import (AdamW, BertForSequenceClassification, BertTokenizer, BertForTokenClassification,
+from transformers import (AdamW, BertForSequenceClassification,
+                          BertForTokenClassification, BertTokenizer,
                           get_linear_schedule_with_warmup)
-from utils import remove_non_printable, traverse_json_dir
+from utils import keywordextract, remove_non_printable, traverse_json_dir
 
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
@@ -25,20 +27,19 @@ device = torch.device("cuda:0" if use_cuda else "cpu")
 
 # mini-json: Subset with only 7822*.json and 7823*.json
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
-model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/" #TODO Unused. Comment it out
-
-tokenizer = BertTokenizer.from_pretrained(model_dir)
-model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,
-
-############################################
+model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
+tok_model_path = "/home/shanglinghsu/BERT-Keyword-Extractor/model.pt"
 
 tag2idx = {'B': 0, 'I': 1, 'O': 2}
 tags_vals = ['B', 'I', 'O']
-classifier_token = BertForTokenClassification.from_pretrained(model_dir, num_labels=len(tag2idx))
 
+tokenizer = BertTokenizer.from_pretrained(model_dir)
+model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,
+token_classifier = BertForTokenClassification.from_pretrained(tok_model_path, num_labels=len(tag2idx))
+splitter = TextSplitter(model_dir) 
 
+############################################
 
-from utils import keywordextract
 
 text = """Some students space paragraphs, trying to separate points when the process of writing is over. This is a major mistake. How much easier your writing would become if you looked at it from another angle! It is reasonable to use different types of paragraphs WHILE you are writing. In case you follow all the rules, you'll have no difficulty in bringing your message across to your reader.
 If you browse for ‘the types of paragraphs' you'll be surprised how many results you'll get. Among others, the four following types should be distinguished: descriptive, expository, narrative, and persuasive paragraphs. Mastering these types will help you a lot in writing almost every type of texts.
