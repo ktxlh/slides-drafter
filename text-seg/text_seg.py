@@ -217,7 +217,7 @@ class TextSplitter():
         for k, j in enumerate(prediction[0]):
             if j==1 or j==0:
                 keywords.append(tkn_words[k])
-                print(tkn_words[k], j)
+                #print(tkn_words[k], j)
         return keywords
 
 """
