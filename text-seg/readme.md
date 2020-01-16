@@ -30,5 +30,5 @@ splitter = TextSplitter(model_dir, token_model_path)
 
 ### Reuse the same splitter multiple times
 ```
-segments = splitter.split(text)
+segments, keywords = splitter.split(text)
 ```

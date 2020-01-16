@@ -13,6 +13,7 @@ import string
 from itertools import combinations
 
 import numpy as np
+from nltk import stop_words
 from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
@@ -25,6 +26,8 @@ from transformers import AdamW, BertForSequenceClassification
 from transformers import BertTokenizer as traTokenizer
 from transformers import get_linear_schedule_with_warmup
 from utils import remove_non_printable, traverse_json_dir
+
+stop_words = set(stopwords.words('english')) 
 
 # mini-json: Subset with only 7822*.json and 7823*.json
 json_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json" # Should be json
@@ -184,6 +187,8 @@ class TextSplitter():
         for subsent in sentence.split(','):
             tmp = self._extract_keywords_helper(subsent)
             keywords.extend(tmp)
+
+        keywords = [w for w in list(set(keywords)) if not w in stop_words]
         return keywords
         
     def _extract_keywords_helper(self, sub_sentence):
