@@ -9,7 +9,8 @@ nltk.download('punkt')
 ```
 
 
-##            Example Usage             
+##            Example Usage           
+### Assumed input text  
 ```
 text = """Some students space paragraphs, trying to separate points when the process of writing is over. This is a major mistake. How much easier your writing would become if you looked at it from another angle! It is reasonable to use different types of paragraphs WHILE you are writing. In case you follow all the rules, you'll have no difficulty in bringing your message across to your reader.
 If you browse for ‘the types of paragraphs' you'll be surprised how many results you'll get. Among others, the four following types should be distinguished: descriptive, expository, narrative, and persuasive paragraphs. Mastering these types will help you a lot in writing almost every type of texts.
