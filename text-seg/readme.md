@@ -8,6 +8,7 @@ To get the keywords of a paragraph for searching proper images.
 ```
 import nltk
 nltk.download('punkt')
+nltk.download('stopwords')
 ```
 
 ##            Example Usage           
