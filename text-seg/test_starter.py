@@ -52,20 +52,6 @@ t1 = "Some students space paragraphs"
 t2 = "trying to separate points when the process of writing is over."
 ts = [t0,t1,t2]
 
-for sent in sentences:
-    print(sent)
-    kw = splitter.extract_keywords(sent)
-    if len(kw) > 0:
-        print(">>",kw)
-    print()
-
-for t in ts:
-    print(t)
-    kw = splitter.extract_keywords(t)
-    if len(kw) > 0:
-        print(">>",kw)
-    print()
-
 title, segments, keywords, subtitles = splitter.split(text)
 
 ######################

@@ -203,12 +203,13 @@ class TextSplitter():
             keywords.extend(tmp)
 
         # Incorporate info from tool
-        tool_words = get_keywords(sentence).split('\n')
-        for word in keywords.copy():
-            for tool_word in tool_words:
-                if word in tool_word:
-                    keywords.remove(word)
-        keywords.extend(tool_words)
+        keywords.extend(get_keywords(sentence).split('\n'))
+        
+        # Remove duplicates
+        for w1 in keywords.copy():
+            for w2 in keywords.copy():
+                if w1 in w2:
+                    keywords.remove(w1)
 
         # Only 0 ~ 4 keywords for now (for formatting)
         keywords = [w for w in keywords if not w in stop_words]
