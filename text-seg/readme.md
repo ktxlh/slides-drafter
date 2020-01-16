@@ -1,4 +1,4 @@
-# Text Splitter
+# Semantic Text Spliter
 To get the keywords of a paragraph for searching proper images.
 
 ## Dependencies
