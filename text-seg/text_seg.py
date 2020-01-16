@@ -152,7 +152,7 @@ class TextSplitter():
         : subtitles: list(str) -- Each str may be "Title" or one key sentence.
         """
         title = summarize(text)
-        if title == '':
+        if len(title) == 0:
             title = "Title"
 
         segments = []
@@ -199,7 +199,7 @@ class TextSplitter():
         subtitles = []
         for segment in segments:
             s = summarize(segment)
-            if s == '':
+            if len(s) == 0:
                 subtitles.append("Title")
             else:
                 subtitles.append(s)
