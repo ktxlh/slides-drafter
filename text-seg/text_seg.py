@@ -177,7 +177,10 @@ class TextSplitter():
         keywords = []
         keywords.extend(self._extract_keywords_helper(sentence))
         for subsent in sentence.split(','):
-            keywords.extend(self._extract_keywords_helper(subsent))
+            print("***", subsent)
+            tmp = self._extract_keywords_helper(subsent)
+            print("***>>",tmp)
+            keywords.extend(tmp)
         return keywords
         
     def _extract_keywords_helper(self, sub_sentence):

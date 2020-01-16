@@ -50,6 +50,11 @@ sentences = sent_tokenize(text)
 sentence = sentences[0]
 s0, s1, s2 = sentences[:3]
 
+t0 = "Some students space paragraphs, trying to separate points when the process of writing is over."
+t1 = "Some students space paragraphs"
+t2 = "trying to separate points when the process of writing is over."
+ts = [t0,t1,t2]
+
 for sent in sentences:
     kw = splitter.extract_keywords(sent)
     print(sent)
