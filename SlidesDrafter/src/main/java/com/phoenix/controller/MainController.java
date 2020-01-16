@@ -28,12 +28,6 @@ public class MainController {
         return new ModelAndView("index");
     }
 
-    @RequestMapping(value = "/sendtext", method = RequestMethod.POST)
-    public String uploadFileAction(String input) {
-        filename = input;
-        return filename;
-    }
-
 
 
 }
