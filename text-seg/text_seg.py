@@ -10,11 +10,12 @@ import os
 import random
 import re
 import string
+from collections import Counter
 from itertools import combinations
 
 import numpy as np
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize #, texttiling
+from nltk.tokenize import sent_tokenize, word_tokenize  # , texttiling
 from tqdm import tqdm, trange
 
 import torch
@@ -194,8 +195,10 @@ class TextSplitter():
             tmp = self._extract_keywords_helper(subsent)
             keywords.extend(tmp)
 
-        # Only 0 to 3 keywords
-        keywords = [w for w in list(set(keywords)) if not w in stop_words]
+        # Only 0 ~ 4 keywords for now (for formatting)
+        keywords = [w for w in keywords if not w in stop_words]
+        occurence_count = Counter(keywords)
+        keywords = [w for (w,_) in occurence_count.most_common(4)]
         return keywords
         
     def _extract_keywords_helper(self, sub_sentence):
