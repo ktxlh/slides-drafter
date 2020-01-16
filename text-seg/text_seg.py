@@ -217,10 +217,12 @@ class TextSplitter():
         keywords.extend(get_keywords(sentence).split('\n'))
         
         # Remove duplicates
+        keywords = list(set(key_words))
         for w1 in keywords:
             for w2 in keywords:
-                if w1 in w2:
-                    keywords.remove(w1)
+                if w2 != w1 and w2 in w1:
+                    keywords.remove(w2)
+                    break
 
         # Only 0 ~ 4 keywords for now (for formatting)
         keywords = [w for w in keywords if not w in stop_words]
