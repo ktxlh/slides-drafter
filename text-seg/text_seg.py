@@ -194,6 +194,7 @@ class TextSplitter():
             tmp = self._extract_keywords_helper(subsent)
             keywords.extend(tmp)
 
+        # Only 0 to 3 keywords
         keywords = [w for w in list(set(keywords)) if not w in stop_words]
         return keywords
         
@@ -221,6 +222,7 @@ class TextSplitter():
         prediction.extend([list(p) for p in np.argmax(logit, axis=2)])
         keywords = []
         for k, j in enumerate(prediction[0]):
+            # tag2idx = {'B': 0, 'I': 1, 'O': 2}
             if j==1 or j==0:
                 keywords.append(tkn_words[k])
                 #print(tkn_words[k], j)
