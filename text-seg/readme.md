@@ -4,8 +4,10 @@ To get the keywords of a paragraph for searching proper images.
 ## Dependencies
 Use the default pytorch conda ve provided: conda activate pytorch
 ```
-pip install --user transformers nltk pytorch-pretrained-bert
-
+pip install --user transformers nltk pytorch-pretrained-bert summa
+```
+The following seems to work for linux only. See repo https://github.com/NVIDIA/apex
+```
 git clone https://github.com/NVIDIA/apex
 cd apex
 pip install --user -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
