@@ -193,12 +193,12 @@ class TextSplitter():
         
     def _extract_keywords_helper(self, sub_sentence):
         text = sub_sentence
-        whole_tokens = word_tokenize(text) # ["I","sleep","."]
-        tkns, pos_words = [],[]
-        for i in range(len(whole_tokens)):
-            subwords = self.ppb_tokenizer.tokenize(word) 
-            pos_words.extend([
-                whole_tokens[i] for j in range(len(subwords))
+        words = word_tokenize(text) # ["I","sleep","."]
+        tkns, tkn_words = [],[]
+        for word in words:
+            subwords = self.ppb_tokenizer.tokenize(word)
+            tkn_words.extend([
+                word for j in range(len(subwords))
             ])
             tkns.extend(subwords)  # ["sle","##ep"]
         
@@ -216,8 +216,8 @@ class TextSplitter():
         keywords = []
         for k, j in enumerate(prediction[0]):
             if j==1 or j==0:
-                keywords.append(pos_words[k])
-                print(pos_words[k], j)
+                keywords.append(tkn_words[k])
+                print(tkn_words[k], j)
         return keywords
 
 """
