@@ -15,11 +15,12 @@ from tqdm import tqdm, trange
 
 import torch
 from pytorch_pretrained_bert import BertForTokenClassification
-from text_seg import TextSplitter
+from pytorch_pretrained_bert import BertTokenizer as pytTokenizer
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
-from transformers import (AdamW, BertForSequenceClassification, BertTokenizer,
-                          get_linear_schedule_with_warmup)
+from transformers import AdamW, BertForSequenceClassification
+from transformers import BertTokenizer as traTokenizer
+from transformers import get_linear_schedule_with_warmup
 from utils import remove_non_printable, traverse_json_dir
 
 # CUDA for PyTorch
@@ -34,9 +35,6 @@ tok_model_path = "/home/shanglinghsu/BERT-Keyword-Extractor/model.pt"
 tag2idx = {'B': 0, 'I': 1, 'O': 2}
 tags_vals = ['B', 'I', 'O']
 
-tokenizer = BertTokenizer.from_pretrained(model_dir)
-model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,
-token_classifier = torch.load(tok_model_path)
 splitter = TextSplitter(model_dir, tok_model_path) 
 
 ############################################
@@ -60,6 +58,7 @@ for sent in sentences:
     kw = splitter.extract_keywords(sent)
     if len(kw) > 0:
         print(">>",kw)
+    print()
 
 for t in ts:
     print(t)

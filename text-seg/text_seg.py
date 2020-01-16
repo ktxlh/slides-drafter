@@ -11,16 +11,19 @@ import random
 import re
 import string
 from itertools import combinations
+
 import numpy as np
 from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
 import torch
 from pytorch_pretrained_bert import BertForTokenClassification
+from pytorch_pretrained_bert import BertTokenizer as pytTokenizer
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
-from transformers import (AdamW, BertForSequenceClassification, BertTokenizer,
-                          get_linear_schedule_with_warmup)
+from transformers import AdamW, BertForSequenceClassification
+from transformers import BertTokenizer as traTokenizer
+from transformers import get_linear_schedule_with_warmup
 from utils import remove_non_printable, traverse_json_dir
 
 # mini-json: Subset with only 7822*.json and 7823*.json
@@ -116,11 +119,11 @@ class TextSplitter():
     properly installed before using this
     """
     def __init__(self, model_dir, tok_model_path):
-        self.tokenizer = BertTokenizer.from_pretrained(model_dir)
+        self.tokenizer = traTokenizer.from_pretrained(model_dir)
         self.model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,'bert-base-cased')
         
         self.token_classifier = torch.load(tok_model_path)
-        self.ppb_tokenizer = pytorch_pretrained_bert.BertTokenizer.from_pretrained("bert-based-uncased", do_lower_case=True)
+        self.ppb_tokenizer = pytTokenizer.from_pretrained("bert-base-uncased", do_lower_case=True)
 
         # CUDA for PyTorch
         use_cuda = torch.cuda.is_available()
@@ -235,7 +238,7 @@ def test_model(model, device, tokenizer): # generator
 
 # Load model
 model = BertForSequenceClassification.from_pretrained(model_dir)#'bert-base-cased')
-tokenizer = BertTokenizer.from_pretrained(model_dir)#'bert-base-cased')
+tokenizer = traTokenizer.from_pretrained(model_dir)#'bert-base-cased')
 
 #test_model(model, device, tokenizer)
 """
