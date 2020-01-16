@@ -204,7 +204,7 @@ class TextSplitter():
 
         # Incorporate info from tool
         tool_words = get_keywords(sentence).split('\n')
-        for word in keywords:
+        for word in keywords.copy():
             for tool_word in tool_words:
                 if word in tool_word:
                     keywords.remove(word)
@@ -242,7 +242,7 @@ class TextSplitter():
         for k, j in enumerate(prediction[0]):
             # tag2idx = {'B': 0, 'I': 1, 'O': 2}
             if j==1 or j==0:
-                keywords.append(tkn_words[k])
+                keywords.append(tkn_words[k].lower())
                 #print(tkn_words[k], j)
         return keywords
 
