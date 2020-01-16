@@ -12,6 +12,8 @@ import re
 import string
 from collections import Counter
 from itertools import combinations
+from summa.keywords import keywords as get_keywords
+from summa.summarizer import summarize
 
 import numpy as np
 from nltk.corpus import stopwords
@@ -143,12 +145,16 @@ class TextSplitter():
         2) Semantic
 
         : text: str -- Normal text input
+        : title: str -- The key sentence of the whole text.
         : segments: list(str) -- Each str is a semantic segment.
-        : key_phrases: list(list(str)) -- Each list corresponds 
+        : keywords: list(list(str)) -- Each list corresponds 
             to a segment, containing 0 or more keywords
+        : subtitles: list(str) -- Each str may be '' or one key sentence.
         """
+        title = summarize(text)
         segments = []
-        key_phrases = []
+        keywords = []
+        subtitles = []
         
         ### 1) paragraph (split by '\n')
         paragraphs = [t for t in text.split('\n') if len(t) > 0]
@@ -161,7 +167,7 @@ class TextSplitter():
                 continue
 
             segments.append([])
-            key_phrases.append([])
+            keywords.append([])
             for i in range(len(sents)-1):
                 # "Current" and "next" sentences
                 input_ids = self.tokenizer.encode_plus(sents[i],sents[i+1], return_tensors='pt')['input_ids']
@@ -171,7 +177,7 @@ class TextSplitter():
                 
                 ## Update list with this result
                 segments[-1].append(sents[i])
-                key_phrases[-1].extend(self.extract_keywords(sents[i]))
+                keywords[-1].extend(self.extract_keywords(sents[i]))
                 
                 ## Split paragraph
                 ### 2) semantic segment
@@ -179,14 +185,15 @@ class TextSplitter():
                 argmax = softmax.argmax().item()
                 if argmax: # 1 if diff; 0 otherwise
                     segments.append([])
-                    key_phrases.append([])
+                    keywords.append([])
             
             # The last sentence
             segments[-1].append(sents[-1])
-            key_phrases[-1].extend(self.extract_keywords(sents[-1]))
+            keywords[-1].extend(self.extract_keywords(sents[-1]))
 
         segments = [' '.join(sents) for sents in segments]
-        return segments, key_phrases
+        subtitles = [summarize(segment) for segment in segments]
+        return title, segments, keywords, subtitles
     
     def extract_keywords(self, sentence):
         keywords = []
@@ -194,6 +201,9 @@ class TextSplitter():
         for subsent in sentence.split(','):
             tmp = self._extract_keywords_helper(subsent)
             keywords.extend(tmp)
+
+        # Incorporate info from tool
+        keywords.extend(get_keywords(sentence).split('\n'))
 
         # Only 0 ~ 4 keywords for now (for formatting)
         keywords = [w for w in keywords if not w in stop_words]
