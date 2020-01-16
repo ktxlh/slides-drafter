@@ -187,8 +187,8 @@ class TextSplitter():
         
     def _extract_keywords_helper(self, sub_sentence):
         text = sub_sentence
-        tkns = tokenizer.tokenize(text)
-        indexed_tokens = tokenizer.convert_tokens_to_ids(tkns)
+        tkns = self.tokenizer.tokenize(text)
+        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tkns)
         segments_ids = [0] * len(tkns)
         tokens_tensor = torch.tensor([indexed_tokens]).to(self.device)
         segments_tensors = torch.tensor([segments_ids]).to(self.device)

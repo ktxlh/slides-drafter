@@ -50,7 +50,7 @@ sentence = sentences[0]
 s0, s1, s2 = sentences[:3]
 
 for sent in sentences:
-    kw = keywordextract(sent, classifier_token, tokenizer)
+    kw = splitter.extract_keywords(sent)
     print(sent)
     if len(kw) > 0:
         print(">>",kw)
