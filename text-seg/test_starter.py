@@ -35,7 +35,7 @@ tags_vals = ['B', 'I', 'O']
 
 tokenizer = BertTokenizer.from_pretrained(model_dir)
 model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,
-token_classifier = BertForTokenClassification.from_pretrained(tok_model_path, num_labels=len(tag2idx))
+token_classifier = torch.load(tok_model_path)
 splitter = TextSplitter(model_dir) 
 
 ############################################
@@ -57,7 +57,7 @@ for sent in sentences:
 
 
 
-########################
+######################
 # Key: shorter senteces work better
 """
 python keyword-extractor.py --path "model.pt" --sentence "The IOB format (short for inside, outside, beginning) is a common tagging format for tagging tokens in a chunking task in computational linguistics (ex. named-entity recognition)."
