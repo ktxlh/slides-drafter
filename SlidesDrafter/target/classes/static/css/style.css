@@ -1,0 +1,88 @@
+body.sticky-footer .content-wrapper {
+    min-height: calc(100vh - 56px);
+}
+
+body.sticky-footer {
+    margin-bottom: 0px;
+}
+
+.fileupload{
+    width: calc(100% - 2px);
+    min-height: 92px;
+    border-style: dashed;
+    border-width: 1px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+/* Mimic table appearance */
+div.table {
+    display: table;
+    margin-bottom: 0px;
+}
+div.table .file-row {
+    display: table-row;
+}
+div.table .file-row > div {
+
+    display: table-cell;
+    /*border-top: 1px solid #ddd;*/
+    vertical-align: middle;
+    padding: 10px;
+}
+
+#col1{
+    width: 10%;
+}
+
+#col2{
+    width: 30%;
+}
+
+#col3{
+    width: 25%;
+}
+
+#col4{
+    width: 25%;
+    text-align: center;
+}
+
+
+div.table .file-row:nth-child(even) {
+    background: #f9f9f9;
+}
+
+
+
+/* The total progress gets shown by event listeners */
+#total-progress {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+/* Hide the progress bar when finished */
+[id $= previews] .file-row.dz-success .progress {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+/* Hide the delete button initially */
+[id $= previews] .file-row .delete {
+    display: none;
+}
+
+/* Hide the start and cancel buttons and show the delete button */
+
+[id $= previews] .file-row.dz-success .start,
+[id $= previews] .file-row.dz-success .cancel {
+    display: none;
+}
+[id $= previews] .file-row.dz-success .delete {
+    display: block;
+}

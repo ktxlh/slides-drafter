@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<input id="inputtext" type="text" name="filename" value=""/>
+<input id="upload_btn" type="button" value="send text"/>
+<form id="download" method="post" action="/downloadFileAction">
+    <input id="filename" name="filename" value="" type="hidden">
+</form>
+<input id="download_btn" type="button" value="下载文件" onclick="doDownload()"/>
+<script type="text/javascript">
+    function doDownload() {
+        var upl = document.getElementById("download");
+        upl.submit();
+    }
+</script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>

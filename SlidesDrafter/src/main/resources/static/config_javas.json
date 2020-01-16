@@ -1,0 +1,47 @@
+{
+    "api-packages": [
+		"java.sql",
+		"java.net",
+        "java.nio",
+        "java.nio.charset",
+        "java.nio.charset.spi",
+        "java.nio.channels",
+        "java.nio.channels.spi",
+        "java.io",
+        "java.awt.font",
+        "java.security",
+        "java.security.spec",
+        "java.security.interfaces",
+        "java.security.cert",
+        "java.security.acl",
+        "java.util.regex",
+        "java.util.zip",
+        "java.util.concurrent",
+        "java.util.concurrent.locks",
+        "java.util.concurrent.atomic",
+        "java.util.jar",
+        "java.util.logging",
+        "java.prefs",
+        "org.json",
+        "org.w3c.dom",
+        "org.w3c.dom.ls",
+        "org.xml.sax",
+        "org.xml.sax.helper",
+        "org.xml.sax.ext",
+        "org.xmlpull.v1",
+        "org.xmlpull.v1.sax2"
+    ],
+    "api-classes": [
+        "java.lang.Process"
+    ],
+    "api-modules": [
+        "javax",
+        "android"
+    ],
+    "api-exclusive":[
+        "java.io"
+    ],
+    "num-unrolls": 3,
+    "javadoc-type": "full",
+	"max-seqs": 20
+}
