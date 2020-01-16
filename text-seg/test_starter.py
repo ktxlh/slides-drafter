@@ -9,6 +9,7 @@ import re
 import string
 from itertools import combinations
 
+import numpy as np
 from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
