@@ -23,6 +23,8 @@ from transformers import BertTokenizer as traTokenizer
 from transformers import get_linear_schedule_with_warmup
 from utils import remove_non_printable, traverse_json_dir
 
+from text_seg import TextSplitter
+
 # CUDA for PyTorch
 use_cuda = torch.cuda.is_available()
 device = torch.device("cuda:0" if use_cuda else "cpu")
