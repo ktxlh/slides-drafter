@@ -1,7 +1,7 @@
 # Text Splitter
 ## Dependencies
 * default pytorch conda ve provided: conda activate pytorch
-* pip install --user transformers nltk
+* pip install --user transformers nltk pytorch-pretrained-bert
 * In python, run this
 ```
 import nltk

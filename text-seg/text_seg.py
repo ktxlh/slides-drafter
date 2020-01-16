@@ -182,9 +182,7 @@ class TextSplitter():
         keywords = []
         keywords.extend(self._extract_keywords_helper(sentence))
         for subsent in sentence.split(','):
-            print("***", subsent)
             tmp = self._extract_keywords_helper(subsent)
-            print("***>>",tmp)
             keywords.extend(tmp)
         return keywords
         
@@ -206,7 +204,7 @@ class TextSplitter():
         for k, j in enumerate(prediction[0]):
             if j==1 or j==0:
                 keywords.append(self.ppb_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k])
-                print(self.ppb_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
+                #print(self.ppb_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
         return keywords
 
 """
