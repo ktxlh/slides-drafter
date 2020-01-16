@@ -151,7 +151,7 @@ class TextSplitter():
             to a segment, containing 0 or more keywords
         : subtitles: list(str) -- Each str may be "Title" or one key sentence.
         """
-        title = summarize(text)
+        title = summarize(text).split('\n')[0]
         if len(title) == 0:
             title = "Title"
 
@@ -195,15 +195,7 @@ class TextSplitter():
             keywords[-1].extend(self.extract_keywords(sents[-1]))
 
         segments = [' '.join(sents) for sents in segments]
-
-        subtitles = []
-        for segment in segments:
-            s = summarize(segment)
-            if len(s) == 0:
-                subtitles.append("Title")
-            else:
-                subtitles.append(s)
-        
+        subtitles = [summarize(segment).split('\n')[0] for segment in segments]
         return title, segments, keywords, subtitles
     
     def extract_keywords(self, sentence):
