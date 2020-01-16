@@ -58,6 +58,12 @@ for sent in sentences:
 
 
 ########################
-# python keyword-extractor.py --path "model.pt" --sentence "The IOB format (short for inside, outside, beginning) is a common tagging format for tagging tokens in a chunking task in computational linguistics (ex. named-entity recognition)."
+"""
+python keyword-extractor.py --path "model.pt" --sentence "The IOB format (short for inside, outside, beginning) is a common tagging format for tagging tokens in a chunking task in computational linguistics (ex. named-entity recognition)."
 
-# python keyword-extractor.py --path "model.pt" --sentence "Some students space paragraphs, trying to separate points when the process of writing is over."
+python keyword-extractor.py --path "model.pt" --sentence "Some students space paragraphs"
+
+python keyword-extractor.py --path "model.pt" --sentence "trying to separate points when the process of writing is over."
+
+python keyword-extractor.py --path "model.pt" --sentence "Such paragraphs demand a certain knowledge."
+"""
