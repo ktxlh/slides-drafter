@@ -66,7 +66,7 @@ for t in ts:
         print(">>",kw)
     print()
 
-segs, kw = splitter.split(text)
+title, segments, keywords, subtitles = splitter.split(text)
 
 ######################
 # Key: shorter senteces work better
