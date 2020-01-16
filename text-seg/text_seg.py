@@ -217,8 +217,8 @@ class TextSplitter():
         keywords.extend(get_keywords(sentence).split('\n'))
         
         # Remove duplicates
-        for w1 in keywords.copy():
-            for w2 in keywords.copy():
+        for w1 in keywords:
+            for w2 in keywords:
                 if w1 in w2:
                     keywords.remove(w1)
 
