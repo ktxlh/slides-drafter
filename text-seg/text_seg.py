@@ -222,7 +222,7 @@ class TextSplitter():
                     break
 
         # Only 0 ~ 4 keywords for now (for formatting)
-        keywords = [w for w in keywords if not w in stop_words]
+        keywords = [w for w in keywords if not w in stop_words and not w in string.punctuation]
         occurence_count = Counter(keywords)
         keywords = [w for (w,_) in occurence_count.most_common(4)]
         return keywords
