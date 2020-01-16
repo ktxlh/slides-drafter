@@ -12,7 +12,6 @@ $(function(){
 
                 filename=data;
                 $("#filename").val(filename);
-                alert(data);
             }
         });
     });
