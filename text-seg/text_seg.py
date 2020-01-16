@@ -12,8 +12,6 @@ import re
 import string
 from collections import Counter
 from itertools import combinations
-from summa.keywords import keywords as get_keywords
-from summa.summarizer import summarize
 
 import numpy as np
 from nltk.corpus import stopwords
@@ -23,6 +21,8 @@ from tqdm import tqdm, trange
 import torch
 from pytorch_pretrained_bert import BertForTokenClassification
 from pytorch_pretrained_bert import BertTokenizer as pytTokenizer
+from summa.keywords import keywords as get_keywords
+from summa.summarizer import summarize
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
 from transformers import AdamW, BertForSequenceClassification
