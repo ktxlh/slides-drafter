@@ -36,9 +36,9 @@ splitter = TextSplitter(model_dir, token_model_path)
 ```
 segments, keywords = splitter.split(text)
 ```
-#### Example outputs:
+## Example outputs:
 
-* segments
+### segments
 ```
 ['Some students space paragraphs, trying to separate points when the process of writing is over.', 'This is a major mistake. How much easier your writing would become if you looked at 
 it from another angle! It is reasonable to use different types of paragraphs WHILE you are writing.', "In case you follow all the rules, you'll have no difficulty in bringing your mess
@@ -52,7 +52,7 @@ graph, especially if you are an amateur in the subject.', 'These paragraphs expl
 
 ```
 
-* keywords
+### keywords
 ```
 [['writing'], [], ['writing'], [], ['message'], ['browse'], ['descriptive'], ['writing'], [], ['response', 'emotional', 'vision', 'dynamics'], ['grammar'], ['amateur'], ['certain'], ['
 material', 'learning']]
