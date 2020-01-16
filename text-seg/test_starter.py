@@ -37,7 +37,7 @@ tags_vals = ['B', 'I', 'O']
 tokenizer = BertTokenizer.from_pretrained(model_dir)
 model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,
 token_classifier = torch.load(tok_model_path)
-splitter = TextSplitter(model_dir) 
+splitter = TextSplitter(model_dir, tok_model_path) 
 
 ############################################
 
@@ -56,11 +56,17 @@ t2 = "trying to separate points when the process of writing is over."
 ts = [t0,t1,t2]
 
 for sent in sentences:
-    kw = splitter.extract_keywords(sent)
     print(sent)
+    kw = splitter.extract_keywords(sent)
     if len(kw) > 0:
         print(">>",kw)
 
+for t in ts:
+    print(t)
+    kw = splitter.extract_keywords(t)
+    if len(kw) > 0:
+        print(">>",kw)
+    print()
 
 
 ######################

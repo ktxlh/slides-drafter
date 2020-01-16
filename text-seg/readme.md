@@ -17,13 +17,14 @@ text = r"This is the text to be split. Many sentences. Sometimes '\n'."
 
 from text_seg import TextSplitter
 model_dir = "/home/shanglinghsu/ml-camp/wiki-vandalism/mini-json-raw/pregen/models/"
+token_model_path = "~/BERT-Keyword-Extractor/model.pt"
 
 ```
 
 ### Initialize one splitter
 It takes time, so reuse it!
 ```
-splitter = TextSplitter(model_dir) 
+splitter = TextSplitter(model_dir, token_model_path) 
 ```
 
 
