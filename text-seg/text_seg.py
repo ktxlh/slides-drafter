@@ -16,7 +16,7 @@ from nltk.tokenize import sent_tokenize
 from tqdm import tqdm, trange
 
 import torch
-from pytorch_pretrained_bert import BertForTokenClassification, BertTokenizer
+from pytorch_pretrained_bert import BertForTokenClassification
 from torch.utils.data import (DataLoader, RandomSampler, TensorDataset,
                               random_split)
 from transformers import (AdamW, BertForSequenceClassification, BertTokenizer,
@@ -120,7 +120,7 @@ class TextSplitter():
         self.model = BertForSequenceClassification.from_pretrained(model_dir)#, output_attentions=True,'bert-base-cased')
         
         self.token_classifier = torch.load(tok_model_path)
-        self.bpt_tokenizer = BertTokenizer.from_pretrained("bert-based-uncased", do_lower_case=True)
+        self.ppb_tokenizer = pytorch_pretrained_bert.BertTokenizer.from_pretrained("bert-based-uncased", do_lower_case=True)
 
         # CUDA for PyTorch
         use_cuda = torch.cuda.is_available()
@@ -187,8 +187,8 @@ class TextSplitter():
         
     def _extract_keywords_helper(self, sub_sentence):
         text = sub_sentence
-        tkns = self.bpt_tokenizer.tokenize(text)
-        indexed_tokens = self.bpt_tokenizer.convert_tokens_to_ids(tkns)
+        tkns = self.ppb_tokenizer.tokenize(text)
+        indexed_tokens = self.ppb_tokenizer.convert_tokens_to_ids(tkns)
         segments_ids = [0] * len(tkns)
         tokens_tensor = torch.tensor([indexed_tokens]).to(self.device)
         segments_tensors = torch.tensor([segments_ids]).to(self.device)
@@ -202,8 +202,8 @@ class TextSplitter():
         keywords = []
         for k, j in enumerate(prediction[0]):
             if j==1 or j==0:
-                keywords.append(self.bpt_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k])
-                print(self.bpt_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
+                keywords.append(self.ppb_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k])
+                print(self.ppb_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
         return keywords
 
 """

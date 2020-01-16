@@ -80,3 +80,6 @@ python keyword-extractor.py --path "model.pt" --sentence "trying to separate poi
 
 python keyword-extractor.py --path "model.pt" --sentence "Such paragraphs demand a certain knowledge."
 """
+"""
+import test_starter
+"""
