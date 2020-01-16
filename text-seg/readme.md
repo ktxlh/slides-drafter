@@ -39,8 +39,14 @@ splitter = TextSplitter(model_dir, token_model_path)
 
 ### Reuse the same splitter multiple times
 ```
-segments, keywords = splitter.split(text)
+title, segments, keywords, subtitles = splitter.split(text)
 ```
+* text: str -- Normal text input
+* title: str -- The key sentence of the whole text or "Title"
+* segments: list(str) -- Each str is a semantic segment.
+* keywords: list(list(str)) -- Each list corresponds to a segment, containing 0 or more keywords
+* subtitles: list(str) -- Each str may be "Title" or one key sentence.
+
 ## Example outputs:
 
 ### segments
