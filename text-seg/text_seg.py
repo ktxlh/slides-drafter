@@ -168,7 +168,7 @@ class TextSplitter():
                 argmax = softmax.argmax().item()
                 if argmax: # 1 if diff; 0 otherwise
                     segments.append([])
-                    key_phrasws.append([])
+                    key_phrases.append([])
                     segment_counter += 1 
             
             # The last sentence
