@@ -14,7 +14,7 @@ from itertools import combinations
 
 import numpy as np
 from nltk.corpus import stopwords
-from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize, sent_tokenize
 from tqdm import tqdm, trange
 
 import torch
@@ -193,7 +193,15 @@ class TextSplitter():
         
     def _extract_keywords_helper(self, sub_sentence):
         text = sub_sentence
-        tkns = self.ppb_tokenizer.tokenize(text)
+        whole_tokens = word_tokenize(text) # ["I","sleep","."]
+        tkns, pos_words = [],[]
+        for i in range(len(whole_tokens)):
+            subwords = self.ppb_tokenizer.tokenize(word) 
+            pos_words.extend([
+                whole_tokens[i] for j in range(len(subwords))
+            ])
+            tkns.extend(subwords)  # ["sle","##ep"]
+        
         indexed_tokens = self.ppb_tokenizer.convert_tokens_to_ids(tkns)
         segments_ids = [0] * len(tkns)
         tokens_tensor = torch.tensor([indexed_tokens]).to(self.device)
@@ -208,8 +216,8 @@ class TextSplitter():
         keywords = []
         for k, j in enumerate(prediction[0]):
             if j==1 or j==0:
-                keywords.append(self.ppb_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k])
-                #print(self.ppb_tokenizer.convert_ids_to_tokens(tokens_tensor[0].to('cpu').numpy())[k], j)
+                keywords.append(pos_words[k])
+                print(pos_words[k], j)
         return keywords
 
 """
