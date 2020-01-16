@@ -133,7 +133,7 @@ class TextSplitter():
         self.device = torch.device("cuda:0" if use_cuda else "cpu")
 
         #self.texttiling = texttiling.TextTilingTokenizer()
-        
+
     def split(self, text):
         """
         The main API of this code.
@@ -148,7 +148,6 @@ class TextSplitter():
         """
         segments = []
         key_phrases = []
-        segment_counter = 0
         
         ### 1) paragraph (split by '\n')
         paragraphs = [t for t in text.split('\n') if len(t) > 0]
@@ -180,7 +179,6 @@ class TextSplitter():
                 if argmax: # 1 if diff; 0 otherwise
                     segments.append([])
                     key_phrases.append([])
-                    segment_counter += 1 
             
             # The last sentence
             segments[-1].append(sents[-1])
