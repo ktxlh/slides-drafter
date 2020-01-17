@@ -6,6 +6,8 @@ from pptx.dml.color import RGBColor
 from pptx.util import Inches, Pt
 from pptx.enum.text import MSO_VERTICAL_ANCHOR, PP_PARAGRAPH_ALIGNMENT
 import os
+import argparse
+
 
 rules_path = os.path.join(c.res_documents, 'ppt_rules.txt')
 ppt_bg_path = os.path.join(c.res_pictures, '2.jpg')
@@ -180,6 +182,27 @@ def read_rules(prs, filename):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-seg_file", default='test.txt', help='seg_file')
+    parser.add_argument("-title_file", default='test.txt', help='title_file')
+    parser.add_argument('-output_file', default='output.txt', help='output_file')
+    args = parser.parse_args()
+
+    seg_file = args.seg_file
+    title_file = args.title_file
+    seg_text = []
+    title_text = []
+
+    with open(seg_file) as f:
+        for line in f:
+            seg_text.append(line)
+        f.close()
+    
+    with open(title_file) as f:
+        for lien in f:
+            title_text.append(line)
+    
+
     t.is_dir_existed(c.outputs_documents_path)
     ppt_existed(ppt_file_name)
     presentation = Presentation(ppt_file_name)

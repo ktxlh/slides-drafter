@@ -1,0 +1,20 @@
+Machine learning algorithms build a mathematical model based on sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to perform the task.
+ @ml@machine learning@inference
+ @artificial
+ @model@learning algorithms build
+ @vision@conventional@computer@develop
+ @learning@predictions
+ @mathematical@machine@learning@optimization
+ @machine@learning@data@exploratory
+ @machine@business@problems@learning
+ @machine@learning
+ @machine@mitchell provided@tom@learning
+ @alan
+ @thinking
+ @unknown@mining@machine@training
+ @machine@learning@data mining
+ @journals@discovery@research communities@exception
+ @knowledge@known
+ @machine@learning
+ @label@express@classification@loss
+ @learning@fields arises@set

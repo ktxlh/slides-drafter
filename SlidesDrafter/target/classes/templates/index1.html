@@ -1,0 +1,119 @@
+<html lang="zh">
+
+<head>
+
+   
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>SlidesDrafter</title>
+<link href="css/style1.css" type="text/css" rel="stylesheet">
+<script src="http://www.bootstrapmb.com/content/js/jquery.min.js"></script>
+<script src="js/Carousel.js"></script>
+
+</head>
+<style>
+	#download_btn
+	{
+        background-color:black;
+        color:white;
+        margin-left:350px;
+        border-radius:5px;
+        margin-top:20px;
+        height:60px;
+        font-size:20px;
+        font-weight:bold;
+	}
+    #download_btn:disabled
+    {
+        background-color:gray;
+        color:white;
+        margin-left:350px;
+        border-radius:5px;
+        margin-top:20px;
+        height:60px;
+        font-size:20px;
+        font-weight:bold;
+    }
+	body
+	{
+	background-image:url('images/bg11.jpg');
+	background-repeat:no-repeat;
+        background-size: 100%;
+	}
+	h1 {color:white;font-size:50;font-weight:bold;margin-top:80px}
+</style>
+
+<div id="main" style="width:1600px; height:350px;">
+<div id="right" style="float:right ; width:60%; height:100%;">
+	<div class="poster-main">
+        <div class="poster-btn poster-prev-btn"></div>
+        <ul class="poster-list">
+            <li class="poster-item">
+                <a href="#"><img src="images/11.png"></a>
+                
+            </li>
+            <li class="poster-item">
+                <a href="#"><img src="images/score1.png"></a>
+               
+            </li>
+            <li class="poster-item">
+                <a href="#"><img src="images/tfs1.png"></a>
+                
+            </li>
+            <li class="poster-item">
+                <a href="#"><img src="images/bw.png"></a>
+                
+            </li>
+            <li class="poster-item">
+                <a href="#"><img src="images/a5.png"></a>
+                
+            </li>
+        </ul>
+        <div class="poster-btn poster-next-btn"></div>
+		
+    </div>
+	<body>
+		<form id="download" method="post" action="/downloadFileAction">
+			<input id="filename" name="filename" value="" type="hidden">
+		</form>
+		<input id="download_btn" type="button" value="Download" onclick="doDownload()"/>
+	</body>
+</div>
+    <script src="http://www.bootstrapmb.com/content/js/jquery.min.js"></script>
+    <script src="js/Carousel.js"></script>
+	<script>
+
+
+        $(".poster-main").Carousel({
+            "width": 800,
+            "height": 400,
+            "posterWidth": 550,
+            "posterHeight": 400,
+            "scale": 0.85,
+            "speed": 500,
+            "autoPlay": true,
+            "delay": 1500,
+            "verticalAlign": "middle"
+        });
+
+    </script>
+
+<div id="left" style="float:left; width:40%; height:100%;">
+
+	<body>
+	
+	<textarea style="border-radius:9px;width:400px;height:300px;margin-left:100px;margin-top:80px" cols="5" rows="2" id="inputtext" type="text" name="filename" value=""></textarea>
+	<br />
+	<input style="background-color:black;color:white;position:relative; left:150px; top:40px; border-radius:5px;width:90px;font-size:20px;font-weight:bold;height:60px" id="upload_btn" type="button" value="send"/>
+    <input style="background-color:black;color:white;position:relative; left:250px; top:40px; border-radius:5px;width:90px;font-size:20px;font-weight:bold;height:60px" id="random_btn" type="button" value="random"/>
+	<script type="text/javascript">
+		function doDownload() {
+			var upl = document.getElementById("download");
+			upl.submit();
+		}
+	</script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+	</body>
+</div>
+</html>
