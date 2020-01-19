@@ -1,7 +1,7 @@
 # Text to Slides Contents
 1. To split the paragraph semantically into ``segments``.
 2. To extract ``keywords`` of each semantical segment for searching proper images. We trained our model with the code from [this repo](https://github.com/ibatra/BERT-Keyword-Extractor).
-3. To get the key sentences of text as a candidate of the title of each slide (``subtitles``) and the whole slide deck (``title``). We used TextTiling as a tool from [this library](https://github.com/miso-belica/sumy).
+3. To get the key sentences of text as a candidate of the title of each slide (``subtitles``) and the whole slide deck (``title``). We adopted TextRank as a tool from [this library](https://github.com/miso-belica/sumy).
 
 ## Dependencies
 * Used the default pytorch conda provided: ``conda activate pytorch``
