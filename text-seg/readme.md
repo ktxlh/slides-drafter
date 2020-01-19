@@ -1,12 +1,15 @@
-# Semantic Text Spliter
-To get the keywords of a paragraph for searching proper images.
+# Text to Slides Contents
+1. To split the paragraph semantically into ``segments``.
+2. To extract ``keywords`` of each semantical segment for searching proper images. We trained our model with the code from [this repo](https://github.com/ibatra/BERT-Keyword-Extractor).
+3. To get the key sentences of text as a candidate of the title of each slide (``subtitles``) and the whole slide deck (``title``). We used TextTiling as a tool from [this library](https://github.com/miso-belica/sumy).
 
 ## Dependencies
-Use the default pytorch conda ve provided: conda activate pytorch
+* Used the default pytorch conda provided: ``conda activate pytorch``
+* The following should be installed
 ```
 pip install --user transformers nltk pytorch-pretrained-bert summa
 ```
-The following seems to work for linux only. See repo https://github.com/NVIDIA/apex
+* The following seems to work for linux only. See [the original repo](https://github.com/NVIDIA/apex). 
 ```
 git clone https://github.com/NVIDIA/apex
 cd apex
