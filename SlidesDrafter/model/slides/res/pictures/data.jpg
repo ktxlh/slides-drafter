@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://technicalstack.com/xmlrpc.php" />
+<link rel="shortcut icon" href="http://technicalstack.com/wp-content/uploads/2016/02/technicalstack.jpg" /><link rel="apple-touch-icon" href="http://technicalstack.com/wp-content/uploads/2016/02/technicalstack.jpg" /><title>Page not found &#8211; TechnicalStack</title>
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="TechnicalStack &raquo; Feed" href="http://technicalstack.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="TechnicalStack &raquo; Comments Feed" href="http://technicalstack.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/technicalstack.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.13"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='yarppWidgetCss-css'  href='http://technicalstack.com/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css?ver=4.9.13' type='text/css' media='all' />
+<link rel='stylesheet' id='validate-engine-css-css'  href='http://technicalstack.com/wp-content/plugins/wysija-newsletters/css/validationEngine.jquery.css?ver=2.9' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-css'  href='http://technicalstack.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-classic-css'  href='http://technicalstack.com/wp-content/plugins/crayon-syntax-highlighter/themes/classic/classic.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='http://technicalstack.com/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='drawit-css-css'  href='http://technicalstack.com/wp-content/plugins/drawit/css/drawit.min.css?ver=1.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-share-buttons-adder-font-awesome-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.9.13' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://technicalstack.com/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel='stylesheet' id='wordpress-popular-posts-css'  href='http://technicalstack.com/wp-content/plugins/wordpress-popular-posts/style/wpp.css?ver=3.3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='nirvanas-fonts-css'  href='http://technicalstack.com/wp-content/themes/nirvana/fonts/fontfaces.css?ver=1.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='nirvanas-css'  href='http://technicalstack.com/wp-content/themes/nirvana/style.css?ver=1.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dtree.css-css'  href='http://technicalstack.com/wp-content/plugins/wp-dtree-30/wp-dtree.min.css?ver=4.4.3.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://technicalstack.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://technicalstack.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/technicalstack.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var quicktagsL10n = {"closeAllOpenTags":"Close all open tags","closeTags":"close tags","enterURL":"Enter the URL","enterImageURL":"Enter the URL of the image","enterImageDescription":"Enter a description of the image","textdirection":"text direction","toggleTextdirection":"Toggle Editor Text Direction","dfw":"Distraction-free writing mode","strong":"Bold","strongClose":"Close bold tag","em":"Italic","emClose":"Close italic tag","link":"Insert link","blockquote":"Blockquote","blockquoteClose":"Close blockquote tag","del":"Deleted text (strikethrough)","delClose":"Close deleted text tag","ins":"Inserted text","insClose":"Close inserted text tag","image":"Insert image","ul":"Bulleted list","ulClose":"Close bulleted list tag","ol":"Numbered list","olClose":"Close numbered list tag","li":"List item","liClose":"Close list item tag","code":"Code","codeClose":"Close code tag","more":"Insert Read More tag"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://technicalstack.com/wp-includes/js/quicktags.min.js?ver=4.9.13'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var drawitFE = {"mediaupload":"http:\/\/technicalstack.com\/wp-admin\/\/media-upload.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/drawit/js/qt-btn.js?ver=1.1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPdTreeSettings = {"animate":"1","duration":"250","imgurl":"http:\/\/technicalstack.com\/wp-content\/plugins\/wp-dtree-30\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/wp-dtree-30/wp-dtree.min.js?ver=4.4.3.2'></script>
+<link rel='https://api.w.org/' href='http://technicalstack.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://technicalstack.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://technicalstack.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.13" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+<style type="text/css"> #header-container { width: 1300px;} #header-container, #access >.menu, #forbottom, #colophon, #footer-widget-area, #topbar-inner, .ppbox, #pp-afterslider #container, #breadcrumbs-box { max-width: 1300px; } #header-full, #breadcrumbs, #main { max-width: 1300px; margin:0 auto; } #access > .menu > ul { margin-left:0; } #pp-texttop, #pp-textmiddle, #pp-textbottom, #front-columns h2, .presentation-page #content { padding-left:20px !important; padding-right: 20px !important; } @media (max-width: 800px) { #header-container {position: relative !important;} #branding {height: auto !important;}}#container.one-column { } #container.two-columns-right #secondary { width:500px; float:right; } #container.two-columns-right #content { width:710px; float:left; } /*fallback*/ #container.two-columns-right #content { width:calc(100% - 530px); float:left; } #container.two-columns-left #primary { width:500px; float:left; } #container.two-columns-left #content { width:710px; float:right; } /*fallback*/ #container.two-columns-left #content { width:-moz-calc(100% - 530px); float:right; width:-webkit-calc(100% - 530px); width:calc(100% - 530px); } #container.three-columns-right .sidey { width:250px; float:left; } #container.three-columns-right #primary { margin-left:30px; margin-right:30px; } #container.three-columns-right #content { width:680px; float:left; } /*fallback*/ #container.three-columns-right #content { width:-moz-calc(100% - 560px); float:left; width:-webkit-calc(100% - 560px); width:calc(100% - 560px);} #container.three-columns-left .sidey { width:250px; float:left; } #container.three-columns-left #secondary {margin-left:30px; margin-right:30px; } #container.three-columns-left #content { width:680px; float:right;} /*fallback*/ #container.three-columns-left #content { width:-moz-calc(100% - 560px); float:right; width:-webkit-calc(100% - 560px); width:calc(100% - 560px); } #container.three-columns-sided .sidey { width:250px; float:left; } #container.three-columns-sided #secondary { float:right; } #container.three-columns-sided #content { width:680px; float:right; /*fallback*/ width:-moz-calc(100% - 560px); float:right; width:-webkit-calc(100% - 560px); float:right; width:calc(100% - 560px); float:right; margin: 0 280px 0 -1240px; } body { font-family: Helvetica, sans-serif; } #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title { font-family: Ubuntu Condensed; } .widget-title, .widget-title a { line-height: normal; font-family: Oswald Light; } .widget-container, .widget-container a { font-family: inherit; } .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, #comments #reply-title, .nivo-caption h2, #front-text1 h1, #front-text2 h1, h3.column-header-image { font-family: Ubuntu Condensed; } #site-title span a { font-family: Ubuntu; } #access ul li a, #access ul li a span { font-family: Droid Sans; } body { color: #555353; background-color: #f7f8fa } a { color: #074a83; } a:hover,.entry-meta span a:hover, .comments-link a:hover, body.coldisplay2 #front-columns a:active { color: #8aa8ff; } a:active {background-color:#008ED6; color:#FF3c9bedFFFF; } .entry-meta a:hover, .widget-container a:hover, .footer2 a:hover { border-bottom-color: #CCCCCC; } .sticky h2.entry-title a {background-color:#008ED6; color:#FF3c9bedFFFF;} #header { background-color: #FFFFFF; } #site-title span a { color:#777; } #site-description { color:#777; background-color: rgba(255,255,255,0.3); padding-left: 6px; } .socials a:hover .socials-hover { background-color: #Ffff; } .socials-hover { background-color: #338CD0; } /* Main menu top level */ #access a, #nav-toggle span { color: #ffffff; } #access, #nav-toggle, #access ul li {background-color: #193C5B; } #access > .menu > ul > li > a > span { } #access ul li:hover {background-color: #01192d; color:#c6c2ff; } #access ul > li.current_page_item , #access ul > li.current-menu-item , #access ul > li.current_page_ancestor , #access ul > li.current-menu-ancestor { background-color: #264968; } /* Main menu Submenus */ #access ul ul li, #access ul ul { background-color:#01192d; } #access ul ul li a {color:#c6c2ff} #access ul ul li:hover {background:#0f273b} #breadcrumbs {background:#edeef0} #access ul ul li.current_page_item, #access ul ul li.current-menu-item, #access ul ul li.current_page_ancestor , #access ul ul li.current-menu-ancestor { background-color:#0f273b; } #topbar { background-color: #193c5b;border-bottom-color:#052847; } .menu-header-search #searchform {background: #F7F7F7;} .topmenu ul li a, .search-icon:before { color: #f7f8fa; } .topmenu ul li a:hover { color: #fff; background-color: #008ED6; } .search-icon:hover:before { color: #008ED6; } #main { background-color: #FF3c9bedFFFF; } #author-info, #entry-author-info, .page-title { border-color: #CCCCCC; } .page-title-text {border-color: #008ED6; } .page-title span {border-color: #008ED6; } #entry-author-info #author-avatar, #author-info #author-avatar { border-color: #EEEEEE; } .avatar-container:before {background-color:#008ED6;} .sidey .widget-container { color: #555353; background-color: #f7f8fa; } .sidey .widget-title { color: #FFF; background-color: #026582;border-color:#CCCCCC;} .sidey .widget-container a {color:;} .sidey .widget-container a:hover {color:#0042FF;} .widget-title span {border-color:#008ED6;} .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 { color: #0B253B; } .entry-title, .entry-title a { color: #0B253B; } .entry-title a:hover { color: #366d9d; } #content span.entry-format { color: #CCCCCC; } #footer { color: #FFF; background-color: #085687; } #footer2 { color: #FFF; background-color: #0B253B; } #sfooter-full { background-color: #062036; } .footermenu ul li { border-color: #1a344a; } .footermenu ul li:hover { border-color: #2e485e; } #footer a { color: #FFF; } #footer a:hover { color: ; } #footer2 a, .footermenu ul li:after { color: ; } #footer2 a:hover { color: ; } #footer .widget-container { color: #eee; background-color: ; } #footer .widget-title { color: #fff; background-color: ;border-color:#CCCCCC;} a.continue-reading-link { color:#074a83; border-color:#074a83; } a.continue-reading-link:hover { background-color:#008ED6 !important; color:#f7f8fa !important; } #cryout_ajax_more_trigger {border:1px solid #CCCCCC; } #cryout_ajax_more_trigger:hover {background-color:#F7F7F7;} a.continue-reading-link i.icon-right-dir {color:#008ED6} a.continue-reading-link:hover i.icon-right-dir {color:#f7f8fa} .page-link a, .page-link > span > em {border-color:#CCCCCC} .columnmore a {background:#008ED6;color:#F7F7F7} .columnmore a:hover {background:#008ED6;} .file, .button, #respond .form-submit input#submit, input[type=submit], input[type=reset] { background-color: #FF3c9bedFFFF; border-color: #CCCCCC; box-shadow: 0 -10px 10px 0 #F7F7F7 inset; } .file:hover, .button:hover, #respond .form-submit input#submit:hover { background-color: #F7F7F7; } .entry-content tr th, .entry-content thead th { color: #0B253B; } #content tr th { background-color: #008ED6;color:#FF3c9bedFFFF; } #content tr.even { background-color: #F7F7F7; } hr { background-color: #CCCCCC; } input[type="text"], input[type="password"], input[type="email"], input[type="file"], textarea, select, input[type="color"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="month"],input[type="number"],input[type="range"], input[type="search"],input[type="tel"],input[type="time"],input[type="url"],input[type="week"] { /*background-color: #F7F7F7;*/ border-color: #CCCCCC #EEEEEE #EEEEEE #CCCCCC; color: #555353; } input[type="submit"], input[type="reset"] { color: #555353; background-color: #FF3c9bedFFFF; border-color: #CCCCCC; box-shadow: 0 -10px 10px 0 #F7F7F7 inset; } input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, textarea:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="range"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover { background-color: rgba(247,247,247,0.4); } .entry-content code {background-color:#F7F7F7; border-color: rgba(0,142,214,0.1);} .entry-content pre { border-color: #CCCCCC;} abbr, acronym { border-color: #555353; } .comment-meta a { color: #999; } #respond .form-allowed-tags { color: #999; } .reply a{ border-color: #EEEEEE; } .reply a:hover {color: #074a83; } .entry-meta {border-color:#EEEEEE;} .entry-meta .icon-metas:before {color:#426483;} .entry-meta span a, .comments-link a {color:#666;} .entry-meta span a:hover, .comments-link a:hover {color:;} .entry-meta span, .entry-utility span, .footer-tags {color:#999;} .nav-next a:hover, .nav-previous a:hover {background:#074a83;color:#FF3c9bedFFFF;} .pagination { border-color:#ededed;} .pagination a:hover { background: #008ED6;color: #FF3c9bedFFFF ;} h3#comments-title {border-color:#CCCCCC} h3#comments-title span {background: #008ED6;color: #FF3c9bedFFFF ;} .comment-details {border-color:#EEEEEE} #searchform input[type="text"] {color:#999;} #searchform:after {background-color:#008ED6;} #searchform:hover:after {background-color:#008ED6;} #searchsubmit {color:#F7F7F7} li.menu-main-search #searchform #s {background-color:#f7f8fa;} li.menu-main-search #searchsubmit {color:#999;} .caption-accented .wp-caption { background-color:rgba(0,142,214,0.8)); color:#FF3c9bedFFFF} .nirvana-image-one .entry-content img[class*='align'],.nirvana-image-one .entry-summary img[class*='align'], .nirvana-image-two .entry-content img[class*='align'],.nirvana-image-two .entry-summary img[class*='align'] { border-color:#008ED6;} #content p, #content ul, #content ol, #content, .ppbox { text-align:Default ; } #content p, #content ul, #content ol, .widget-container, .widget-container a, table, table td, .ppbox , .navigation, #content dt, #content dd, #content { font-size:16px;line-height:1.2em; word-spacing:Default; letter-spacing:Default; } #content h1.entry-title, #content h2.entry-title { font-size:26px ;} .widget-title, .widget-title a { font-size:20px ;} .widget-container, .widget-container a { font-size:14px ;} #content .entry-content h1, #pp-afterslider h1 { font-size: 26px;} #content .entry-content h2, #pp-afterslider h2 { font-size: 22px;} #content .entry-content h3, #pp-afterslider h3 { font-size: 19px;} #content .entry-content h4, #pp-afterslider h4 { font-size: 16px;} #content .entry-content h5, #pp-afterslider h5 { font-size: 13px;} #content .entry-content h6, #pp-afterslider h6 { font-size: 10px;} #site-title span a { font-size:38px ;} #access ul li a { font-size:15px ;} #access ul ul ul a {font-size:13px;} .nocomments, .nocomments2 {display:none;} .comments-link span { display:none;} #header-container > div { margin:35px 0 0 15px;} #content p, #content ul, #content ol, #content dd, #content pre, #content hr { margin-bottom: 1.0em; } article footer.entry-meta {display:none;} #toTop:hover .icon-back2top:before {color:#008ED6;} #main {margin-top:5px; } #forbottom {padding-left: 0px; padding-right: 0px;} #header-widget-area { width: 33%; } #branding { height:130px; } </style> 
+<style type="text/css">/* Nirvana Custom CSS */</style>
+<link rel="icon" href="http://technicalstack.com/wp-content/uploads/2016/02/technicalstack-150x150.jpg" sizes="32x32" />
+<link rel="icon" href="http://technicalstack.com/wp-content/uploads/2016/02/technicalstack.jpg" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="http://technicalstack.com/wp-content/uploads/2016/02/technicalstack.jpg" />
+<meta name="msapplication-TileImage" content="http://technicalstack.com/wp-content/uploads/2016/02/technicalstack.jpg" />
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('aside');
+document.createElement('footer');
+</script>
+<![endif]-->
+<script type="text/javascript">
+function makeDoubleDelegate(function1, function2) {
+    return function() { if (function1) function1(); if (function2) function2(); }
+}
+function nirvana_onload() {
+ jQuery(".entry-content").fitVids(); };
+window.onload = makeDoubleDelegate(window.onload, nirvana_onload );
+jQuery(document).ready(function(){
+ nirvana_mobilemenu_init(); });
+</script>
+</head>
+<body class="error404 custom-background nirvana-image-none caption-dark nirvana-menu-left">
+
+
+<div id="wrapper" class="hfeed">
+<div id="topbar" ><div id="topbar-inner"> <div class="socials" id="sheader">
+			<a  target="_blank"  href="#"
+			class="socialicons social-Facebook" title="Facebook">
+				<img alt="Facebook" src="http://technicalstack.com/wp-content/themes/nirvana/images/socials/Facebook.png" />
+			</a>
+			<a  href="https://twitter.com/TechnicalStack"
+			class="socialicons social-Twitter" title="Twitter">
+				<img alt="Twitter" src="http://technicalstack.com/wp-content/themes/nirvana/images/socials/Twitter.png" />
+			</a>
+			<a  href="#"
+			class="socialicons social-GooglePlus" title="GooglePlus">
+				<img alt="GooglePlus" src="http://technicalstack.com/wp-content/themes/nirvana/images/socials/GooglePlus.png" />
+			</a></div><nav class="topmenu"><ul id="menu-top-menu" class="menu"><li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://technicalstack.com/about-us/">ABOUT US</a></li>
+<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="http://technicalstack.com/contact-us/">CONTACT US</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://technicalstack.com/advertise/">ADVERTISE</a></li>
+<li class='menu-header-search'>
+							<i class='search-icon'></i>
+							<form action='http://technicalstack.com/' id='searchform' method='get'>
+								<input type='text' name='s' id='s' placeholder='Search...'>
+								<input type='submit' id='searchsubmit' value='&#xe816;' />
+							</form>
+						</li></ul></nav> </div></div>
+
+<div id="header-full">
+	<header id="header">
+		<div id="masthead">
+					<div id="branding" role="banner" >
+				<div id="header-container">
+<div><div id="site-title"><span> <a href="http://technicalstack.com/" title="TechnicalStack" rel="home">TechnicalStack</a> </span></div><div id="site-description" >Stack Of Knowledge</div></div></div>								<div style="clear:both;"></div>
+			</div><!-- #branding -->
+			<a id="nav-toggle"><span>&nbsp;</span></a>
+			<nav id="access" role="navigation">
+				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+<div class="menu"><ul id="prime_nav" class="menu"><li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-14"><a href="http://technicalstack.com/"><span>Home</span></a></li>
+<li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="http://technicalstack.com/java/"><span>JAVA</span></a></li>
+<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17"><a href="http://technicalstack.com/framework/"><span>FRAMEWORK</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-68"><a href="http://technicalstack.com/spring/"><span>SPRING</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="http://technicalstack.com/spring/spring-core/"><span>SPRING CORE</span></a></li>
+		<li id="menu-item-58" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58"><a href="http://technicalstack.com/category/spring/spring-mvc/"><span>Spring MVC</span></a></li>
+		<li id="menu-item-59" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-59"><a href="http://technicalstack.com/category/spring/spring-security/"><span>Spring Security</span></a></li>
+		<li id="menu-item-84" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-84"><a href="http://technicalstack.com/category/spring/spring-batch/"><span>Spring Batch</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-97"><a href="http://technicalstack.com/framework/struts/"><span>STRUTS</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88"><a href="http://technicalstack.com/struts-1/"><span>STRUTS 1.x</span></a></li>
+		<li id="menu-item-215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-215"><a href="http://technicalstack.com/framework/struts/struts-2-x/"><span>STRUTS 2.x</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-256" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-256"><a href="http://technicalstack.com/framework/java-server-faces/"><span>JAVA SERVER FACES</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-277" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-277"><a href="http://technicalstack.com/framework/java-server-faces/java-server-faces-1-x/"><span>JAVA SERVER FACES 1.x</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-271"><a href="http://technicalstack.com/hibernate/"><span>HIBERNATE</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-274"><a href="http://technicalstack.com/hibernate/hibernate-3-x/"><span>HIBERNATE 3.x</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-16"><a href="http://technicalstack.com/design-pattern/"><span>DESIGN PATTERN</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-376"><a href="http://technicalstack.com/framework/creational-design-patterns/"><span>CREATIONAL DESIGN PATTERNS</span></a></li>
+	<li id="menu-item-379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-379"><a href="http://technicalstack.com/framework/structural-design-patterns/"><span>STRUCTURAL DESIGN PATTERNS</span></a></li>
+	<li id="menu-item-384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-384"><a href="http://technicalstack.com/framework/behavioural-design-patterns/"><span>BEHAVIOURAL DESIGN PATTERNS</span></a></li>
+</ul>
+</li>
+<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="http://technicalstack.com/database/"><span>DATABASE</span></a></li>
+<li id="menu-item-1442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1442"><a href="http://technicalstack.com/big-data/"><span>BIG DATA</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-1425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1425"><a href="http://technicalstack.com/hadoop/"><span>HADOOP</span></a></li>
+</ul>
+</li>
+<li id="menu-item-1394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1394"><a href="http://technicalstack.com/miscellaneous/"><span>MISCELLANEOUS</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-1397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1397"><a href="http://technicalstack.com/uml/"><span>UML</span></a></li>
+	<li id="menu-item-2163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2163"><a href="http://technicalstack.com/restful-web-service/"><span>RESTful Web Service</span></a></li>
+</ul>
+</li>
+<li id="menu-item-677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-677"><a href="http://technicalstack.com/question-bank/"><span>QUESTION BANK</span></a></li>
+<li id="menu-item-2942" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2942"><a href="http://technicalstack.com/spring-boot/"><span>SPRING BOOT</span></a></li>
+</ul></div>			</nav><!-- #access -->
+			
+			
+		</div><!-- #masthead -->
+	</header><!-- #header -->
+</div><!-- #header-full -->
+
+<div style="clear:both;height:0;"> </div>
+<div id="breadcrumbs"><div id="breadcrumbs-box"><a href="http://technicalstack.com"><i class="icon-homebread"></i></a><i class="icon-angle-right"></i> <span class="current">Error 404</span></div></div><div id="main">
+		<div id="toTop"><i class="icon-back2top"></i> </div>	<div  id="forbottom" >
+		
+		<div style="clear:both;"> </div>
+	<div id="container" class="three-columns-sided">
+	
+		<div id="content" role="main">
+
+			<div id="post-0" class="post error404 not-found">
+				<h1 class="entry-title">Not Found</h1>
+				<div class="entry-content">
+					<div class="contentsearch">
+					<p>Apologies, but the page you requested could not be found. Perhaps searching will help.</p>
+					 
+<form method="get" id="searchform" action="http://technicalstack.com/">
+<input type="text" value="Search" name="s" id="s"
+	onblur="if (this.value == '') {this.value = 'Search';}"
+	onfocus="if (this.value == 'Search') {this.value = '';}" />
+<input type="submit" id="searchsubmit" value="&#xe816;" />
+</form>					</div>
+				</div><!-- .entry-content -->
+			</div><!-- #post-0 -->
+
+		</div><!-- #content -->
+		<div id="primary" class="widget-area sidey" role="complementary">
+		
+			<ul class="xoxo">
+								<li id="wpdt-categories-widget-3" class="widget-container wpdt-categories"><h3 class="widget-title"><span>Stack                                                               </span></h3><div class="dtree"><span class='oclinks oclinks_cat' id='oclinks_cat1'><a href='javascript:cat1.openAll();' title='open all'>open all</a><span class='oclinks_sep oclinks_sep_cat' id='oclinks_sep_cat1'> | </span><a href='javascript:cat1.closeAll();' title='close all'>close all</a></span>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+try{
+if(document.getElementById && document.getElementById('oclinks_cat1')){document.getElementById('oclinks_cat1').style.display = 'block';}
+var cat1 = new wpdTree('cat1', 'http://technicalstack.com/','0');
+cat1.config.useLines=1;
+cat1.config.useIcons=0;
+cat1.config.closeSameLevel=1;
+cat1.config.folderLinks=0;
+cat1.config.useSelection=0;
+cat1.a(0,'root','','','','','');
+cat1.a(-1,0,'Uncategorized','','category/uncategorized/','','');
+cat1.a(-4,0,'Java','','category/java/','','');
+cat1.a(-5,-4,'Basic Java','','category/java/basic-java/','','');
+cat1.a(-8,-4,'OOPS','OOPS Concepts','category/java/oops/','','');
+cat1.a(-12,0,'Spring','','category/spring/','','');
+cat1.a(-13,-12,'Spring Core','','category/spring/spring-core/','','');
+cat1.a(-14,-12,'Spring MVC','','category/spring/spring-mvc/','','');
+cat1.a(-16,-12,'Spring Security','','category/spring/spring-security/','','');
+cat1.a(-22,-12,'Spring Batch','','category/spring/spring-batch/','','');
+cat1.a(-23,0,'Struts','','category/struts/','','');
+cat1.a(-24,-23,'Struts 1.x','','category/struts/struts-1-x/','','');
+cat1.a(-37,-23,'Struts 2.x','Struts 2','category/struts/struts-struts/','','');
+cat1.a(-47,0,'Database','','category/database/','','');
+cat1.a(-48,-47,'SQL Server','','category/database/sql-server/','','');
+cat1.a(-58,0,'Java Server Faces (JSF)','Java Server Faces','category/java-server-faces/','','');
+cat1.a(-59,-58,'Java Server Faces 1.x','','category/java-server-faces/java-server-faces-1-x/','','');
+cat1.a(-61,0,'Hibernate','','category/hibernate/','','');
+cat1.a(-62,-61,'Hibernate 3.x','','category/hibernate/hibernate-3-x/','','');
+cat1.a(-69,0,'Design Patterns','','category/design-patterns/','','');
+cat1.a(-70,-69,'Creational Design Patterns','','category/design-patterns/creational-design-patterns/','','');
+cat1.a(-77,-4,'Constructors','','category/java/constructors/','','');
+cat1.a(-86,-69,'Structural Design Patterns','','category/design-patterns/structural-design-patterns/','','');
+cat1.a(-94,-69,'Behavioural Design Patterns','','category/design-patterns/behavioural-design-patterns/','','');
+cat1.a(-109,-4,'Exception Handling','','category/java/exception-handling/','','');
+cat1.a(-110,-4,'Thread','','category/java/thread/','','');
+cat1.a(-113,-4,'Collection &amp; Util package','','category/java/collection-util-package/','','');
+cat1.a(-116,0,'Question Bank','','category/question-bank/','','');
+cat1.a(-117,-116,'Java Questions &amp; Answers','','category/question-bank/java-questions-answers/','','');
+cat1.a(-119,-117,'Basic Java Questions','','category/question-bank/java-questions-answers/basic-java-questions/','','');
+cat1.a(-120,-116,'Spring Questions &amp; Answers','','category/question-bank/spring-questions-answers/','','');
+cat1.a(-121,-120,'Spring Core Questions &amp; Answers','','category/question-bank/spring-questions-answers/spring-core-questions-answers/','','');
+cat1.a(-144,-120,'Spring MVC Questions and Answers','','category/question-bank/spring-questions-answers/spring-mvc-questions-and-answers/','','');
+cat1.a(-150,-4,'Concurrency package','','category/java/concurrency-package/','','');
+cat1.a(-173,-116,'SQL SERVER Interview Questions and Answers','','category/question-bank/sql-server-interview-questions-and-answers/','','');
+cat1.a(-191,0,'UML','Unified Modeling Language','category/uml/','','');
+cat1.a(-199,0,'Big Data','','category/big-data/','','');
+cat1.a(-200,-199,'Hadoop','','category/big-data/hadoop/','','');
+cat1.a(-222,-116,'Struts 1x Interview Questions &amp; Answers','','category/question-bank/struts-1x-interview-questions-answers/','','');
+cat1.a(-272,-117,'Threading Questions','','category/question-bank/java-questions-answers/threading-questions/','','');
+cat1.a(-320,0,'Webservice','','category/webservice/','','');
+cat1.a(-321,-320,'RESTful Web Service','','category/webservice/restful-web-service/','','');
+cat1.a(-329,-320,'SOAP Web Service','SOAP Web Services','category/webservice/soap-web-services/','','');
+cat1.a(-344,0,'Diagrams','','category/diagrams/','','');
+cat1.a(-345,-4,'Coding','','category/java/coding/','','');
+cat1.a(-346,0,'FAQ','','category/faq/','','');
+cat1.a(-347,-116,'Linux','','category/question-bank/linux/','','');
+cat1.a(-348,-61,'Hibernate 4.x','','category/hibernate/hibernate-4-x/','','');
+cat1.a(-355,-4,'Java 8','','category/java/java-8/','','');
+cat1.a(-384,-12,'Spring Boot','','category/spring/spring-boot/','','');
+cat1.a(28,-5,'Overview of Java','','overview-of-java/','','');
+cat1.a(39,-5,'Features of Java','','features-of-java/','','');
+cat1.a(47,-8,'Object and Class','','object-and-class/','','');
+cat1.a(61,-13,'Introduction to Spring','','introduction-to-spring/','','');
+cat1.a(63,-13,'Spring Modules','','spring-modules/','','');
+cat1.a(75,-14,'Spring MVC Flow','','spring-mvc-flow/','','');
+cat1.a(75,-346,'Spring MVC Flow','','spring-mvc-flow/','','');
+cat1.a(82,-22,'Spring Batch','','spring-batch-4/','','');
+cat1.a(89,-24,'Introduction to Struts 1.x','','introduction-to-struts-1-x/','','');
+cat1.a(98,-24,'Struts Architecture','','struts_architecture/','','');
+cat1.a(117,-24,'Struts Controller','','struts-controller/','','');
+cat1.a(123,-24,'Struts Action Class','','struts-action-class/','','');
+cat1.a(129,-24,'Struts ActionForm Class','','struts-actionform-class/','','');
+cat1.a(133,-24,'Struts HTML Tags','','struts-html-tags/','','');
+cat1.a(138,-24,'Struts Validator Framework','','struts-validator-framework/','','');
+cat1.a(151,-24,'Custom Validators in STRUTS','','custom-validators-in-struts/','','');
+cat1.a(199,-24,'Struts Tiles Application','','struts-tiles-application/','','');
+cat1.a(201,-24,'Using tiles-defs.xml in Tiles Application','','using-tiles-defs-xml-in-tiles-application/','','');
+cat1.a(207,-37,'Introduction to Struts 2.x','','introduction-to-struts-2-x/','','');
+cat1.a(223,-24,'Struts DispatchAction','','struts-dispatchaction/','','');
+cat1.a(225,-24,'Struts Forward Action','','struts-forward-action/','','');
+cat1.a(227,-24,'Struts IncludeAction','','struts-includeaction/','','');
+cat1.a(230,-24,'Struts LocaleAction','','struts-localeaction/','','');
+cat1.a(232,-24,'StrutsLookupDispatchAction','','strutslookupdispatchaction/','','');
+cat1.a(234,-24,'Struts MappingDispatchAction','','struts-mappingdispatchaction/','','');
+cat1.a(236,-24,'Struts SwitchAction','','struts-switchaction/','','');
+cat1.a(242,-48,'SQL Server Installation','','sql-server-installation/','','');
+cat1.a(245,-48,'Creating altering and dropping a database','','creating-altering-and-dropping-a-database/','','');
+cat1.a(247,-48,'Creating and working with tables','','creating-and-working-with-tables/','','');
+cat1.a(249,-48,'Default constraint','','adding-a-default-constraint/','','');
+cat1.a(252,-48,'Cascading referential integrity constraint','','cascading-referential-integrity-constraint/','','');
+cat1.a(257,-59,'JSF Introduction','','jsf-introduction/','','');
+cat1.a(259,-62,'Hibernate introduction','','hibernate-introduction/','','');
+cat1.a(283,-13,'IOC and Dependency Injection','','ioc-and-dependency-injection/','','');
+cat1.a(323,-48,'Adding a check constraint','','adding-a-check-constraint/','','');
+cat1.a(394,-70,'Factory Pattern','','factory-pattern/','','');
+cat1.a(410,-70,'Abstract Factory Pattern','','abstract-factory-pattern/','','');
+cat1.a(415,-70,'Prototype pattern','','prototype-pattern/','','');
+cat1.a(426,-48,'Identity Column in SQL Server','','identity-column-in-sql-server/','','');
+cat1.a(440,-48,'Unique key constraint','','unique-key-constraint/','','');
+cat1.a(512,-77,'Constructors','','constructors/','','');
+cat1.a(519,-5,'Setting classpath and Running Java Programme','','setting-classpath-and-running-java-programme/','','');
+cat1.a(532,-5,'Architecture of JVM','','architecture-of-jvm/','','');
+cat1.a(537,-5,'Main Method Description','','main-method/','','');
+cat1.a(543,-5,'Access specifiers vs Access modifiers','','access-specifiers-vs-access-modifiers/','','');
+cat1.a(580,-86,'Adapter Pattern','','adapter-pattern/','','');
+cat1.a(582,-86,'Composite Pattern','','composite-pattern/','','');
+cat1.a(584,-86,'Proxy Pattern','','proxy-pattern/','','');
+cat1.a(586,-86,'Flyweight Pattern','','flyweight-pattern/','','');
+cat1.a(588,-86,'Facade Pattern','','facade-pattern/','','');
+cat1.a(590,-86,'Bridge Pattern','','bridge-pattern/','','');
+cat1.a(592,-86,'Decorator Pattern','','decorator-pattern/','','');
+cat1.a(595,-94,'Command Pattern','','command-pattern/','','');
+cat1.a(598,-94,'Mediator Pattern','','mediator-pattern/','','');
+cat1.a(600,-94,'Strategy Pattern','','strategy-pattern/','','');
+cat1.a(602,-94,'Observer Pattern','','observer-pattern/','','');
+cat1.a(604,-94,'Chain of Responsibility Pattern','','chain-of-responsibility-pattern/','','');
+cat1.a(606,-94,'Template Method Pattern','','template-method-pattern/','','');
+cat1.a(608,-94,'State Pattern','','state-pattern/','','');
+cat1.a(610,-94,'Visitor Pattern','','visitor-pattern/','','');
+cat1.a(612,-94,'Interpreter Pattern','','interpreter-pattern/','','');
+cat1.a(614,-94,'Iterator Pattern','','iterator-pattern/','','');
+cat1.a(616,-94,'Memento Pattern','','memento-pattern/','','');
+cat1.a(618,-70,'Builder Pattern','','builder-pattern/','','');
+cat1.a(620,-70,'Singleton Pattern','','singleton-pattern/','','');
+cat1.a(620,-346,'Singleton Pattern','','singleton-pattern/','','');
+cat1.a(628,-113,'Collection','','collection/','','');
+cat1.a(705,-119,'Top 20 Java Basic Interview Questions','','top-20-java-basic-interview-questions/','','');
+cat1.a(708,-121,'Spring Core Interview Questions and Answers','','spring-core-interview-questions-and-answers/','','');
+cat1.a(728,-62,'Hibernate Architecture','','hibernate-architecture/','','');
+cat1.a(740,-62,'Setting Up Hibernate','','setting-up-hibernate/','','');
+cat1.a(743,-62,'Origins of Hibernate and Object-Relational Mapping','','origins-of-hibernate-and-object-relational-mapping/','','');
+cat1.a(747,-62,'Mapping-Configuration Files  and Dialect In Hibernate','','mapping-configuration-and-dialect/','','');
+cat1.a(758,-119,'Interview Questions on OOPS','','interview-questions-on-oops/','','');
+cat1.a(767,-119,'Top Constructor Interview Questions','','top-constructor-interview-questions/','','');
+cat1.a(773,-13,'Spring First Example, Setter Injection With Primitive Values','','spring-first-example-setter-injection-with-primitive-values/','','');
+cat1.a(777,-5,'Garbage collection','','garbage-collection/','','');
+cat1.a(785,-5,'Types Of References In Java','','types-of-references-in-java/','','');
+cat1.a(925,-14,'Spring MVC-View Resolvers','','spring-mvc-view-resolvers/','','');
+cat1.a(934,-14,'Dispatcher Servlet,HandlerMapping &#038; Controller','','dispatcher-servlethandlermapping-controller/','','');
+cat1.a(971,-144,'Spring MVC Questions and Answers','','spring-mvc-interview-questions-and-answers/','','');
+cat1.a(1045,-16,'Spring Security','','spring-security/','','');
+cat1.a(1114,-62,'Hibernate Using Mapping File','','hibernate-using-mapping-file/','','');
+cat1.a(1123,-119,'Top  Java Questions and Answer','','top-java-questions-and-answer/','','');
+cat1.a(1127,-5,'Java static keyword','','java-static-keyword/','','');
+cat1.a(1129,-150,'Java Executor framework','','java-executor-framework-thread-pool/','','');
+cat1.a(1135,-150,'Java Concurrency Utilities Introduction','','java-concurrency-utilities-introduction/','','');
+cat1.a(1137,-150,'BlockingQueue','','blockingqueue/','','');
+cat1.a(1149,-121,'Spring Notes','','spring-notes/','','');
+cat1.a(1151,-1,'Spring JDBC Example','','spring-jdbc-example/','','');
+cat1.a(1153,-13,'Circular Dependency in Spring','','circular-dependency-in-spring/','','');
+cat1.a(1163,-13,'Spring Hibernate Integration Example (Spring 4 &#038; Hibernate 3 )','','spring-hibernate-integration-example-spring-4-hibernate-3/','','');
+cat1.a(1176,-1,'Trade Life Cycle/Securities trade life cycle','','trade-life-cyclesecurities-trade-life-cycle/','','');
+cat1.a(1181,-1,'Investment Banking Concepts','','investment-banking-concepts/','','');
+cat1.a(1185,-1,'SQL Server 2016 New Features','','sql-server-2016-new-features/','','');
+cat1.a(1187,-150,'Locks in Java','','locks-in-java/','','');
+cat1.a(1193,-150,'Read / Write Locks in Java','','read-write-locks-in-java/','','');
+cat1.a(1199,-150,'ReentrantLock Example in Java, Difference between synchronized vs ReentrantLock','','reentrantlock-example-in-java-difference-between-synchronized-vs-reentrantlock/','','');
+cat1.a(1208,-48,'Database Normalization','','database-normalization/','','');
+cat1.a(1218,-48,'SQL Server Data Types','','sql-server-data-types/','','');
+cat1.a(1223,-173,'SQL SERVER – Interview Questions and Answers','','sql-server-interview-questions-and-answers/','','');
+cat1.a(1227,-173,'SQL SERVER – Interview Questions and Answers – Frequently Asked Questions – Day 2 of 31','','sql-server-interview-questions-and-answers-frequently-asked-questions-day-2-of-31/','','');
+cat1.a(1229,-173,'SQL SERVER – Interview Questions and Answers – Frequently Asked Questions – Day 3 of 31','','sql-server-interview-questions-and-answers-frequently-asked-questions-day-3-of-31/','','');
+cat1.a(1234,-48,'SQL Server – JOINs','','sql-server-joins/','','');
+cat1.a(1239,-5,'Java Memory Management','','java-memory-management/','','');
+cat1.a(1315,-150,'ReentrantLock','','reentrantlock/','','');
+cat1.a(1321,-150,'Concurrency vs. Parallelism','','concurrency-vs-parallelism/','','');
+cat1.a(1332,-113,'Fail Fast Vs Fail Safe Iterator','','fail-fast-vs-fail-safe-iterator/','','');
+cat1.a(1345,-5,'Class Loader','','class-loader/','','');
+cat1.a(1356,-62,'Hibernate-Hello World','','hibernate-hello-world/','','');
+cat1.a(1364,-62,'Hibernate Versioning Of Objects','','hibernate-versioning-of-objects/','','');
+cat1.a(1375,-62,'Wrapper And Primitive Types In Hibernate','','wrapper-and-primitive-types-in-hibernate/','','');
+cat1.a(1403,-191,'UML &#8211; Class Diagram','','uml-class-diagram/','','');
+cat1.a(1419,-1,'Flowchart','','flowchart/','','');
+cat1.a(1432,-200,'Apache-Hadoop','','apache-hadoop/','','');
+cat1.a(1436,-1,'Big-Data-Questions','','big-data-questions/','','');
+cat1.a(1443,-200,'Introduction of Hadoop','','introduction-of-hadoop/','','');
+cat1.a(1445,-200,'Hadoop-HDFS','','hadoop-hdfs/','','');
+cat1.a(1462,-62,'Lifecycle-Of-Pojo-Class-Objects','','lifecycle-of-pojo-class-objects/','','');
+cat1.a(1477,-62,'Converting Object From Detached to Persistent state','','converting-object-from-detached-to-persistent-state/','','');
+cat1.a(1481,-62,'Inheritance Mapping In Hibernate','','inheritance-mapping-in-hibernate/','','');
+cat1.a(1482,-62,'Inheritance-Table Per Class Hierarchy','','hibernate-inheritance-table-per-class-hierarchy/','','');
+cat1.a(1507,-62,'Inheritance-Table Per Subclass Hierarchy','','hibernate-inheritance-table-per-subclass-hierarchy/','','');
+cat1.a(1524,-200,'Hadoop MapReduce','','hadoop-mapreduce/','','');
+cat1.a(1531,-62,'Inheritance: Table Per Concrete Class Hierarchy','','inheritance-table-per-concrete-class-hierarchy/','','');
+cat1.a(1551,-62,'Composite Primary Keys In Hibernate','','composite-primary-keys-in-hibernate/','','');
+cat1.a(1556,-62,'Hibernate-generator-element','','hibernate-generator-element/','','');
+cat1.a(1567,-150,'CopyOnWriteArrayList','','copyonwritearraylist/','','');
+cat1.a(1570,-222,'Struts 1.x Interview Questions and Answers -1','','struts-1-x-interview-questions-and-answers-1/','','');
+cat1.a(1576,-119,'Difference between new operator and newInstance()','','difference-between-new-operator-and-newinstance/','','');
+cat1.a(1583,-62,'Using Hibernate generator to generate id incrementally','','using-hibernate-generator-to-generate-id-incrementally/','','');
+cat1.a(1594,-62,'Introduction to Hibernate Query Language','','introduction-to-hibernate-query-language/','','');
+cat1.a(1611,-48,'Advance Joins in SQL Server','','advance-joins-in-sql-server/','','');
+cat1.a(1617,-48,'Self Join in SQL Server','','self-join-in-sql-server/','','');
+cat1.a(1627,-48,'Differnet ways to replace NULL in SQL Server','','differnet-ways-to-replace-null-in-sql-server/','','');
+cat1.a(1663,-48,'Union and Union All','','union-and-union-all/','','');
+cat1.a(1670,-48,'Indexes in SQL Server','','indexes-in-sql-server/','','');
+cat1.a(1680,-62,'Executing HQL Commands','','executing-hql-commands/','','');
+cat1.a(1687,-48,'User Defined Functions','','user-defined-functions/','','');
+cat1.a(1697,-48,'Inline Table Valued Function','','inline-table-valued-function/','','');
+cat1.a(1703,-48,'Multi-Statement Table Valued Function','','multi-statement-table-valued-function/','','');
+cat1.a(1709,-48,'Temporary Tables in SQL Server','','temporary-tables-in-sql-server/','','');
+cat1.a(1723,-48,'Derived Table and Common Table Expressions','','derived-table-and-common-table-expressions/','','');
+cat1.a(1755,-5,'OutOfMemoryError in Java','','outofmemoryerror-in-java/','','');
+cat1.a(1764,-113,'Java Collections &#8211; Queue','','java-collections-queue/','','');
+cat1.a(1768,-113,'Java Collections &#8211; Deque','','java-collections-deque/','','');
+cat1.a(1774,-113,'Java Collections &#8211; Stack','','java-collections-stack/','','');
+cat1.a(1790,-110,'Java Multi-Threading','','java-multithreading/','','');
+cat1.a(1792,-110,'Life Cycle of a Thread','','life-cycle-of-a-thread/','','');
+cat1.a(1792,-344,'Life Cycle of a Thread','','life-cycle-of-a-thread/','','');
+cat1.a(1792,-346,'Life Cycle of a Thread','','life-cycle-of-a-thread/','','');
+cat1.a(1815,-48,'Common Table Expression(CTE)','','common-table-expressioncte/','','');
+cat1.a(1819,-48,'Updatable Common Table Expression (CTE)','','updatable-common-table-expression-cte/','','');
+cat1.a(1830,-48,'Recursive and Nonrecursive CTE (Common Table Expression)','','recursive-and-nonrecursive-cte-common-table-expression/','','');
+cat1.a(1841,-150,'Future and FutureTask','','future-and-futuretask/','','');
+cat1.a(1846,-150,'ExecutorService','','executorservice/','','');
+cat1.a(1854,-5,'Java Version-wise History','','java-version-wise-history/','','');
+cat1.a(1861,-150,'ArrayBlockingQueue','','arrayblockingqueue/','','');
+cat1.a(1863,-150,'DelayQueue','','delayqueue/','','');
+cat1.a(1868,-150,'LinkedBlockingQueue','','linkedblockingqueue/','','');
+cat1.a(1872,-150,'PriorityBlockingQueue','','priorityblockingqueue/','','');
+cat1.a(1875,-150,'SynchronousQueue','','synchronousqueue/','','');
+cat1.a(1877,-150,'Fork and Join','','fork-and-join/','','');
+cat1.a(1881,-272,'Inteview Question and Answer on Threading','','inteview-question-and-answer-on-threading/','','');
+cat1.a(1888,-113,'Producer Consumer Example','','producer-consumer-example/','','');
+cat1.a(1888,-150,'Producer Consumer Example','','producer-consumer-example/','','');
+cat1.a(1893,-150,'Producer Consumer Example using BlockingQueue','','producer-consumer-example-using-blockingqueue/','','');
+cat1.a(1893,-346,'Producer Consumer Example using BlockingQueue','','producer-consumer-example-using-blockingqueue/','','');
+cat1.a(1899,-48,'Table-Valued Parameters','','table-valued-parameters/','','');
+cat1.a(1908,-48,'Stored Procedure Optimization','','stored-procedure-optimization/','','');
+cat1.a(1913,-48,'Processing a SELECT Statement','','processing-a-select-statement/','','');
+cat1.a(1915,-48,'Best Practices for Query Optimization','','best-practices-for-query-optimization/','','');
+cat1.a(1917,-62,'Calling stored procedure in Hibernate','','calling-stored-procedure-in-hibernate/','','');
+cat1.a(1924,-62,'Hibernate Batch Processing','','hibernate-batch-processing/','','');
+cat1.a(1932,-62,'Hibernate Caching','','hibernate-caching/','','');
+cat1.a(1939,-109,'Exception handling in Java','','exception-handling-in-java/','','');
+cat1.a(1945,-173,'Differences between','','differences-between/','','');
+cat1.a(1949,-14,'First MVC Application','','first-mvc-application/','','');
+cat1.a(1956,-14,'First MVC using Annotation','','first-mvc-using-annotation/','','');
+cat1.a(1967,-14,'MultiAction Controller class, @RequestMapping annotation at class level','','multiaction-controller-class-requestmapping-annotation-at-class-level/','','');
+cat1.a(1977,-14,'@PathVariable annotation in Spring MVC','','pathvariable-annotation-in-spring-mvc/','','');
+cat1.a(1989,-14,'Handling an HTML form using @RequestParam annotation','','handling-an-html-form-using-requestparam-annotation/','','');
+cat1.a(2004,-14,'@ModelAttribute Annotation -part 1','','understanding-modelattribute-annotation-part-1/','','');
+cat1.a(2010,-14,'@ModelAttribute Annotation -part 2','','modelattribute-annotation-part-2/','','');
+cat1.a(2016,-14,'Data Binding with Date, Collection (Arraylist), Long','','data-binding-with-date-collection-arraylist-long/','','');
+cat1.a(2021,-14,'Data Binding with a User-Defined Type, BindingResult (concept)','','data-binding-with-a-user-defined-type-bindingresult-features/','','');
+cat1.a(2034,-14,'@InitBinder annotation, WebDataBinder, CustomDateEditor','','initbinder-annotation-webdatabinder-customdateeditor/','','');
+cat1.a(2044,-14,'Custom Property Editor','','custom-property-editor/','','');
+cat1.a(2046,-14,'Form Validation &#8211; part 1 ( using JSR 303_349 annotations )','','form-validations-part1-using-jsr-303_349-annotations/','','');
+cat1.a(2061,-14,'Form Validation &#8211; part 2 (customizing error messages using Spring MessageSource)','','form-validation-part-2-customizing-error-messages-using-spring-messagesource/','','');
+cat1.a(2070,-14,'Form Validation &#8211; part 3 (more on Spring MessageSource concept)','','form-validation-part-3-more-on-spring-messagesource-concept/','','');
+cat1.a(2077,-14,'Form Validation &#8211; part 4 (using annotation @Pattern, @Past, @Max etc)','','form-validation-part-4-using-annotation-pattern-past-max-etc/','','');
+cat1.a(2086,-14,'Form Validation &#8211; part 5 (writing a custom Form Validation annotation)','','form-validation-part-5-writing-a-custom-form-validation-annotation/','','');
+cat1.a(2094,-14,'Form Validation &#8211; part 6 (Custom Form Validation Annotation with Parameters)','','form-validation-part-6-custom-form-validation-annotation-with-parameters/','','');
+cat1.a(2101,-14,'Interceptors &#8211; part 1','','interceptors-part-1/','','');
+cat1.a(2112,-14,'Exception Handling &#8211; part 1','','exception-handling-part-1/','','');
+cat1.a(2127,-14,'Exception Handling &#8211; part 2 &#8211; Globally','','exception-handling-part-2-globally/','','');
+cat1.a(2136,-173,'Sql server important queries','','sql-server-important-queries/','','');
+cat1.a(2150,-5,'Call by Value vs Call by Reference','','call-by-value-vs-call-by-reference/','','');
+cat1.a(2160,-321,'RESTful Web Service Introduction','','restful-web-service-introduction/','','');
+cat1.a(2165,-321,'Developing RESTful API&#8217;s with JAX-RS','','developing-restful-apis-with-jax-rs/','','');
+cat1.a(2171,-321,'Designing RESTful URI','','designing-restful-uri/','','');
+cat1.a(2174,-321,'Type of Resource URI&#8217;s','','type-of-resource-uris/','','');
+cat1.a(2181,-5,'Comparble and Comparator Interface','','comparble-and-comparator-interface/','','');
+cat1.a(2185,-329,'SOAP Web Services 01 &#8211; Introduction To Web Services','','soap-web-services-01-introduction-to-web-services/','','');
+cat1.a(2191,-329,'SOAP Web Services 02 &#8211; Terminology','','soap-web-services-02-terminology/','','');
+cat1.a(2193,-329,'SOAP Web Services 03 &#8211; Writing a Web service Client_ Stub generation','','soap-web-services-03-writing-a-web-service-client_-stub-generation/','','');
+cat1.a(2209,-1,'JAXB &#8211; Java Architecture for XML Binding','','jaxb-java-architecture-for-xml-binding/','','');
+cat1.a(2223,-1,'Java Reflection','','java-reflection/','','');
+cat1.a(2231,-1,'Java Reflection &#8211; Private Fields and Methods','','java-reflection-private-fields-and-methods/','','');
+cat1.a(2255,-13,'Dependency Injection explained','','dependency-injection-explained/','','');
+cat1.a(2264,-13,'Spring Core &#8211; Setup','','spring-core-setup/','','');
+cat1.a(2266,-13,'Spring Bean Factory','','spring-bean-factory/','','');
+cat1.a(2286,-13,'Writing Code using Bean Factory','','writing-code-using-bean-factory/','','');
+cat1.a(2292,-13,'ApplicationContext and Property Initiallization','','applicationcontext-and-property-initiallization/','','');
+cat1.a(2306,-13,'Constructor Injection','','constructor-injection/','','');
+cat1.a(2317,-272,'Interview Question and Answer on Threading-2','','interview-question-and-answer-on-threading-2/','','');
+cat1.a(2354,-1,'Using JDBC without Spring','','using-jdbc-without-spring/','','');
+cat1.a(2370,-344,'Exception-Hierarchy','','exceptionhierarchy/','','');
+cat1.a(2370,-346,'Exception-Hierarchy','','exceptionhierarchy/','','');
+cat1.a(2377,-1,'Collection-Hierarchy','','collection-hierarchy/','','');
+cat1.a(2377,-344,'Collection-Hierarchy','','collection-hierarchy/','','');
+cat1.a(2377,-346,'Collection-Hierarchy','','collection-hierarchy/','','');
+cat1.a(2383,-345,'Immutable-Class','','immutable-class/','','');
+cat1.a(2383,-346,'Immutable-Class','','immutable-class/','','');
+cat1.a(2396,-347,'FAQ-Linux Commands -1','','faq-linux-commands/','','');
+cat1.a(2405,-347,'FAQ-Linux Commands -2','','faq-linux-command-2/','','');
+cat1.a(2423,-121,'Spring-Interview-Preparation','','spring-interview-preparation/','','');
+cat1.a(2423,-346,'Spring-Interview-Preparation','','spring-interview-preparation/','','');
+cat1.a(2431,-346,'Junit interview questions','','junit-interview-questions/','','');
+cat1.a(2436,-348,'Hibernate Setup for Eclipse','','hibernate-setup-for-eclipse/','','');
+cat1.a(2438,-348,'Writing Model Class and Saving Object','','writing-model-class-and-saving-object/','','');
+cat1.a(2442,-348,'Importance of hbm2ddl and show_sql','','importance-of-hbm2ddl-and-show_sql/','','');
+cat1.a(2444,-348,'Hibernate Name Annotation','','name-annotation/','','');
+cat1.a(2457,-348,'Useful Annotation for Model Class','','useful-annotation-for-model-class/','','');
+cat1.a(2459,-348,'Retrieving Objects using session.get()','','retrieving-objects-using-session-get/','','');
+cat1.a(2465,-344,'Map Hierarchy','','map-hierarchy/','','');
+cat1.a(2465,-346,'Map Hierarchy','','map-hierarchy/','','');
+cat1.a(2472,-346,'Design Pattern Compilation','','design-pattern-compilation/','','');
+cat1.a(2498,-150,'ConcurrentHashMap','','concurrenthashmap/','','');
+cat1.a(2523,-110,'Race condition in Java multi-threading','','race-condition-in-java-multi-threading/','','');
+cat1.a(2523,-272,'Race condition in Java multi-threading','','race-condition-in-java-multi-threading/','','');
+cat1.a(2523,-346,'Race condition in Java multi-threading','','race-condition-in-java-multi-threading/','','');
+cat1.a(2564,-119,'Java Memory and Performance Interview Questions','','java-memory-and-performance-interview-questions/','','');
+cat1.a(2564,-346,'Java Memory and Performance Interview Questions','','java-memory-and-performance-interview-questions/','','');
+cat1.a(2579,-346,'Hibernate-Interview-Preparation','','hibernate-interview-preparation/','','');
+cat1.a(2605,-121,'Bean lifecycle and CallBack Methods in Spring','','bean-lifecycle-and-callback-methods-in-spring/','','');
+cat1.a(2605,-346,'Bean lifecycle and CallBack Methods in Spring','','bean-lifecycle-and-callback-methods-in-spring/','','');
+cat1.a(2646,-1,'Lambda Expressions Examples','','lambda-expressions-examples/','','');
+cat1.a(2679,-346,'Evaluation','','evaluation/','','');
+cat1.a(2683,-346,'RESTful Webservice Interview Questions','','restful-webservice-interview-questions/','','');
+cat1.a(2702,-348,'Hibernate-Primary Keys','','hibernate-primary-keys/','','');
+cat1.a(2723,-348,'Hibernate-Value Types and Embedding Objects','','hibernate-value-types-and-embedding-objects/','','');
+cat1.a(2727,-348,'Hibernate-Working with Collection-part 1 [@ElementCollection,@JoinTable,@JoinColumn]','','hibernate-working-with-collection/','','');
+cat1.a(2748,-348,'Hibernate-Working with Collection-part 2 [adding primary key]','','hibernate-working-with-collection-part-2-adding-primary-key/','','');
+cat1.a(2762,-348,'Proxy Objects,Eager and Lazy Fetch Types','','proxy-objectseager-and-lazy-fetch-types/','','');
+cat1.a(2832,-110,'Thread Local','','thread-local/','','');
+cat1.a(2848,-113,'Collection Interview Questions','','collection-interview-questions/','','');
+cat1.a(2850,-4,'Serialization and Deserialization in java','','serialization-and-deserialization-in-java/','','');
+cat1.a(2878,-272,'Multithreading Interview Question-1','','multithreading-interview-question-1/','','');
+cat1.a(2881,-355,'Java 8 Features','','java-8-features/','','');
+cat1.a(2883,-355,'Functional Interface','','functional-interface/','','');
+cat1.a(2889,-355,'Lamda Expression','','lamda-expression/','','');
+cat1.a(2894,-355,'Lamda_AddExample','','lamda_addexample/','','');
+cat1.a(2896,-355,'Lamda_SquareExample','','lamda_squareexample/','','');
+cat1.a(2905,-355,'Default Method','','default-method/','','');
+cat1.a(2912,-320,'Microservices','','microservices/','','');
+cat1.a(2933,-62,'Joins In Hibernate','','joins-in-hibernate/','','');
+cat1.a(2936,-62,'Fetching strategies in Hibernate','','fetching-strategies-in-hibernate/','','');
+cat1.a(2936,-348,'Fetching strategies in Hibernate','','fetching-strategies-in-hibernate/','','');
+cat1.a(2945,-384,'Intoduction to Spring Boot','','intoduction-to-spring-boot/','','');
+cat1.a(2950,-1,'Spring Security Interview Questions','','spring-security-interview-questions/','','');
+cat1.a(2953,-144,'Enable Spring Security','','enable-spring-security/','','');
+cat1.a(2961,-1,'Retrieve the user details in Spring Security','','retrieve-the-user-details-in-spring-security/','','');
+cat1.a(2963,-16,'Spring security filter chain','','spring-security-filter-chain/','','');
+document.write(cat1);
+}catch(e){} /* ]]> */
+</script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+try{
+/*WP-dTree: cat1 request was "'wp-content\/uploads\/2016\/06\/big-data.jpg'" Couldn't find it.*/
+}catch(e){} /* ]]> */
+</script>
+</div></li><li id="wysija-2" class="widget-container widget_wysija"><h3 class="widget-title"><span>Subscription</span></h3><div class="widget_wysija_cont"><div id="msg-form-wysija-2" class="wysija-msg ajax"></div><form id="form-wysija-2" method="post" action="#wysija" class="widget_wysija">
+<p class="wysija-paragraph">
+    <label>Email <span class="wysija-required">*</span></label>
+    
+    	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="Email"  value="" />
+    
+    
+    
+    <span class="abs-req">
+        <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="" />
+    </span>
+    
+</p>
+
+<input class="wysija-submit wysija-submit-field" type="submit" value="Subscribe!" />
+
+    <input type="hidden" name="form_id" value="1" />
+    <input type="hidden" name="action" value="save" />
+    <input type="hidden" name="controller" value="subscribers" />
+    <input type="hidden" value="1" name="wysija-page" />
+
+    
+        <input type="hidden" name="wysija[user_list][list_ids]" value="1" />
+    
+ </form></div></li>		<li id="recent-posts-3" class="widget-container widget_recent_entries">		<h3 class="widget-title"><span>Recent Posts</span></h3>		<ul>
+											<li>
+					<a href="http://technicalstack.com/spring-security-filter-chain/">Spring security filter chain</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/retrieve-the-user-details-in-spring-security/">Retrieve the user details in Spring Security</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/enable-spring-security/">Enable Spring Security</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/spring-security-interview-questions/">Spring Security Interview Questions</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/intoduction-to-spring-boot/">Intoduction to Spring Boot</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/fetching-strategies-in-hibernate/">Fetching strategies in Hibernate</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/joins-in-hibernate/">Joins In Hibernate</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/microservices/">Microservices</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/default-method/">Default Method</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/lamda_squareexample/">Lamda_SquareExample</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/lamda_addexample/">Lamda_AddExample</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/lamda-expression/">Lamda Expression</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/functional-interface/">Functional Interface</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/java-8-features/">Java 8 Features</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/multithreading-interview-question-1/">Multithreading Interview Question-1</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/serialization-and-deserialization-in-java/">Serialization and Deserialization in java</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/collection-interview-questions/">Collection Interview Questions</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/thread-local/">Thread Local</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/proxy-objectseager-and-lazy-fetch-types/">Proxy Objects,Eager and Lazy Fetch Types</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/hibernate-working-with-collection-part-2-adding-primary-key/">Hibernate-Working with Collection-part 2 [adding primary key]</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/hibernate-working-with-collection/">Hibernate-Working with Collection-part 1 [@ElementCollection,@JoinTable,@JoinColumn]</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/hibernate-value-types-and-embedding-objects/">Hibernate-Value Types and Embedding Objects</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/hibernate-primary-keys/">Hibernate-Primary Keys</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/restful-webservice-interview-questions/">RESTful Webservice Interview Questions</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/evaluation/">Evaluation</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/lambda-expressions-examples/">Lambda Expressions Examples</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/bean-lifecycle-and-callback-methods-in-spring/">Bean lifecycle and CallBack Methods in Spring</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/hibernate-interview-preparation/">Hibernate-Interview-Preparation</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/java-memory-and-performance-interview-questions/">Java Memory and Performance Interview Questions</a>
+									</li>
+											<li>
+					<a href="http://technicalstack.com/race-condition-in-java-multi-threading/">Race condition in Java multi-threading</a>
+									</li>
+					</ul>
+		</li>			</ul>
+
+			
+		</div>
+
+		<div id="secondary" class="widget-area sidey" role="complementary">
+		
+			<ul class="xoxo">
+								<li id="text-2" class="widget-container widget_text">			<div class="textwidget"><p><script type="text/javascript">amzn_assoc_ad_type ="responsive_search_widget"; amzn_assoc_tracking_id ="technicalstac-21"; amzn_assoc_marketplace ="amazon"; amzn_assoc_region ="IN"; amzn_assoc_placement =""; amzn_assoc_search_type = "search_widget";amzn_assoc_width ="auto"; amzn_assoc_height ="auto"; amzn_assoc_default_search_category =""; amzn_assoc_default_search_key ="";amzn_assoc_theme ="light"; amzn_assoc_bg_color ="FFFFFF"; </script><script src="//z-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&#038;Operation=GetScript&#038;ID=OneJS&#038;WS=1&#038;Marketplace=IN"></script><br />
+<iframe style="width:100%; height: 240px;" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=tf_til&amp;ad_type=product_link&amp;tracking_id=technicalstac-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B01NAKU37U&amp;asins=B01NAKU37U&amp;linkId=34ef37b0f4b6ef77902d79cb465a4c26&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">&lt;br /&gt;<br />
+</iframe></p>
+</div>
+		</li><li id="text-3" class="widget-container widget_text">			<div class="textwidget"><p><iframe style="width:100%;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&#038;OneJS=1&#038;Operation=GetAdHtml&#038;MarketPlace=IN&#038;source=ac&#038;ref=tf_til&#038;ad_type=product_link&#038;tracking_id=technicalstac-21&#038;marketplace=amazon&#038;region=IN&#038;placement=B008YD57OO&#038;asins=B008YD57OO&#038;linkId=8b80e1584edfaf1ee74cb6c91c565787&#038;show_border=true&#038;link_opens_in_new_window=true&#038;price_color=333333&#038;title_color=0066c0&#038;bg_color=ffffff"><br />
+</iframe></p>
+</div>
+		</li><li class="widget-container techn-widget"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=tf_til&ad_type=product_link&tracking_id=technicalstac-21&marketplace=amazon&region=IN&placement=B00ZTSOJSM&asins=B00ZTSOJSM&linkId=7ec7c102e0b63166cf8cc2e290a78f44&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+    </iframe>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=tf_til&ad_type=product_link&tracking_id=technicalstac-21&marketplace=amazon&region=IN&placement=B06ZY87N76&asins=B06ZY87N76&linkId=7e80262d63ccd7f209dea3951accf1b5&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+    </iframe>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=tf_til&ad_type=product_link&tracking_id=technicalstac-21&marketplace=amazon&region=IN&placement=B06XY98VPT&asins=B06XY98VPT&linkId=cfae1243c47d727615850ee9890c46cc&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+    </iframe></li>			</ul>
+
+			
+		</div>
+	</div><!-- #container -->
+	<div style="clear:both;"></div>
+	</div> <!-- #forbottom -->
+
+
+	<footer id="footer" role="contentinfo">
+		<div id="colophon">
+		
+			
+
+			<div id="footer-widget-area"  role="complementary"  class="footerone" >
+
+				<div id="first" class="widget-area">
+					<ul class="xoxo">
+						<li id="wpdt-categories-widget-15" class="widget-container wpdt-categories"><h3 class="widget-title"><span>Categories</span></h3><div class="dtree"><span class='oclinks oclinks_cat' id='oclinks_cat2'><a href='javascript:cat2.openAll();' title='open all'>open all</a><span class='oclinks_sep oclinks_sep_cat' id='oclinks_sep_cat2'> | </span><a href='javascript:cat2.closeAll();' title='close all'>close all</a></span>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+try{
+if(document.getElementById && document.getElementById('oclinks_cat2')){document.getElementById('oclinks_cat2').style.display = 'block';}
+var cat2 = new wpdTree('cat2', 'http://technicalstack.com/','0');
+cat2.config.useLines=1;
+cat2.config.useIcons=0;
+cat2.config.closeSameLevel=1;
+cat2.config.folderLinks=0;
+cat2.config.useSelection=0;
+cat2.a(0,'root','','','','','');
+cat2.a(-5,-4,'Basic Java','','category/java/basic-java/','','');
+cat2.a(-119,-117,'Basic Java Questions','','category/question-bank/java-questions-answers/basic-java-questions/','','');
+cat2.a(-94,-69,'Behavioural Design Patterns','','category/design-patterns/behavioural-design-patterns/','','');
+cat2.a(-199,0,'Big Data','','category/big-data/','','');
+cat2.a(-345,-4,'Coding','','category/java/coding/','','');
+cat2.a(-113,-4,'Collection &amp; Util package','','category/java/collection-util-package/','','');
+cat2.a(-150,-4,'Concurrency package','','category/java/concurrency-package/','','');
+cat2.a(-77,-4,'Constructors','','category/java/constructors/','','');
+cat2.a(-70,-69,'Creational Design Patterns','','category/design-patterns/creational-design-patterns/','','');
+cat2.a(-47,0,'Database','','category/database/','','');
+cat2.a(-69,0,'Design Patterns','','category/design-patterns/','','');
+cat2.a(-344,0,'Diagrams','','category/diagrams/','','');
+cat2.a(-109,-4,'Exception Handling','','category/java/exception-handling/','','');
+cat2.a(-346,0,'FAQ','','category/faq/','','');
+cat2.a(-200,-199,'Hadoop','','category/big-data/hadoop/','','');
+cat2.a(-61,0,'Hibernate','','category/hibernate/','','');
+cat2.a(-62,-61,'Hibernate 3.x','','category/hibernate/hibernate-3-x/','','');
+cat2.a(-348,-61,'Hibernate 4.x','','category/hibernate/hibernate-4-x/','','');
+cat2.a(-4,0,'Java','','category/java/','','');
+cat2.a(-355,-4,'Java 8','','category/java/java-8/','','');
+cat2.a(-117,-116,'Java Questions &amp; Answers','','category/question-bank/java-questions-answers/','','');
+cat2.a(-58,0,'Java Server Faces (JSF)','Java Server Faces','category/java-server-faces/','','');
+cat2.a(-59,-58,'Java Server Faces 1.x','','category/java-server-faces/java-server-faces-1-x/','','');
+cat2.a(-347,-116,'Linux','','category/question-bank/linux/','','');
+cat2.a(-8,-4,'OOPS','OOPS Concepts','category/java/oops/','','');
+cat2.a(-116,0,'Question Bank','','category/question-bank/','','');
+cat2.a(-321,-320,'RESTful Web Service','','category/webservice/restful-web-service/','','');
+cat2.a(-329,-320,'SOAP Web Service','SOAP Web Services','category/webservice/soap-web-services/','','');
+cat2.a(-12,0,'Spring','','category/spring/','','');
+cat2.a(-22,-12,'Spring Batch','','category/spring/spring-batch/','','');
+cat2.a(-384,-12,'Spring Boot','','category/spring/spring-boot/','','');
+cat2.a(-13,-12,'Spring Core','','category/spring/spring-core/','','');
+cat2.a(-121,-120,'Spring Core Questions &amp; Answers','','category/question-bank/spring-questions-answers/spring-core-questions-answers/','','');
+cat2.a(-14,-12,'Spring MVC','','category/spring/spring-mvc/','','');
+cat2.a(-144,-120,'Spring MVC Questions and Answers','','category/question-bank/spring-questions-answers/spring-mvc-questions-and-answers/','','');
+cat2.a(-120,-116,'Spring Questions &amp; Answers','','category/question-bank/spring-questions-answers/','','');
+cat2.a(-16,-12,'Spring Security','','category/spring/spring-security/','','');
+cat2.a(-48,-47,'SQL Server','','category/database/sql-server/','','');
+cat2.a(-173,-116,'SQL SERVER Interview Questions and Answers','','category/question-bank/sql-server-interview-questions-and-answers/','','');
+cat2.a(-86,-69,'Structural Design Patterns','','category/design-patterns/structural-design-patterns/','','');
+cat2.a(-23,0,'Struts','','category/struts/','','');
+cat2.a(-24,-23,'Struts 1.x','','category/struts/struts-1-x/','','');
+cat2.a(-222,-116,'Struts 1x Interview Questions &amp; Answers','','category/question-bank/struts-1x-interview-questions-answers/','','');
+cat2.a(-37,-23,'Struts 2.x','Struts 2','category/struts/struts-struts/','','');
+cat2.a(-110,-4,'Thread','','category/java/thread/','','');
+cat2.a(-272,-117,'Threading Questions','','category/question-bank/java-questions-answers/threading-questions/','','');
+cat2.a(-191,0,'UML','Unified Modeling Language','category/uml/','','');
+cat2.a(-1,0,'Uncategorized','','category/uncategorized/','','');
+cat2.a(-320,0,'Webservice','','category/webservice/','','');
+cat2.a(2963,-16,'Spring security filter chain','','spring-security-filter-chain/','','');
+cat2.a(2961,-1,'Retrieve the user details in Spring Security','','retrieve-the-user-details-in-spring-security/','','');
+cat2.a(2953,-144,'Enable Spring Security','','enable-spring-security/','','');
+cat2.a(2950,-1,'Spring Security Interview Questions','','spring-security-interview-questions/','','');
+cat2.a(2945,-384,'Intoduction to Spring Boot','','intoduction-to-spring-boot/','','');
+cat2.a(2936,-62,'Fetching strategies in Hibernate','','fetching-strategies-in-hibernate/','','');
+cat2.a(2936,-348,'Fetching strategies in Hibernate','','fetching-strategies-in-hibernate/','','');
+cat2.a(2933,-62,'Joins In Hibernate','','joins-in-hibernate/','','');
+cat2.a(2912,-320,'Microservices','','microservices/','','');
+cat2.a(2905,-355,'Default Method','','default-method/','','');
+cat2.a(2896,-355,'Lamda_SquareExample','','lamda_squareexample/','','');
+cat2.a(2894,-355,'Lamda_AddExample','','lamda_addexample/','','');
+cat2.a(2889,-355,'Lamda Expression','','lamda-expression/','','');
+cat2.a(2883,-355,'Functional Interface','','functional-interface/','','');
+cat2.a(2881,-355,'Java 8 Features','','java-8-features/','','');
+cat2.a(2878,-272,'Multithreading Interview Question-1','','multithreading-interview-question-1/','','');
+cat2.a(2850,-4,'Serialization and Deserialization in java','','serialization-and-deserialization-in-java/','','');
+cat2.a(2848,-113,'Collection Interview Questions','','collection-interview-questions/','','');
+cat2.a(2832,-110,'Thread Local','','thread-local/','','');
+cat2.a(2762,-348,'Proxy Objects,Eager and Lazy Fetch Types','','proxy-objectseager-and-lazy-fetch-types/','','');
+cat2.a(2748,-348,'Hibernate-Working with Collection-part 2 [adding primary key]','','hibernate-working-with-collection-part-2-adding-primary-key/','','');
+cat2.a(2727,-348,'Hibernate-Working with Collection-part 1 [@ElementCollection,@JoinTable,@JoinColumn]','','hibernate-working-with-collection/','','');
+cat2.a(2723,-348,'Hibernate-Value Types and Embedding Objects','','hibernate-value-types-and-embedding-objects/','','');
+cat2.a(2702,-348,'Hibernate-Primary Keys','','hibernate-primary-keys/','','');
+cat2.a(2683,-346,'RESTful Webservice Interview Questions','','restful-webservice-interview-questions/','','');
+cat2.a(2679,-346,'Evaluation','','evaluation/','','');
+cat2.a(2646,-1,'Lambda Expressions Examples','','lambda-expressions-examples/','','');
+cat2.a(2605,-121,'Bean lifecycle and CallBack Methods in Spring','','bean-lifecycle-and-callback-methods-in-spring/','','');
+cat2.a(2605,-346,'Bean lifecycle and CallBack Methods in Spring','','bean-lifecycle-and-callback-methods-in-spring/','','');
+cat2.a(2579,-346,'Hibernate-Interview-Preparation','','hibernate-interview-preparation/','','');
+cat2.a(2564,-119,'Java Memory and Performance Interview Questions','','java-memory-and-performance-interview-questions/','','');
+cat2.a(2564,-346,'Java Memory and Performance Interview Questions','','java-memory-and-performance-interview-questions/','','');
+cat2.a(2523,-110,'Race condition in Java multi-threading','','race-condition-in-java-multi-threading/','','');
+cat2.a(2523,-272,'Race condition in Java multi-threading','','race-condition-in-java-multi-threading/','','');
+cat2.a(2523,-346,'Race condition in Java multi-threading','','race-condition-in-java-multi-threading/','','');
+cat2.a(2498,-150,'ConcurrentHashMap','','concurrenthashmap/','','');
+cat2.a(2472,-346,'Design Pattern Compilation','','design-pattern-compilation/','','');
+cat2.a(2465,-344,'Map Hierarchy','','map-hierarchy/','','');
+cat2.a(2465,-346,'Map Hierarchy','','map-hierarchy/','','');
+cat2.a(2459,-348,'Retrieving Objects using session.get()','','retrieving-objects-using-session-get/','','');
+cat2.a(2457,-348,'Useful Annotation for Model Class','','useful-annotation-for-model-class/','','');
+cat2.a(2444,-348,'Hibernate Name Annotation','','name-annotation/','','');
+cat2.a(2442,-348,'Importance of hbm2ddl and show_sql','','importance-of-hbm2ddl-and-show_sql/','','');
+cat2.a(2438,-348,'Writing Model Class and Saving Object','','writing-model-class-and-saving-object/','','');
+cat2.a(2436,-348,'Hibernate Setup for Eclipse','','hibernate-setup-for-eclipse/','','');
+cat2.a(2431,-346,'Junit interview questions','','junit-interview-questions/','','');
+cat2.a(2423,-121,'Spring-Interview-Preparation','','spring-interview-preparation/','','');
+cat2.a(2423,-346,'Spring-Interview-Preparation','','spring-interview-preparation/','','');
+cat2.a(2405,-347,'FAQ-Linux Commands -2','','faq-linux-command-2/','','');
+cat2.a(2396,-347,'FAQ-Linux Commands -1','','faq-linux-commands/','','');
+cat2.a(2383,-345,'Immutable-Class','','immutable-class/','','');
+cat2.a(2383,-346,'Immutable-Class','','immutable-class/','','');
+cat2.a(2377,-1,'Collection-Hierarchy','','collection-hierarchy/','','');
+cat2.a(2377,-344,'Collection-Hierarchy','','collection-hierarchy/','','');
+cat2.a(2377,-346,'Collection-Hierarchy','','collection-hierarchy/','','');
+cat2.a(2370,-344,'Exception-Hierarchy','','exceptionhierarchy/','','');
+cat2.a(2370,-346,'Exception-Hierarchy','','exceptionhierarchy/','','');
+cat2.a(2354,-1,'Using JDBC without Spring','','using-jdbc-without-spring/','','');
+cat2.a(2317,-272,'Interview Question and Answer on Threading-2','','interview-question-and-answer-on-threading-2/','','');
+cat2.a(2306,-13,'Constructor Injection','','constructor-injection/','','');
+cat2.a(2292,-13,'ApplicationContext and Property Initiallization','','applicationcontext-and-property-initiallization/','','');
+cat2.a(2286,-13,'Writing Code using Bean Factory','','writing-code-using-bean-factory/','','');
+cat2.a(2266,-13,'Spring Bean Factory','','spring-bean-factory/','','');
+cat2.a(2264,-13,'Spring Core &#8211; Setup','','spring-core-setup/','','');
+cat2.a(2255,-13,'Dependency Injection explained','','dependency-injection-explained/','','');
+cat2.a(2231,-1,'Java Reflection &#8211; Private Fields and Methods','','java-reflection-private-fields-and-methods/','','');
+cat2.a(2223,-1,'Java Reflection','','java-reflection/','','');
+cat2.a(2209,-1,'JAXB &#8211; Java Architecture for XML Binding','','jaxb-java-architecture-for-xml-binding/','','');
+cat2.a(2193,-329,'SOAP Web Services 03 &#8211; Writing a Web service Client_ Stub generation','','soap-web-services-03-writing-a-web-service-client_-stub-generation/','','');
+cat2.a(2191,-329,'SOAP Web Services 02 &#8211; Terminology','','soap-web-services-02-terminology/','','');
+cat2.a(2185,-329,'SOAP Web Services 01 &#8211; Introduction To Web Services','','soap-web-services-01-introduction-to-web-services/','','');
+cat2.a(2181,-5,'Comparble and Comparator Interface','','comparble-and-comparator-interface/','','');
+cat2.a(2174,-321,'Type of Resource URI&#8217;s','','type-of-resource-uris/','','');
+cat2.a(2171,-321,'Designing RESTful URI','','designing-restful-uri/','','');
+cat2.a(2165,-321,'Developing RESTful API&#8217;s with JAX-RS','','developing-restful-apis-with-jax-rs/','','');
+cat2.a(2160,-321,'RESTful Web Service Introduction','','restful-web-service-introduction/','','');
+cat2.a(2150,-5,'Call by Value vs Call by Reference','','call-by-value-vs-call-by-reference/','','');
+cat2.a(2136,-173,'Sql server important queries','','sql-server-important-queries/','','');
+cat2.a(2127,-14,'Exception Handling &#8211; part 2 &#8211; Globally','','exception-handling-part-2-globally/','','');
+cat2.a(2112,-14,'Exception Handling &#8211; part 1','','exception-handling-part-1/','','');
+cat2.a(2101,-14,'Interceptors &#8211; part 1','','interceptors-part-1/','','');
+cat2.a(2094,-14,'Form Validation &#8211; part 6 (Custom Form Validation Annotation with Parameters)','','form-validation-part-6-custom-form-validation-annotation-with-parameters/','','');
+cat2.a(2086,-14,'Form Validation &#8211; part 5 (writing a custom Form Validation annotation)','','form-validation-part-5-writing-a-custom-form-validation-annotation/','','');
+cat2.a(2077,-14,'Form Validation &#8211; part 4 (using annotation @Pattern, @Past, @Max etc)','','form-validation-part-4-using-annotation-pattern-past-max-etc/','','');
+cat2.a(2070,-14,'Form Validation &#8211; part 3 (more on Spring MessageSource concept)','','form-validation-part-3-more-on-spring-messagesource-concept/','','');
+cat2.a(2061,-14,'Form Validation &#8211; part 2 (customizing error messages using Spring MessageSource)','','form-validation-part-2-customizing-error-messages-using-spring-messagesource/','','');
+cat2.a(2046,-14,'Form Validation &#8211; part 1 ( using JSR 303_349 annotations )','','form-validations-part1-using-jsr-303_349-annotations/','','');
+cat2.a(2044,-14,'Custom Property Editor','','custom-property-editor/','','');
+cat2.a(2034,-14,'@InitBinder annotation, WebDataBinder, CustomDateEditor','','initbinder-annotation-webdatabinder-customdateeditor/','','');
+cat2.a(2021,-14,'Data Binding with a User-Defined Type, BindingResult (concept)','','data-binding-with-a-user-defined-type-bindingresult-features/','','');
+cat2.a(2016,-14,'Data Binding with Date, Collection (Arraylist), Long','','data-binding-with-date-collection-arraylist-long/','','');
+cat2.a(2010,-14,'@ModelAttribute Annotation -part 2','','modelattribute-annotation-part-2/','','');
+cat2.a(2004,-14,'@ModelAttribute Annotation -part 1','','understanding-modelattribute-annotation-part-1/','','');
+cat2.a(1989,-14,'Handling an HTML form using @RequestParam annotation','','handling-an-html-form-using-requestparam-annotation/','','');
+cat2.a(1977,-14,'@PathVariable annotation in Spring MVC','','pathvariable-annotation-in-spring-mvc/','','');
+cat2.a(1967,-14,'MultiAction Controller class, @RequestMapping annotation at class level','','multiaction-controller-class-requestmapping-annotation-at-class-level/','','');
+cat2.a(1956,-14,'First MVC using Annotation','','first-mvc-using-annotation/','','');
+cat2.a(1949,-14,'First MVC Application','','first-mvc-application/','','');
+cat2.a(1945,-173,'Differences between','','differences-between/','','');
+cat2.a(1939,-109,'Exception handling in Java','','exception-handling-in-java/','','');
+cat2.a(1932,-62,'Hibernate Caching','','hibernate-caching/','','');
+cat2.a(1924,-62,'Hibernate Batch Processing','','hibernate-batch-processing/','','');
+cat2.a(1917,-62,'Calling stored procedure in Hibernate','','calling-stored-procedure-in-hibernate/','','');
+cat2.a(1915,-48,'Best Practices for Query Optimization','','best-practices-for-query-optimization/','','');
+cat2.a(1913,-48,'Processing a SELECT Statement','','processing-a-select-statement/','','');
+cat2.a(1908,-48,'Stored Procedure Optimization','','stored-procedure-optimization/','','');
+cat2.a(1899,-48,'Table-Valued Parameters','','table-valued-parameters/','','');
+cat2.a(1893,-150,'Producer Consumer Example using BlockingQueue','','producer-consumer-example-using-blockingqueue/','','');
+cat2.a(1893,-346,'Producer Consumer Example using BlockingQueue','','producer-consumer-example-using-blockingqueue/','','');
+cat2.a(1888,-113,'Producer Consumer Example','','producer-consumer-example/','','');
+cat2.a(1888,-150,'Producer Consumer Example','','producer-consumer-example/','','');
+cat2.a(1881,-272,'Inteview Question and Answer on Threading','','inteview-question-and-answer-on-threading/','','');
+cat2.a(1877,-150,'Fork and Join','','fork-and-join/','','');
+cat2.a(1875,-150,'SynchronousQueue','','synchronousqueue/','','');
+cat2.a(1872,-150,'PriorityBlockingQueue','','priorityblockingqueue/','','');
+cat2.a(1868,-150,'LinkedBlockingQueue','','linkedblockingqueue/','','');
+cat2.a(1863,-150,'DelayQueue','','delayqueue/','','');
+cat2.a(1861,-150,'ArrayBlockingQueue','','arrayblockingqueue/','','');
+cat2.a(1854,-5,'Java Version-wise History','','java-version-wise-history/','','');
+cat2.a(1846,-150,'ExecutorService','','executorservice/','','');
+cat2.a(1841,-150,'Future and FutureTask','','future-and-futuretask/','','');
+cat2.a(1830,-48,'Recursive and Nonrecursive CTE (Common Table Expression)','','recursive-and-nonrecursive-cte-common-table-expression/','','');
+cat2.a(1819,-48,'Updatable Common Table Expression (CTE)','','updatable-common-table-expression-cte/','','');
+cat2.a(1815,-48,'Common Table Expression(CTE)','','common-table-expressioncte/','','');
+cat2.a(1792,-110,'Life Cycle of a Thread','','life-cycle-of-a-thread/','','');
+cat2.a(1792,-344,'Life Cycle of a Thread','','life-cycle-of-a-thread/','','');
+cat2.a(1792,-346,'Life Cycle of a Thread','','life-cycle-of-a-thread/','','');
+cat2.a(1790,-110,'Java Multi-Threading','','java-multithreading/','','');
+cat2.a(1774,-113,'Java Collections &#8211; Stack','','java-collections-stack/','','');
+cat2.a(1768,-113,'Java Collections &#8211; Deque','','java-collections-deque/','','');
+cat2.a(1764,-113,'Java Collections &#8211; Queue','','java-collections-queue/','','');
+cat2.a(1755,-5,'OutOfMemoryError in Java','','outofmemoryerror-in-java/','','');
+cat2.a(1723,-48,'Derived Table and Common Table Expressions','','derived-table-and-common-table-expressions/','','');
+cat2.a(1709,-48,'Temporary Tables in SQL Server','','temporary-tables-in-sql-server/','','');
+cat2.a(1703,-48,'Multi-Statement Table Valued Function','','multi-statement-table-valued-function/','','');
+cat2.a(1697,-48,'Inline Table Valued Function','','inline-table-valued-function/','','');
+cat2.a(1687,-48,'User Defined Functions','','user-defined-functions/','','');
+cat2.a(1680,-62,'Executing HQL Commands','','executing-hql-commands/','','');
+cat2.a(1670,-48,'Indexes in SQL Server','','indexes-in-sql-server/','','');
+cat2.a(1663,-48,'Union and Union All','','union-and-union-all/','','');
+cat2.a(1627,-48,'Differnet ways to replace NULL in SQL Server','','differnet-ways-to-replace-null-in-sql-server/','','');
+cat2.a(1617,-48,'Self Join in SQL Server','','self-join-in-sql-server/','','');
+cat2.a(1611,-48,'Advance Joins in SQL Server','','advance-joins-in-sql-server/','','');
+cat2.a(1594,-62,'Introduction to Hibernate Query Language','','introduction-to-hibernate-query-language/','','');
+cat2.a(1583,-62,'Using Hibernate generator to generate id incrementally','','using-hibernate-generator-to-generate-id-incrementally/','','');
+cat2.a(1576,-119,'Difference between new operator and newInstance()','','difference-between-new-operator-and-newinstance/','','');
+cat2.a(1570,-222,'Struts 1.x Interview Questions and Answers -1','','struts-1-x-interview-questions-and-answers-1/','','');
+cat2.a(1567,-150,'CopyOnWriteArrayList','','copyonwritearraylist/','','');
+cat2.a(1556,-62,'Hibernate-generator-element','','hibernate-generator-element/','','');
+cat2.a(1551,-62,'Composite Primary Keys In Hibernate','','composite-primary-keys-in-hibernate/','','');
+cat2.a(1531,-62,'Inheritance: Table Per Concrete Class Hierarchy','','inheritance-table-per-concrete-class-hierarchy/','','');
+cat2.a(1524,-200,'Hadoop MapReduce','','hadoop-mapreduce/','','');
+cat2.a(1507,-62,'Inheritance-Table Per Subclass Hierarchy','','hibernate-inheritance-table-per-subclass-hierarchy/','','');
+cat2.a(1482,-62,'Inheritance-Table Per Class Hierarchy','','hibernate-inheritance-table-per-class-hierarchy/','','');
+cat2.a(1481,-62,'Inheritance Mapping In Hibernate','','inheritance-mapping-in-hibernate/','','');
+cat2.a(1477,-62,'Converting Object From Detached to Persistent state','','converting-object-from-detached-to-persistent-state/','','');
+cat2.a(1462,-62,'Lifecycle-Of-Pojo-Class-Objects','','lifecycle-of-pojo-class-objects/','','');
+cat2.a(1445,-200,'Hadoop-HDFS','','hadoop-hdfs/','','');
+cat2.a(1443,-200,'Introduction of Hadoop','','introduction-of-hadoop/','','');
+cat2.a(1436,-1,'Big-Data-Questions','','big-data-questions/','','');
+cat2.a(1432,-200,'Apache-Hadoop','','apache-hadoop/','','');
+cat2.a(1419,-1,'Flowchart','','flowchart/','','');
+cat2.a(1403,-191,'UML &#8211; Class Diagram','','uml-class-diagram/','','');
+cat2.a(1375,-62,'Wrapper And Primitive Types In Hibernate','','wrapper-and-primitive-types-in-hibernate/','','');
+cat2.a(1364,-62,'Hibernate Versioning Of Objects','','hibernate-versioning-of-objects/','','');
+cat2.a(1356,-62,'Hibernate-Hello World','','hibernate-hello-world/','','');
+cat2.a(1345,-5,'Class Loader','','class-loader/','','');
+cat2.a(1332,-113,'Fail Fast Vs Fail Safe Iterator','','fail-fast-vs-fail-safe-iterator/','','');
+cat2.a(1321,-150,'Concurrency vs. Parallelism','','concurrency-vs-parallelism/','','');
+cat2.a(1315,-150,'ReentrantLock','','reentrantlock/','','');
+cat2.a(1239,-5,'Java Memory Management','','java-memory-management/','','');
+cat2.a(1234,-48,'SQL Server – JOINs','','sql-server-joins/','','');
+cat2.a(1229,-173,'SQL SERVER – Interview Questions and Answers – Frequently Asked Questions – Day 3 of 31','','sql-server-interview-questions-and-answers-frequently-asked-questions-day-3-of-31/','','');
+cat2.a(1227,-173,'SQL SERVER – Interview Questions and Answers – Frequently Asked Questions – Day 2 of 31','','sql-server-interview-questions-and-answers-frequently-asked-questions-day-2-of-31/','','');
+cat2.a(1223,-173,'SQL SERVER – Interview Questions and Answers','','sql-server-interview-questions-and-answers/','','');
+cat2.a(1218,-48,'SQL Server Data Types','','sql-server-data-types/','','');
+cat2.a(1208,-48,'Database Normalization','','database-normalization/','','');
+cat2.a(1199,-150,'ReentrantLock Example in Java, Difference between synchronized vs ReentrantLock','','reentrantlock-example-in-java-difference-between-synchronized-vs-reentrantlock/','','');
+cat2.a(1193,-150,'Read / Write Locks in Java','','read-write-locks-in-java/','','');
+cat2.a(1187,-150,'Locks in Java','','locks-in-java/','','');
+cat2.a(1185,-1,'SQL Server 2016 New Features','','sql-server-2016-new-features/','','');
+cat2.a(1181,-1,'Investment Banking Concepts','','investment-banking-concepts/','','');
+cat2.a(1176,-1,'Trade Life Cycle/Securities trade life cycle','','trade-life-cyclesecurities-trade-life-cycle/','','');
+cat2.a(1163,-13,'Spring Hibernate Integration Example (Spring 4 &#038; Hibernate 3 )','','spring-hibernate-integration-example-spring-4-hibernate-3/','','');
+cat2.a(1153,-13,'Circular Dependency in Spring','','circular-dependency-in-spring/','','');
+cat2.a(1151,-1,'Spring JDBC Example','','spring-jdbc-example/','','');
+cat2.a(1149,-121,'Spring Notes','','spring-notes/','','');
+cat2.a(1137,-150,'BlockingQueue','','blockingqueue/','','');
+cat2.a(1135,-150,'Java Concurrency Utilities Introduction','','java-concurrency-utilities-introduction/','','');
+cat2.a(1129,-150,'Java Executor framework','','java-executor-framework-thread-pool/','','');
+cat2.a(1127,-5,'Java static keyword','','java-static-keyword/','','');
+cat2.a(1123,-119,'Top  Java Questions and Answer','','top-java-questions-and-answer/','','');
+cat2.a(1114,-62,'Hibernate Using Mapping File','','hibernate-using-mapping-file/','','');
+cat2.a(1045,-16,'Spring Security','','spring-security/','','');
+cat2.a(971,-144,'Spring MVC Questions and Answers','','spring-mvc-interview-questions-and-answers/','','');
+cat2.a(934,-14,'Dispatcher Servlet,HandlerMapping &#038; Controller','','dispatcher-servlethandlermapping-controller/','','');
+cat2.a(925,-14,'Spring MVC-View Resolvers','','spring-mvc-view-resolvers/','','');
+cat2.a(785,-5,'Types Of References In Java','','types-of-references-in-java/','','');
+cat2.a(777,-5,'Garbage collection','','garbage-collection/','','');
+cat2.a(773,-13,'Spring First Example, Setter Injection With Primitive Values','','spring-first-example-setter-injection-with-primitive-values/','','');
+cat2.a(767,-119,'Top Constructor Interview Questions','','top-constructor-interview-questions/','','');
+cat2.a(758,-119,'Interview Questions on OOPS','','interview-questions-on-oops/','','');
+cat2.a(747,-62,'Mapping-Configuration Files  and Dialect In Hibernate','','mapping-configuration-and-dialect/','','');
+cat2.a(743,-62,'Origins of Hibernate and Object-Relational Mapping','','origins-of-hibernate-and-object-relational-mapping/','','');
+cat2.a(740,-62,'Setting Up Hibernate','','setting-up-hibernate/','','');
+cat2.a(728,-62,'Hibernate Architecture','','hibernate-architecture/','','');
+cat2.a(708,-121,'Spring Core Interview Questions and Answers','','spring-core-interview-questions-and-answers/','','');
+cat2.a(705,-119,'Top 20 Java Basic Interview Questions','','top-20-java-basic-interview-questions/','','');
+cat2.a(628,-113,'Collection','','collection/','','');
+cat2.a(620,-70,'Singleton Pattern','','singleton-pattern/','','');
+cat2.a(620,-346,'Singleton Pattern','','singleton-pattern/','','');
+cat2.a(618,-70,'Builder Pattern','','builder-pattern/','','');
+cat2.a(616,-94,'Memento Pattern','','memento-pattern/','','');
+cat2.a(614,-94,'Iterator Pattern','','iterator-pattern/','','');
+cat2.a(612,-94,'Interpreter Pattern','','interpreter-pattern/','','');
+cat2.a(610,-94,'Visitor Pattern','','visitor-pattern/','','');
+cat2.a(608,-94,'State Pattern','','state-pattern/','','');
+cat2.a(606,-94,'Template Method Pattern','','template-method-pattern/','','');
+cat2.a(604,-94,'Chain of Responsibility Pattern','','chain-of-responsibility-pattern/','','');
+cat2.a(602,-94,'Observer Pattern','','observer-pattern/','','');
+cat2.a(600,-94,'Strategy Pattern','','strategy-pattern/','','');
+cat2.a(598,-94,'Mediator Pattern','','mediator-pattern/','','');
+cat2.a(595,-94,'Command Pattern','','command-pattern/','','');
+cat2.a(592,-86,'Decorator Pattern','','decorator-pattern/','','');
+cat2.a(590,-86,'Bridge Pattern','','bridge-pattern/','','');
+cat2.a(588,-86,'Facade Pattern','','facade-pattern/','','');
+cat2.a(586,-86,'Flyweight Pattern','','flyweight-pattern/','','');
+cat2.a(584,-86,'Proxy Pattern','','proxy-pattern/','','');
+cat2.a(582,-86,'Composite Pattern','','composite-pattern/','','');
+cat2.a(580,-86,'Adapter Pattern','','adapter-pattern/','','');
+cat2.a(543,-5,'Access specifiers vs Access modifiers','','access-specifiers-vs-access-modifiers/','','');
+cat2.a(537,-5,'Main Method Description','','main-method/','','');
+cat2.a(532,-5,'Architecture of JVM','','architecture-of-jvm/','','');
+cat2.a(519,-5,'Setting classpath and Running Java Programme','','setting-classpath-and-running-java-programme/','','');
+cat2.a(512,-77,'Constructors','','constructors/','','');
+cat2.a(440,-48,'Unique key constraint','','unique-key-constraint/','','');
+cat2.a(426,-48,'Identity Column in SQL Server','','identity-column-in-sql-server/','','');
+cat2.a(415,-70,'Prototype pattern','','prototype-pattern/','','');
+cat2.a(410,-70,'Abstract Factory Pattern','','abstract-factory-pattern/','','');
+cat2.a(394,-70,'Factory Pattern','','factory-pattern/','','');
+cat2.a(323,-48,'Adding a check constraint','','adding-a-check-constraint/','','');
+cat2.a(283,-13,'IOC and Dependency Injection','','ioc-and-dependency-injection/','','');
+cat2.a(259,-62,'Hibernate introduction','','hibernate-introduction/','','');
+cat2.a(257,-59,'JSF Introduction','','jsf-introduction/','','');
+cat2.a(252,-48,'Cascading referential integrity constraint','','cascading-referential-integrity-constraint/','','');
+cat2.a(249,-48,'Default constraint','','adding-a-default-constraint/','','');
+cat2.a(247,-48,'Creating and working with tables','','creating-and-working-with-tables/','','');
+cat2.a(245,-48,'Creating altering and dropping a database','','creating-altering-and-dropping-a-database/','','');
+cat2.a(242,-48,'SQL Server Installation','','sql-server-installation/','','');
+cat2.a(236,-24,'Struts SwitchAction','','struts-switchaction/','','');
+cat2.a(234,-24,'Struts MappingDispatchAction','','struts-mappingdispatchaction/','','');
+cat2.a(232,-24,'StrutsLookupDispatchAction','','strutslookupdispatchaction/','','');
+cat2.a(230,-24,'Struts LocaleAction','','struts-localeaction/','','');
+cat2.a(227,-24,'Struts IncludeAction','','struts-includeaction/','','');
+cat2.a(225,-24,'Struts Forward Action','','struts-forward-action/','','');
+cat2.a(223,-24,'Struts DispatchAction','','struts-dispatchaction/','','');
+cat2.a(207,-37,'Introduction to Struts 2.x','','introduction-to-struts-2-x/','','');
+cat2.a(201,-24,'Using tiles-defs.xml in Tiles Application','','using-tiles-defs-xml-in-tiles-application/','','');
+cat2.a(199,-24,'Struts Tiles Application','','struts-tiles-application/','','');
+cat2.a(151,-24,'Custom Validators in STRUTS','','custom-validators-in-struts/','','');
+cat2.a(138,-24,'Struts Validator Framework','','struts-validator-framework/','','');
+cat2.a(133,-24,'Struts HTML Tags','','struts-html-tags/','','');
+cat2.a(129,-24,'Struts ActionForm Class','','struts-actionform-class/','','');
+cat2.a(123,-24,'Struts Action Class','','struts-action-class/','','');
+cat2.a(117,-24,'Struts Controller','','struts-controller/','','');
+cat2.a(98,-24,'Struts Architecture','','struts_architecture/','','');
+cat2.a(89,-24,'Introduction to Struts 1.x','','introduction-to-struts-1-x/','','');
+cat2.a(82,-22,'Spring Batch','','spring-batch-4/','','');
+cat2.a(75,-14,'Spring MVC Flow','','spring-mvc-flow/','','');
+cat2.a(75,-346,'Spring MVC Flow','','spring-mvc-flow/','','');
+cat2.a(63,-13,'Spring Modules','','spring-modules/','','');
+cat2.a(61,-13,'Introduction to Spring','','introduction-to-spring/','','');
+cat2.a(47,-8,'Object and Class','','object-and-class/','','');
+cat2.a(39,-5,'Features of Java','','features-of-java/','','');
+cat2.a(28,-5,'Overview of Java','','overview-of-java/','','');
+document.write(cat2);
+}catch(e){} /* ]]> */
+</script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+try{
+/*WP-dTree: cat2 request was "'wp-content\/uploads\/2016\/06\/big-data.jpg'" Couldn't find it.*/
+}catch(e){} /* ]]> */
+</script>
+</div></li>					</ul>
+				</div><!-- #first .widget-area -->
+
+
+
+			</div><!-- #footer-widget-area -->
+			
+		</div><!-- #colophon -->
+
+		<div id="footer2">
+			<div id="footer2-inside">
+			<nav class="footermenu"><ul id="menu-footer-menu" class="menu"><li id="menu-item-880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-880"><a href="http://technicalstack.com/about-us/">ABOUT US</a></li>
+<li id="menu-item-882" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-882"><a href="http://technicalstack.com/contact-us/">CONTACT US</a></li>
+<li id="menu-item-870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-870"><a href="http://technicalstack.com/privacy-policy/">PRIVACY POLICY</a></li>
+<li id="menu-item-875" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-875"><a href="http://technicalstack.com/disclaimer/">DISCLAIMER</a></li>
+</ul></nav><div id="site-copyright">TechnicalStack © 2016. All Rights Reserved.</div>	<em style="display:table;margin:0 auto;float:none;text-align:center;padding:7px 0;font-size:13px;">
+	Powered by <a target="_blank" href="http://www.cryoutcreations.eu" title="Nirvana Theme by Cryout Creations">Nirvana</a> &amp;
+	<a target="_blank" href="http://wordpress.org/" title="Semantic Personal Publishing Platform">  WordPress.</a></em>
+				</div> <!-- #footer2-inside -->
+		</div><!-- #footer2 -->
+
+	</footer><!-- #footer -->
+
+	</div><!-- #main -->
+</div><!-- #wrapper -->
+
+
+<link rel='stylesheet' id='nirvana-mobile-css'  href='http://technicalstack.com/wp-content/themes/nirvana/styles/style-mobile.css?ver=1.2.3' type='text/css' media='all' />
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/drawit/js/drawit-iframe.js?ver=1.1.3'></script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/simple-share-buttons-adder/js/ssba.js?ver=4.9.13'></script>
+<script type='text/javascript'>
+Main.boot( [] );
+</script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/themes/nirvana/js/frontend.js?ver=1.2.3'></script>
+<script type='text/javascript' src='http://technicalstack.com/wp-includes/js/wp-embed.min.js?ver=4.9.13'></script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-en.js?ver=2.9'></script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine.js?ver=2.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"http:\/\/technicalstack.com\/wp-admin\/admin-ajax.php","loadingTrans":"Loading...","is_rtl":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://technicalstack.com/wp-content/plugins/wysija-newsletters/js/front-subscribers.js?ver=2.9'></script>
+<script type="text/javascript">var cryout_global_content_width = 800;</script>
+</body>
+</html>

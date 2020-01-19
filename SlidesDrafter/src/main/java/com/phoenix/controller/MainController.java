@@ -20,12 +20,12 @@ public class MainController {
 
     @RequestMapping("/")
     public ModelAndView rootPage(){
-        return new ModelAndView("index");
+        return new ModelAndView("index1");
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ModelAndView login(){
-        return new ModelAndView("index");
+        return new ModelAndView("index1");
     }
 
 

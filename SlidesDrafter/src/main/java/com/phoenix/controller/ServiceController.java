@@ -19,7 +19,6 @@ public class ServiceController {
     private static String anaconda_pyhont_dir;
     private static String input_dir;
     private static String seg_dir;
-    private static String title_dir;
     private static String slides_dir;
     private static String model_dir;
     private static String filename;
@@ -27,7 +26,6 @@ public class ServiceController {
         base_dir = new File(System.getProperty("user.dir")).getAbsolutePath();
         input_dir = base_dir + "/input_text/";
         seg_dir = base_dir + "/seg_text/";
-        title_dir = base_dir + "/title_text/";
         slides_dir = base_dir + "/generated_slides/";
         model_dir = base_dir + "/model/";
         python_dir = "python";
@@ -60,11 +58,13 @@ public class ServiceController {
         System.out.println("Text to Segment");
         String[] seg_arguments = new String[]{
                 python_dir,
-                model_dir + "seg.py",
+                model_dir + "/text-seg/seg.py",
                 "-input_file",
                 input_dir + filename,
                 "-output_file",
-                 seg_dir + filename
+                seg_dir + filename,
+                "-base_dir",
+                model_dir
         };
 
         try{
@@ -73,36 +73,20 @@ public class ServiceController {
         }catch(Exception e){
             e.printStackTrace();
         }
-
-        //Title
-        System.out.println("Segment to Title");
-        String[] title_arguments = new String[]{
-                python_dir,
-                model_dir + "title.py",
-                "-input_file",
-                seg_dir + filename,
-                "-output_file",
-                title_dir + filename
-        };
-
-        try{
-            Process process = Runtime.getRuntime().exec(title_arguments);
-            process.waitFor();
-        }catch(Exception e){
-            e.printStackTrace();
+        for(String str: seg_arguments) {
+            System.out.print(str + " ");
         }
+        System.out.println();
 
         //slides
         System.out.println("Slides Gen");
         String[] slides_arguments = new String[]{
                 python_dir,
-                model_dir + "slidesGen.py",
-                "-seg_file",
+                model_dir + "/slides/slidespy1.py",
+                "-input_file",
                 seg_dir + filename,
-                "-title_file",
-                title_dir + filename,
                 "-output_file",
-                slides_dir + filename
+                slides_dir + filename + ".pptx"
         };
 
         for(String str: slides_arguments) {
@@ -129,7 +113,7 @@ public class ServiceController {
         response.setContentType("application/octet-stream");
         FileInputStream fis = null;
         try {
-            File file = new File(slides_dir + filename);
+            File file = new File(slides_dir + filename + ".pptx");
             fis = new FileInputStream(file);
             response.setHeader("Content-Disposition", "attachment; filename="+file.getName());
             IOUtils.copy(fis,response.getOutputStream());
